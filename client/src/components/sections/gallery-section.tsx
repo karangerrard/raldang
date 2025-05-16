@@ -14,8 +14,13 @@ export default function GallerySection() {
           transition={{ duration: 0.5 }}
         >
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-[hsl(var(--mountain-pine))] mb-4">Photo Gallery</h2>
-          <p className="text-lg max-w-2xl mx-auto">Take a visual journey through our homestay and the stunning landscapes of Kinnaur Valley.</p>
-          <div className="w-24 h-1 bg-[hsl(var(--mountain-red))] mx-auto mt-4"></div>
+          <p className="text-lg max-w-2xl mx-auto">
+            Take a visual journey through our homestay and the stunning landscapes of Kinnaur Valley.
+            <span className="block text-sm mt-2 text-[hsl(var(--mountain-gold))] font-medium">
+              <i className="fas fa-search-plus mr-1"></i> Click any image to view in full size
+            </span>
+          </p>
+          <div className="w-24 h-1 bg-[hsl(var(--mountain-gold))] mx-auto mt-4"></div>
         </motion.div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

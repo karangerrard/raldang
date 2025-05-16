@@ -62,7 +62,26 @@ export default function ContactSection() {
   });
 
   function onSubmit(data: ContactFormValues) {
+    // Send to backend API
     contactMutation.mutate(data);
+    
+    // Prepare WhatsApp message (as an alternative option)
+    const whatsappMessage = encodeURIComponent(
+      `*New Booking Inquiry*\n\n` +
+      `*Name:* ${data.name}\n` +
+      `*Email:* ${data.email}\n` +
+      `*Phone:* ${data.phone}\n` +
+      `*Guests:* ${data.guests}\n` +
+      `*Check-in:* ${data.checkin}\n` +
+      `*Check-out:* ${data.checkout}\n` +
+      `*Message:* ${data.message || "No additional message"}`
+    );
+    
+    // Open WhatsApp with the message after a short delay
+    setTimeout(() => {
+      // Using business number placeholder - will be replaced with actual number
+      window.open(`https://wa.me/919876543210?text=${whatsappMessage}`, '_blank');
+    }, 1000);
   }
 
   return (
@@ -83,7 +102,7 @@ export default function ContactSection() {
             
             <div className="space-y-6 mb-8">
               <div className="flex items-start gap-4">
-                <div className="mt-1 text-[hsl(var(--mountain-red))]">
+                <div className="mt-1 text-[hsl(var(--mountain-gold))]">
                   <i className="fas fa-map-marker-alt text-xl"></i>
                 </div>
                 <div>
@@ -93,18 +112,18 @@ export default function ContactSection() {
               </div>
               
               <div className="flex items-start gap-4">
-                <div className="mt-1 text-[hsl(var(--mountain-red))]">
+                <div className="mt-1 text-[hsl(var(--mountain-gold))]">
                   <i className="fas fa-phone-alt text-xl"></i>
                 </div>
                 <div>
-                  <h4 className="font-medium text-lg mb-1">Phone</h4>
-                  <p>+91 98765 43210</p>
+                  <h4 className="font-medium text-lg mb-1">Phone & WhatsApp</h4>
+                  <p>+91 98765 43210 <i className="fab fa-whatsapp text-green-400 ml-1"></i></p>
                   <p>+91 98765 43211</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-4">
-                <div className="mt-1 text-[hsl(var(--mountain-red))]">
+                <div className="mt-1 text-[hsl(var(--mountain-gold))]">
                   <i className="fas fa-envelope text-xl"></i>
                 </div>
                 <div>
@@ -285,13 +304,19 @@ export default function ContactSection() {
                   )}
                 />
                 
-                <Button 
-                  type="submit"
-                  disabled={contactMutation.isPending}
-                  className="w-full py-3 px-6 bg-[hsl(var(--mountain-red))] hover:bg-[hsl(var(--mountain-red))]/90 text-white rounded-lg transition-colors font-medium"
-                >
-                  {contactMutation.isPending ? "Sending..." : "Send Inquiry"}
-                </Button>
+                <div className="space-y-2">
+                  <Button 
+                    type="submit"
+                    disabled={contactMutation.isPending}
+                    className="w-full py-3 px-6 bg-[hsl(var(--mountain-gold))] hover:bg-[hsl(var(--mountain-gold))]/90 text-[hsl(var(--mountain-pine))] rounded-lg transition-colors font-medium flex items-center justify-center gap-2"
+                  >
+                    <i className="fab fa-whatsapp text-lg"></i>
+                    {contactMutation.isPending ? "Sending..." : "Send Inquiry via WhatsApp"}
+                  </Button>
+                  <p className="text-xs text-center text-[hsl(var(--mountain-white))]/70">
+                    Your inquiry will be sent directly to our WhatsApp business number for faster response
+                  </p>
+                </div>
               </form>
             </Form>
           </motion.div>
