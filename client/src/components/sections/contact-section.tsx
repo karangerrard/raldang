@@ -168,7 +168,7 @@ export default function ContactSection() {
                       <FormControl>
                         <Input
                           placeholder="Your name"
-                          className="px-4 py-3 rounded-lg bg-[hsl(var(--mountain-pine-800))] border border-[hsl(var(--mountain-blue))]/30 focus:border-[hsl(var(--mountain-gold))] focus:outline-none"
+                          className="px-4 py-3 rounded-lg bg-[hsl(var(--mountain-pine-800))] border border-[hsl(var(--mountain-blue))]/30 focus:border-[hsl(var(--mountain-gold))] focus:outline-none placeholder:text-white/50 text-white"
                           {...field}
                         />
                       </FormControl>
@@ -188,7 +188,7 @@ export default function ContactSection() {
                           <Input
                             type="tel"
                             placeholder="Your phone number"
-                            className="px-4 py-3 rounded-lg bg-[hsl(var(--mountain-pine-800))] border border-[hsl(var(--mountain-blue))]/30 focus:border-[hsl(var(--mountain-red))] focus:outline-none"
+                            className="px-4 py-3 rounded-lg bg-[hsl(var(--mountain-pine-800))] border border-[hsl(var(--mountain-blue))]/30 focus:border-[hsl(var(--mountain-gold))] focus:outline-none placeholder:text-white/50 text-white"
                             {...field}
                           />
                         </FormControl>

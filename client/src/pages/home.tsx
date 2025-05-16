@@ -9,7 +9,7 @@ import TestimonialsSection from "@/components/sections/testimonials-section";
 import GallerySection from "@/components/sections/gallery-section";
 import HowToReachSection from "@/components/sections/activities-section";
 import ContactSection from "@/components/sections/contact-section";
-import MapSection from "@/components/sections/map-section";
+
 
 export default function Home() {
   return (
@@ -25,7 +25,6 @@ export default function Home() {
         <GallerySection />
         <HowToReachSection />
         <ContactSection />
-        <MapSection />
       </main>
       <Footer />
     </>
