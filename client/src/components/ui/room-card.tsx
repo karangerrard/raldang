@@ -24,20 +24,23 @@ export function RoomCard({ room }: RoomCardProps) {
         <CardContent className="p-6">
           <h3 className="font-playfair text-xl font-bold mb-2">{room.name}</h3>
           <p className="text-gray-600 mb-4">{room.description}</p>
-          <div className="flex flex-wrap gap-2 mb-4">
-            {room.amenities.map((amenity, index) => (
-              <span key={index} className="bg-[hsl(var(--mountain-gray))] px-3 py-1 rounded-full text-sm">
-                {amenity}
-              </span>
-            ))}
+          <div className="mb-5">
+            <h4 className="font-medium text-sm mb-2 text-gray-500">AMENITIES</h4>
+            <div className="flex flex-wrap gap-2 min-h-[75px]">
+              {room.amenities.map((amenity, index) => (
+                <span key={index} className="bg-[hsl(var(--mountain-snow))]/30 border border-[hsl(var(--mountain-gold))]/30 px-3 py-1 rounded-full text-xs">
+                  {amenity}
+                </span>
+              ))}
+            </div>
           </div>
-          <div className="flex justify-between items-center">
-            <span className="font-playfair text-[hsl(var(--mountain-blue))] text-xl font-semibold">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <span className="font-playfair text-[hsl(var(--mountain-gold))] text-xl font-semibold">
               {room.price}
             </span>
             <Button 
               asChild
-              className="bg-[hsl(var(--mountain-blue))] hover:bg-[hsl(var(--mountain-blue))] hover:opacity-80 text-white py-2 px-4 rounded-lg transition-colors"
+              className="bg-[hsl(var(--mountain-gold))] hover:bg-[hsl(var(--mountain-gold))]/90 text-[hsl(var(--mountain-pine))] py-2 px-6 rounded-full transition-colors w-full sm:w-auto"
             >
               <a href="#contact">Book Now</a>
             </Button>

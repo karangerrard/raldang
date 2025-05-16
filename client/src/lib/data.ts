@@ -41,7 +41,7 @@ export const rooms: Room[] = [
     id: "mountain-view",
     name: "Mountain Balcony Room",
     description: "Wake up to breathtaking panoramic views of the Raldang peak from your private balcony. These spacious rooms feature traditional Kinnauri décor and modern amenities for a comfortable mountain stay.",
-    amenities: ["Panoramic Mountain View", "Private Balcony", "Free Wi-Fi", "Daily Breakfast", "Tea/Coffee Maker"],
+    amenities: ["Panoramic Mountain View", "Private Balcony", "Free Wi-Fi", "Daily Breakfast", "Tea/Coffee Maker", "Room Service"],
     price: "₹4,500/night",
     image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
   },
@@ -49,7 +49,7 @@ export const rooms: Room[] = [
     id: "garden-view",
     name: "Garden View Room",
     description: "Comfortable rooms with a private balcony overlooking our peaceful garden and apple orchard. Enjoy the tranquil atmosphere with partial mountain views and cozy Himachali interior design.",
-    amenities: ["Garden View", "Private Balcony", "Free Wi-Fi", "Daily Breakfast", "Tea/Coffee Maker"],
+    amenities: ["Garden View", "Private Balcony", "Free Wi-Fi", "Daily Breakfast", "Tea/Coffee Maker", "Room Service"],
     price: "₹3,500/night",
     image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
   }
