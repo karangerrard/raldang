@@ -19,10 +19,11 @@ export default function RoomsSection() {
           <div className="w-24 h-1 bg-[hsl(var(--mountain-red))] mx-auto mt-4"></div>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex flex-col md:flex-row justify-center gap-8 max-w-5xl mx-auto">
           {rooms.map((room, index) => (
             <motion.div
               key={room.id}
+              className="flex-1 min-w-0 max-w-md mx-auto"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}

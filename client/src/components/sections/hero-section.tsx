@@ -36,7 +36,7 @@ export default function HeroSection() {
             </Button>
             <Button 
               asChild
-              className="bg-[hsl(var(--mountain-red))] hover:bg-[hsl(var(--mountain-red))]/90 text-[hsl(var(--mountain-white))] py-3 px-8 rounded-full transition-all transform hover:scale-105 font-medium shadow-lg"
+              className="bg-[hsl(var(--mountain-gold))] hover:bg-[hsl(var(--mountain-gold))]/90 text-[hsl(var(--mountain-pine))] py-3 px-8 rounded-full transition-all transform hover:scale-105 font-medium shadow-lg border-2 border-[hsl(var(--mountain-white))]"
             >
               <a href="#contact">Book Your Stay</a>
             </Button>

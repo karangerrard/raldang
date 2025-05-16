@@ -15,7 +15,6 @@ import { useToast } from "@/hooks/use-toast";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
-  email: z.string().email({ message: "Please enter a valid email address" }),
   phone: z.string().min(10, { message: "Please enter a valid phone number" }),
   guests: z.string(),
   checkin: z.string().min(1, { message: "Please select a check-in date" }),
@@ -32,7 +31,6 @@ export default function ContactSection() {
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
       name: "",
-      email: "",
       phone: "",
       guests: "2",
       checkin: "",
@@ -69,7 +67,6 @@ export default function ContactSection() {
     const whatsappMessage = encodeURIComponent(
       `*New Booking Inquiry*\n\n` +
       `*Name:* ${data.name}\n` +
-      `*Email:* ${data.email}\n` +
       `*Phone:* ${data.phone}\n` +
       `*Guests:* ${data.guests}\n` +
       `*Check-in:* ${data.checkin}\n` +
@@ -162,44 +159,23 @@ export default function ContactSection() {
             <h3 className="font-playfair text-2xl font-bold mb-6">Inquiry Form</h3>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="font-medium">Name</FormLabel>
-                        <FormControl>
-                          <Input
-                            placeholder="Your name"
-                            className="px-4 py-3 rounded-lg bg-[hsl(var(--mountain-pine-800))] border border-[hsl(var(--mountain-blue))]/30 focus:border-[hsl(var(--mountain-red))] focus:outline-none"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="font-medium">Email</FormLabel>
-                        <FormControl>
-                          <Input
-                            type="email"
-                            placeholder="Your email"
-                            className="px-4 py-3 rounded-lg bg-[hsl(var(--mountain-pine-800))] border border-[hsl(var(--mountain-blue))]/30 focus:border-[hsl(var(--mountain-red))] focus:outline-none"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="font-medium">Name</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="Your name"
+                          className="px-4 py-3 rounded-lg bg-[hsl(var(--mountain-pine-800))] border border-[hsl(var(--mountain-blue))]/30 focus:border-[hsl(var(--mountain-gold))] focus:outline-none"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <FormField

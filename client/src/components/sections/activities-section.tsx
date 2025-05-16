@@ -19,7 +19,7 @@ export default function HowToReachSection() {
           <div className="w-24 h-1 bg-[hsl(var(--mountain-gold))] mx-auto mt-4"></div>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {transportOptions.map((option, index) => (
             <motion.div
               key={option.id}
@@ -32,6 +32,28 @@ export default function HowToReachSection() {
             </motion.div>
           ))}
         </div>
+        
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5 }}
+          className="my-12 rounded-xl overflow-hidden shadow-lg border-4 border-[hsl(var(--mountain-gold))]/30"
+        >
+          <h3 className="font-playfair text-xl text-center py-4 bg-[hsl(var(--mountain-gold))]/10 border-b border-[hsl(var(--mountain-gold))]/20">
+            Our Location on Google Maps
+          </h3>
+          <div className="w-full h-[450px]">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13483.580866477763!2d78.24730001410767!3d31.5375051740285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39063304c89e9cf3%3A0x7d39bafad8e25979!2sKalpa%2C%20Himachal%20Pradesh%20172107!5e0!3m2!1sen!2sin!4v1652952465427!5m2!1sen!2sin" 
+              className="w-full h-full" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </motion.div>
         
         <motion.div 
           className="mt-12 text-center"
