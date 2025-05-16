@@ -1,0 +1,54 @@
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+
+export default function HeroSection() {
+  return (
+    <section id="home" className="h-screen relative flex items-center justify-center">
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat parallax" 
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1507501336603-6e31db2be093?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80')" }}
+      ></div>
+      
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(42,61,69,0.6),rgba(42,61,69,0.3))]"></div>
+      
+      {/* Content */}
+      <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1 className="font-playfair text-4xl md:text-6xl text-[hsl(var(--mountain-white))] font-bold mb-4 text-shadow">
+            Experience the Magic of Kinnaur
+          </h1>
+          <p className="text-xl md:text-2xl text-[hsl(var(--mountain-white))] mb-8 max-w-3xl mx-auto text-shadow">
+            A traditional Himachali homestay with breathtaking views of the Raldang peak
+          </p>
+          <div className="flex flex-col md:flex-row justify-center gap-4">
+            <Button 
+              asChild
+              className="bg-[hsl(var(--mountain-blue))] hover:bg-[hsl(var(--mountain-blue))]/90 text-[hsl(var(--mountain-white))] py-3 px-8 rounded-full transition-all transform hover:scale-105 font-medium"
+            >
+              <a href="#rooms">Explore Rooms</a>
+            </Button>
+            <Button 
+              asChild
+              className="bg-[hsl(var(--mountain-red))] hover:bg-[hsl(var(--mountain-red))]/90 text-[hsl(var(--mountain-white))] py-3 px-8 rounded-full transition-all transform hover:scale-105 font-medium"
+            >
+              <a href="#contact">Book Your Stay</a>
+            </Button>
+          </div>
+        </motion.div>
+      </div>
+      
+      {/* Scroll indicator */}
+      <div className="absolute bottom-6 left-0 right-0 text-center text-[hsl(var(--mountain-white))] animate-bounce">
+        <a href="#about" aria-label="Scroll down to about section">
+          <i className="fas fa-chevron-down text-2xl"></i>
+        </a>
+      </div>
+    </section>
+  );
+}
