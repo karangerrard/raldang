@@ -116,3 +116,31 @@ img {
     scroll-behavior: auto !important;
   }
 }
+
+/* Form input styles for better visibility */
+#contact input, 
+#contact textarea, 
+#contact select,
+#contact .select-trigger {
+  color: white !important;
+  font-weight: 400;
+  background-color: hsla(var(--mountain-pine-800), 0.8) !important;
+  border-color: hsla(var(--mountain-gold), 0.3) !important;
+}
+
+#contact input::placeholder, 
+#contact textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+  opacity: 1 !important;
+  font-weight: 400;
+}
+
+/* Date input styling */
+#contact input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+/* Select trigger styling */
+#contact .SelectTrigger {
+  color: white !important;
+}
