@@ -24,13 +24,14 @@
 --ring: 20 14.3% 4.1%;
 --radius: 0.5rem;
 
-/* Custom colors for mountain theme */
+/* Custom colors for mountain theme based on the Kinnaur mountain photo */
 --mountain-white: 0 0% 100%;
---mountain-pine: 200 30% 20%;
---mountain-blue: 210 80% 30%;
---mountain-red: 0 80% 50%;
---mountain-earth: 30 60% 40%;
---mountain-gray: 210 10% 90%;
+--mountain-pine: 215 30% 25%;
+--mountain-blue: 220 70% 50%;
+--mountain-gold: 40 90% 60%;
+--mountain-sunset: 30 80% 50%;
+--mountain-snow: 210 30% 95%;
+--mountain-gray: 215 10% 90%;
   }
   .dark {
       --background: 240 10% 3.9%;

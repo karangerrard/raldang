@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { ActivityCard } from "@/components/ui/activity-card";
-import { activities } from "@/lib/data";
+import { TransportCard } from "@/components/ui/transport-card";
+import { transportOptions } from "@/lib/data";
 import { motion } from "framer-motion";
 
-export default function ActivitiesSection() {
+export default function HowToReachSection() {
   return (
-    <section className="py-20 bg-[hsl(var(--mountain-white))]">
+    <section id="directions" className="py-20 bg-[hsl(var(--mountain-white))]">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div 
           className="text-center mb-16"
@@ -14,21 +14,21 @@ export default function ActivitiesSection() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-[hsl(var(--mountain-pine))] mb-4">Seasonal Experiences</h2>
-          <p className="text-lg max-w-2xl mx-auto">Discover the changing magic of Kinnaur throughout the year with our curated seasonal activities.</p>
-          <div className="w-24 h-1 bg-[hsl(var(--mountain-red))] mx-auto mt-4"></div>
+          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-[hsl(var(--mountain-pine))] mb-4">How To Reach Us</h2>
+          <p className="text-lg max-w-3xl mx-auto">Find your way to our peaceful mountain retreat in Kinnaur Valley, with travel options from major cities.</p>
+          <div className="w-24 h-1 bg-[hsl(var(--mountain-gold))] mx-auto mt-4"></div>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {activities.map((activity, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {transportOptions.map((option, index) => (
             <motion.div
-              key={activity.id}
+              key={option.id}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <ActivityCard activity={activity} />
+              <TransportCard option={option} />
             </motion.div>
           ))}
         </div>
@@ -42,9 +42,9 @@ export default function ActivitiesSection() {
         >
           <Button 
             asChild
-            className="inline-block bg-[hsl(var(--mountain-blue))] hover:bg-[hsl(var(--mountain-blue))]/90 text-white font-medium py-3 px-8 rounded-full transition-all transform hover:scale-105"
+            className="inline-block bg-[hsl(var(--mountain-gold))] hover:bg-[hsl(var(--mountain-gold))]/90 text-[hsl(var(--mountain-pine))] font-medium py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-md"
           >
-            <a href="#contact">Inquire About Seasonal Activities</a>
+            <a href="#contact">Need Help Planning Your Journey?</a>
           </Button>
         </motion.div>
       </div>

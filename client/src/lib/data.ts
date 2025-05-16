@@ -15,45 +15,43 @@ export interface Testimonial {
   initial: string;
 }
 
-export interface Activity {
+export interface TransportOption {
   id: string;
-  season: string;
-  seasonDisplay: string;
+  from: string;
   icon: string;
   color: string;
-  activities: string[];
+  options: TransportDetail[];
+}
+
+export interface TransportDetail {
+  mode: string;
+  duration: string;
+  description: string;
 }
 
 export interface GalleryImage {
   id: string;
   src: string;
   alt: string;
+  fullSize: string;
 }
 
 export const rooms: Room[] = [
   {
     id: "mountain-view",
-    name: "Mountain View Room",
-    description: "Wake up to breathtaking views of the Raldang peak from these spacious rooms featuring traditional Kinnauri décor and modern amenities.",
-    amenities: ["Mountain View", "Private Bathroom", "Breakfast Included"],
-    price: "₹3,500/night",
+    name: "Mountain Balcony Room",
+    description: "Wake up to breathtaking panoramic views of the Raldang peak from your private balcony. These spacious rooms feature traditional Kinnauri décor and modern amenities for a comfortable mountain stay.",
+    amenities: ["Panoramic Mountain View", "Private Balcony", "Free Wi-Fi", "Daily Breakfast", "Tea/Coffee Maker"],
+    price: "₹4,500/night",
     image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
   },
   {
-    id: "family-suite",
-    name: "Family Suite",
-    description: "Perfect for families, this spacious suite offers comfortable beds, a sitting area, and a private balcony overlooking our apple orchard.",
-    amenities: ["Orchard View", "Private Balcony", "Fits 4 People"],
-    price: "₹5,000/night",
+    id: "garden-view",
+    name: "Garden View Room",
+    description: "Comfortable rooms with a private balcony overlooking our peaceful garden and apple orchard. Enjoy the tranquil atmosphere with partial mountain views and cozy Himachali interior design.",
+    amenities: ["Garden View", "Private Balcony", "Free Wi-Fi", "Daily Breakfast", "Tea/Coffee Maker"],
+    price: "₹3,500/night",
     image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
-  },
-  {
-    id: "heritage-cottage",
-    name: "Heritage Cottage",
-    description: "Experience authentic Kinnauri living in our standalone cottage with traditional architecture, modern amenities, and complete privacy.",
-    amenities: ["Private Cottage", "Fireplace", "Garden Access"],
-    price: "₹6,500/night",
-    image: "https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
   }
 ];
 
@@ -81,57 +79,92 @@ export const testimonials: Testimonial[] = [
   }
 ];
 
-export const activities: Activity[] = [
+export const transportOptions: TransportOption[] = [
   {
-    id: "spring",
-    season: "spring",
-    seasonDisplay: "Spring (Mar-May)",
-    icon: "seedling",
+    id: "delhi",
+    from: "From Delhi",
+    icon: "route",
+    color: "gold",
+    options: [
+      {
+        mode: "By Air",
+        duration: "1.5 hours + 8 hours drive",
+        description: "Fly from Delhi to Shimla Airport (Jubbarhatti), then hire a taxi to Kinnaur Valley (approx. 8 hours)."
+      },
+      {
+        mode: "By Train",
+        duration: "8 hours + 8 hours drive",
+        description: "Take Kalka Shatabdi from Delhi to Kalka, connect to the toy train to Shimla (UNESCO heritage), then taxi to Kinnaur."
+      },
+      {
+        mode: "By Bus",
+        duration: "14-16 hours",
+        description: "HRTC Volvo buses run daily from Delhi ISBT Kashmere Gate to Shimla/Reckong Peo. From Shimla, connect to local bus or taxi to Kinnaur."
+      },
+      {
+        mode: "Self-Drive",
+        duration: "14-15 hours (570 km)",
+        description: "Delhi → Chandigarh → Shimla → Narkanda → Kinnaur. Good roads, but challenging mountain driving in the final stretch."
+      }
+    ]
+  },
+  {
+    id: "shimla",
+    from: "From Shimla",
+    icon: "mountain",
+    color: "sunset",
+    options: [
+      {
+        mode: "By Taxi",
+        duration: "7-8 hours (220 km)",
+        description: "Private taxis available from Shimla to Kinnaur. Most comfortable option with flexibility to stop at viewpoints."
+      },
+      {
+        mode: "By Bus",
+        duration: "8-9 hours",
+        description: "Regular HRTC buses from Shimla to Reckong Peo/Kalpa, passing through beautiful Kinnaur Valley. Economical but less comfortable."
+      },
+      {
+        mode: "Shared Taxi",
+        duration: "8 hours",
+        description: "Shared taxis depart from Shimla's New Bus Stand to various Kinnaur destinations. More economical than private taxis."
+      }
+    ]
+  },
+  {
+    id: "chandigarh",
+    from: "From Chandigarh",
+    icon: "road",
     color: "blue",
-    activities: [
-      "Apple blossom viewing and orchard walks",
-      "Bird watching as migratory birds return",
-      "Participate in local spring harvest festivals",
-      "Guided nature walks to see wildflowers"
+    options: [
+      {
+        mode: "By Taxi",
+        duration: "10-11 hours (350 km)",
+        description: "Direct taxis available from Chandigarh Airport or city to Kinnaur. Convenient but expensive option."
+      },
+      {
+        mode: "By Bus",
+        duration: "12 hours",
+        description: "HRTC buses connect Chandigarh to Shimla, then change to another bus to Kinnaur. Budget-friendly option."
+      }
     ]
   },
   {
-    id: "summer",
-    season: "summer",
-    seasonDisplay: "Summer (Jun-Aug)",
-    icon: "sun",
-    color: "red",
-    activities: [
-      "Trekking to nearby peaks and valleys",
-      "River rafting in Sutlej river",
-      "Visits to ancient monasteries and temples",
-      "Picnics by mountain streams and waterfalls"
-    ]
-  },
-  {
-    id: "autumn",
-    season: "autumn",
-    seasonDisplay: "Autumn (Sep-Nov)",
-    icon: "leaf",
-    color: "earth",
-    activities: [
-      "Apple harvesting experience",
-      "Traditional apple cider making",
-      "Photography tours for fall colors",
-      "Local handicraft workshops"
-    ]
-  },
-  {
-    id: "winter",
-    season: "winter",
-    seasonDisplay: "Winter (Dec-Feb)",
-    icon: "snowflake",
-    color: "pine",
-    activities: [
-      "Snow trekking and snowshoeing",
-      "Traditional Kinnauri winter festivals",
-      "Cooking classes for winter specialties",
-      "Bonfire evenings with local folklore"
+    id: "special",
+    from: "Special Note",
+    icon: "info-circle",
+    color: "snow",
+    options: [
+      {
+        mode: "Best Time to Travel",
+        duration: "April to October",
+        description: "Winter months (November to March) can have road closures due to snow. Inner Line Permit required for some areas near the border."
+      },
+      {
+        mode: "Transport Arrangement",
+        duration: "On Request",
+        description: "We can arrange pickup from Shimla or Chandigarh for a hassle-free journey. Contact us for rates and availability."
+      }
     ]
   }
 ];
@@ -140,41 +173,49 @@ export const galleryImages: GalleryImage[] = [
   {
     id: "1",
     src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800&q=80",
+    fullSize: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=100",
     alt: "Kinnaur Valley Panorama"
   },
   {
     id: "2",
     src: "https://images.unsplash.com/photo-1605649487212-47bdab064df7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800&q=80",
+    fullSize: "https://images.unsplash.com/photo-1605649487212-47bdab064df7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=100",
     alt: "Homestay Exterior"
   },
   {
     id: "3",
     src: "https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800&q=80",
+    fullSize: "https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=100",
     alt: "Apple Orchard in Spring"
   },
   {
     id: "4",
-    src: "https://pixabay.com/get/g013420bcbdb71f86f48b80969185250acbd1b0b6755289d65c6ec7ea3868d6ca969c322fe46fb104fd6835cfb6b510f332e67051bfb46c94ada689c4012e4139_1280.jpg",
-    alt: "Kinnaur Apples"
+    src: "/images/kinnaur-mountain-view.jpg",
+    fullSize: "/images/kinnaur-mountain-view.jpg",
+    alt: "Raldang Peak View from Homestay"
   },
   {
     id: "5",
     src: "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800&q=80",
+    fullSize: "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=100",
     alt: "Cozy Room Interior"
   },
   {
     id: "6",
     src: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800&q=80",
-    alt: "Raldang Peak at Sunset"
+    fullSize: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=100",
+    alt: "Mountain Sunset"
   },
   {
     id: "7",
     src: "https://images.unsplash.com/photo-1545044846-351ba102b6d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800&q=80",
+    fullSize: "https://images.unsplash.com/photo-1545044846-351ba102b6d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=100",
     alt: "Traditional Himachali Cuisine"
   },
   {
     id: "8",
-    src: "https://pixabay.com/get/g1c27eb7b70849e7be20bbd0e6b97c4960acb6d9fa5ad07c3c181903a08852d2248dbd944e6bee808135789e601cab1bf2a7782e94dbf758632819715fbad7af4_1280.jpg",
+    src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800&q=80",
+    fullSize: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=100",
     alt: "Gateway to Spiti Valley"
   }
 ];

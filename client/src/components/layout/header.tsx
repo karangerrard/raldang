@@ -29,13 +29,14 @@ export default function Header() {
         </a>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8 text-[hsl(var(--mountain-white))]">
-          <a href="#home" className="hover:text-[hsl(var(--mountain-red))] transition-colors font-medium">Home</a>
-          <a href="#about" className="hover:text-[hsl(var(--mountain-red))] transition-colors font-medium">About</a>
-          <a href="#rooms" className="hover:text-[hsl(var(--mountain-red))] transition-colors font-medium">Rooms</a>
-          <a href="#dining" className="hover:text-[hsl(var(--mountain-red))] transition-colors font-medium">Dining</a>
-          <a href="#gallery" className="hover:text-[hsl(var(--mountain-red))] transition-colors font-medium">Gallery</a>
-          <a href="#contact" className="hover:text-[hsl(var(--mountain-red))] transition-colors font-medium">Contact</a>
+        <nav className="hidden md:flex space-x-6 text-[hsl(var(--mountain-white))]">
+          <a href="#home" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium">Home</a>
+          <a href="#about" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium">About</a>
+          <a href="#rooms" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium">Rooms</a>
+          <a href="#dining" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium">Dining</a>
+          <a href="#gallery" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium">Gallery</a>
+          <a href="#directions" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium">How to Reach</a>
+          <a href="#contact" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium">Contact</a>
         </nav>
         
         {/* Mobile menu button */}

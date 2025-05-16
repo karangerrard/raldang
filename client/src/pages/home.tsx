@@ -7,7 +7,7 @@ import RoomsSection from "@/components/sections/rooms-section";
 import DiningSection from "@/components/sections/dining-section";
 import TestimonialsSection from "@/components/sections/testimonials-section";
 import GallerySection from "@/components/sections/gallery-section";
-import ActivitiesSection from "@/components/sections/activities-section";
+import HowToReachSection from "@/components/sections/activities-section";
 import ContactSection from "@/components/sections/contact-section";
 import MapSection from "@/components/sections/map-section";
 
@@ -23,7 +23,7 @@ export default function Home() {
         <DiningSection />
         <TestimonialsSection />
         <GallerySection />
-        <ActivitiesSection />
+        <HowToReachSection />
         <ContactSection />
         <MapSection />
       </main>
