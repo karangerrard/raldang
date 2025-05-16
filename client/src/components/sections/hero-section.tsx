@@ -7,11 +7,12 @@ export default function HeroSection() {
       {/* Background image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat parallax" 
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1507501336603-6e31db2be093?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80')" }}
+        style={{ backgroundImage: "url('/images/kinnaur-mountain-view.jpg')" }}
+        aria-hidden="true"
       ></div>
       
       {/* Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(42,61,69,0.6),rgba(42,61,69,0.3))]"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.4)] to-[rgba(0,0,0,0.2)]"></div>
       
       {/* Content */}
       <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
@@ -20,22 +21,22 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="font-playfair text-4xl md:text-6xl text-[hsl(var(--mountain-white))] font-bold mb-4 text-shadow">
+          <h1 className="font-playfair text-4xl md:text-6xl text-[hsl(var(--mountain-white))] font-bold mb-4 text-shadow-lg drop-shadow-xl">
             Experience the Magic of Kinnaur
           </h1>
-          <p className="text-xl md:text-2xl text-[hsl(var(--mountain-white))] mb-8 max-w-3xl mx-auto text-shadow">
+          <p className="text-xl md:text-2xl text-[hsl(var(--mountain-white))] mb-8 max-w-3xl mx-auto text-shadow-lg drop-shadow-xl">
             A traditional Himachali homestay with breathtaking views of the Raldang peak
           </p>
           <div className="flex flex-col md:flex-row justify-center gap-4">
             <Button 
               asChild
-              className="bg-[hsl(var(--mountain-blue))] hover:bg-[hsl(var(--mountain-blue))]/90 text-[hsl(var(--mountain-white))] py-3 px-8 rounded-full transition-all transform hover:scale-105 font-medium"
+              className="bg-[hsl(var(--mountain-blue))] hover:bg-[hsl(var(--mountain-blue))]/90 text-[hsl(var(--mountain-white))] py-3 px-8 rounded-full transition-all transform hover:scale-105 font-medium shadow-lg"
             >
               <a href="#rooms">Explore Rooms</a>
             </Button>
             <Button 
               asChild
-              className="bg-[hsl(var(--mountain-red))] hover:bg-[hsl(var(--mountain-red))]/90 text-[hsl(var(--mountain-white))] py-3 px-8 rounded-full transition-all transform hover:scale-105 font-medium"
+              className="bg-[hsl(var(--mountain-red))] hover:bg-[hsl(var(--mountain-red))]/90 text-[hsl(var(--mountain-white))] py-3 px-8 rounded-full transition-all transform hover:scale-105 font-medium shadow-lg"
             >
               <a href="#contact">Book Your Stay</a>
             </Button>
@@ -46,7 +47,7 @@ export default function HeroSection() {
       {/* Scroll indicator */}
       <div className="absolute bottom-6 left-0 right-0 text-center text-[hsl(var(--mountain-white))] animate-bounce">
         <a href="#about" aria-label="Scroll down to about section">
-          <i className="fas fa-chevron-down text-2xl"></i>
+          <i className="fas fa-chevron-down text-2xl drop-shadow-lg"></i>
         </a>
       </div>
     </section>
