@@ -80,19 +80,19 @@ export default function AboutSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="rounded-lg overflow-hidden shadow-lg h-64 gallery-item">
-              <img src="https://pixabay.com/get/gad80294ad48efa10e4df999371bb92c70eb5f313fc2dbb3d0fca1c9cdc6b220b1a4ca492195aa75ffc80edd4ea9f18d4a98315ecf32c896cad0992795d6d7402_1280.jpg" 
+              <img src="/images/cherry_blossoms.jpg" 
                    alt="Traditional Himachali Architecture" className="w-full h-full object-cover" />
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg h-64 gallery-item">
-              <img src="https://pixabay.com/get/gbaff1ff35edd4a5afcbf82bedb1c04076b663ed76aca5982aefb80e64e74efd5f7cefefe5712f245a209d51955f472e2c5aea2716197caa05b7e47ee906d7459_1280.jpg" 
+              <img src="/images/raldang_peak.jpg" 
                    alt="Our Apple Orchard" className="w-full h-full object-cover" />
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg h-64 gallery-item">
-              <img src="https://images.unsplash.com/photo-1531804055935-76f44d7c3621?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" 
+              <img src="/images/kalpa_town.jpg" 
                    alt="Valley View" className="w-full h-full object-cover" />
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg h-64 gallery-item">
-              <img src="https://images.unsplash.com/photo-1513553404607-988bf2703777?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" 
+              <img src="/images/home_food.jpg" 
                    alt="Homestay Interior" className="w-full h-full object-cover" />
             </div>
           </motion.div>

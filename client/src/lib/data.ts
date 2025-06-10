@@ -58,7 +58,7 @@ export const rooms: Room[] = [
 export const testimonials: Testimonial[] = [
   {
     id: "1",
-    text: "Our stay at Kinnaur Valley Homestay was truly magical. The views of Raldang peak from our room were breathtaking, the home-cooked meals were incredibly delicious, and the warmth of our hosts made us feel like family. Walking through the apple orchard and learning about local traditions was a highlight of our Himachal trip.",
+    text: "Our stay at Raldang View Homestay was truly magical. The views of Raldang peak from our room were breathtaking, the home-cooked meals were incredibly delicious, and the warmth of our hosts made us feel like family. Walking through the apple orchard and learning about local traditions was a highlight of our Himachal trip.",
     name: "Aman & Priya",
     location: "Delhi, India",
     initial: "A"

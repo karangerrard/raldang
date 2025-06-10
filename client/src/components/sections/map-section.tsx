@@ -10,7 +10,7 @@ export default function MapSection() {
           allowFullScreen 
           loading="lazy" 
           referrerPolicy="no-referrer-when-downgrade"
-          title="Kinnaur Valley Homestay Location"
+          title="Raldang View Homestay Location"
           aria-label="Interactive map showing the location of Kinnaur Valley Homestay"
         ></iframe>
       </div>

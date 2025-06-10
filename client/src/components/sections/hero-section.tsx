@@ -22,7 +22,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
         >
           <h1 className="font-playfair text-4xl md:text-6xl text-[hsl(var(--mountain-white))] font-bold mb-4 text-shadow-lg drop-shadow-xl">
-            Experience the Magic of Kinnaur
+            Experience the Magic of Kalpa
           </h1>
           <p className="text-xl md:text-2xl text-[hsl(var(--mountain-white))] mb-8 max-w-3xl mx-auto text-shadow-lg drop-shadow-xl">
             A traditional Himachali homestay with breathtaking views of the Raldang peak
@@ -30,16 +30,16 @@ export default function HeroSection() {
           <div className="flex flex-col md:flex-row justify-center gap-4">
             <Button 
               asChild
-              className="bg-[hsl(var(--mountain-blue))] hover:bg-[hsl(var(--mountain-blue))]/90 text-[hsl(var(--mountain-white))] py-3 px-8 rounded-full transition-all transform hover:scale-105 font-medium shadow-lg"
-            >
-              <a href="#rooms">Explore Rooms</a>
-            </Button>
-            <Button 
-              asChild
-              className="bg-[hsl(var(--mountain-gold))] hover:bg-[hsl(var(--mountain-gold))]/90 text-[hsl(var(--mountain-pine))] py-3 px-8 rounded-full transition-all transform hover:scale-105 font-medium shadow-lg border-2 border-[hsl(var(--mountain-white))]"
+              className="bg-[hsl(var(--mountain-gold))] hover:bg-[hsl(var(--mountain-gold))]/90 text-xl md:text-15px text-[hsl(var(--mountain-pine))] py-6 px-12 rounded-full transition-all transform hover:scale-105 font-large shadow-lg border-2 border-[hsl(var(--mountain-white))]"
             >
               <a href="#contact">Book Your Stay</a>
             </Button>
+            <Button 
+              asChild
+              className="bg-[hsl(var(--mountain-white))] hover:bg-[hsl(var(--mountain-white))]/90 text-xl md:text-15px text-[hsl(var(--mountain-gold))] py-6 px-12 rounded-full transition-all transform hover:scale-105 font-large shadow-lg border-2 border-[hsl(var(--mountain-black))"
+            >
+              <a href="#rooms">Explore Rooms</a>
+            </Button>      
           </div>
         </motion.div>
       </div>

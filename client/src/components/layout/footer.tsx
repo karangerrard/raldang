@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="font-dancing text-2xl font-bold mb-4">Kinnaur Valley Homestay</h3>
+            <h3 className="font-dancing text-2xl font-bold mb-4">Raldang View Homestay</h3>
             <p className="mb-4">Your home in the Himalayan mountains with authentic experiences and breathtaking views.</p>
             <div className="flex gap-4">
               <a href="#" className="text-[hsl(var(--mountain-red))] hover:text-[hsl(var(--mountain-red))]/80 transition-colors">
@@ -39,9 +39,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><a href="#" className="hover:text-[hsl(var(--mountain-red))] transition-colors">Apple Orchard Tour</a></li>
               <li><a href="#" className="hover:text-[hsl(var(--mountain-red))] transition-colors">Local Village Walks</a></li>
-              <li><a href="#" className="hover:text-[hsl(var(--mountain-red))] transition-colors">Cooking Classes</a></li>
               <li><a href="#" className="hover:text-[hsl(var(--mountain-red))] transition-colors">Spiti Valley Excursions</a></li>
-              <li><a href="#" className="hover:text-[hsl(var(--mountain-red))] transition-colors">Handicraft Workshops</a></li>
             </ul>
           </div>
           
@@ -50,7 +48,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex gap-3">
                 <i className="fas fa-map-marker-alt mt-1 text-[hsl(var(--mountain-red))]"></i>
-                <span>Kinnaur Valley Homestay, Kalpa, Himachal Pradesh - 172107</span>
+                <span>Raldang View Homestay, Kalpa, Himachal Pradesh - 172107</span>
               </li>
               <li className="flex gap-3">
                 <i className="fas fa-phone-alt mt-1 text-[hsl(var(--mountain-red))]"></i>
@@ -65,7 +63,7 @@ export default function Footer() {
         </div>
         
         <div className="mt-12 pt-6 border-t border-[hsl(var(--mountain-blue))]/30 text-center">
-          <p>© {new Date().getFullYear()} Kinnaur Valley Homestay. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Raldang View Homestay. All rights reserved.</p>
         </div>
       </div>
     </footer>

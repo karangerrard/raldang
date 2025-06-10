@@ -25,7 +25,7 @@ export default function Header() {
     <header className={`fixed w-full z-50 transition-all duration-300 backdrop-blur-md ${scrolled ? 'bg-[hsl(var(--mountain-pine))]/85 shadow-lg' : 'bg-[hsl(var(--mountain-pine))]/70'}`}>
       <div className="container mx-auto px-4 md:px-8 py-3 flex justify-between items-center">
         <a href="#" className="text-[hsl(var(--mountain-white))] font-dancing text-3xl font-bold text-shadow-sm">
-          Kinnaur Valley Homestay
+          Raldang View Homestay
         </a>
         
         {/* Desktop Navigation */}

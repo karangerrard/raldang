@@ -104,7 +104,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-medium text-lg mb-1">Location</h4>
-                  <p>Kinnaur Valley Homestay, Near Raldang Peak View Point, Kalpa, Kinnaur, Himachal Pradesh, India - 172107</p>
+                  <p>Raldang View Homestay, Near Raldang Peak View Point, Kalpa, Kinnaur, Himachal Pradesh, India - 172107</p>
                 </div>
               </div>
               
