@@ -99,20 +99,20 @@ export default function DiningSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="rounded-lg overflow-hidden shadow-lg h-64 gallery-item">
-              <img src="https://images.unsplash.com/photo-1631452180539-96aca7d48617?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" 
-                   alt="Traditional Himachali Thali" className="w-full h-full object-cover" />
+              <img src={`${import.meta.env.BASE_URL}images/food_1.avif`}
+                   alt="Himachali Home food" className="w-full h-full object-cover" />
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg h-64 gallery-item">
-              <img src="https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" 
-                   alt="Fresh Kinnaur Apples" className="w-full h-full object-cover" />
+              <img src={`${import.meta.env.BASE_URL}images/food_2.avif`}
+                   alt="Momo plate" className="w-full h-full object-cover" />
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg h-64 gallery-item">
-              <img src="https://images.unsplash.com/photo-1551782450-17144efb9c50?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" 
-                   alt="Himachali Desserts" className="w-full h-full object-cover" />
+              <img src={`${import.meta.env.BASE_URL}images/food_3.avif`}      
+                   alt="Butter tea" className="w-full h-full object-cover" />
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg h-64 gallery-item">
-              <img src="https://images.unsplash.com/photo-1577303935007-0d306ee638cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" 
-                   alt="Dining With a View" className="w-full h-full object-cover" />
+              <img src={`${import.meta.env.BASE_URL}images/food_4.avif`}
+                   alt="Momo plate red" className="w-full h-full object-cover" />
             </div>
           </motion.div>
         </div>

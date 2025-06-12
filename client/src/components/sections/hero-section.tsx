@@ -7,7 +7,7 @@ export default function HeroSection() {
       {/* Background image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat parallax" 
-        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}images/kinnaur-mountain-view.jpg')` }}
+        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}images/kinnaur-mountain-view.avif')` }}
         aria-hidden="true"
       ></div>
       
