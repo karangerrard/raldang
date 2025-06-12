@@ -7,7 +7,7 @@ export default function LocationHighlight() {
       {/* Background image */}
       <div 
         className="absolute inset-0 bg-cover bg-center parallax" 
-        style={{ backgroundImage: "url('/images/kinnaur-mountain-view.jpg')" }}
+        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}images/kinnaur-mountain-view.jpg')` }}
       ></div>
       
       {/* Overlay */}
