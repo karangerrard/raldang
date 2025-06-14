@@ -172,50 +172,50 @@ export const transportOptions: TransportOption[] = [
 export const galleryImages: GalleryImage[] = [
   {
     id: "1",
-    src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800&q=80",
-    fullSize: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=100",
-    alt: "Kinnaur Valley Panorama"
+    src: "images/gallery_1.avif",
+    fullSize: "images/gallery_1.avif",
+    alt: "Kinnaur Temple"
   },
   {
     id: "2",
-    src: "https://images.unsplash.com/photo-1605649487212-47bdab064df7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800&q=80",
-    fullSize: "https://images.unsplash.com/photo-1605649487212-47bdab064df7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=100",
-    alt: "Homestay Exterior"
+    src: "images/gallery_2.avif",
+    fullSize: "images/gallery_2.avif",
+    alt: "Kinnaur monastery"
   },
   {
     id: "3",
-    src: "https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800&q=80",
-    fullSize: "https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=100",
-    alt: "Apple Orchard in Spring"
+    src: "images/gallery_3.avif",
+    fullSize: "images/gallery_3.avif",
+    alt: "Tibetan Prayer Flags"
   },
   {
     id: "4",
-    src: "/images/kinnaur-mountain-view.jpg",
-    fullSize: "/images/kinnaur-mountain-view.jpg",
-    alt: "Raldang Peak View from Homestay"
+    src: "images/gallery_4.avif",
+    fullSize: "images/gallery_4.avif",
+    alt: "Himalayan sheeps"
   },
   {
     id: "5",
-    src: "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800&q=80",
-    fullSize: "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=100",
-    alt: "Cozy Room Interior"
+    src: "images/gallery_5.avif",
+    fullSize: "images/gallery_5.avif",    
+    alt: "Raldang Peak"
   },
   {
     id: "6",
-    src: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800&q=80",
-    fullSize: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=100",
-    alt: "Mountain Sunset"
+    src: "images/gallery_6.avif",
+    fullSize: "images/gallery_6.avif",        
+    alt: "Snow road to Kinnaur"
   },
   {
     id: "7",
-    src: "https://images.unsplash.com/photo-1545044846-351ba102b6d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800&q=80",
-    fullSize: "https://images.unsplash.com/photo-1545044846-351ba102b6d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=100",
-    alt: "Traditional Himachali Cuisine"
+    src: "images/gallery_9.avif",
+    fullSize: "images/gallery_9.avif",
+    alt: "Kinnaur suicide point"
   },
   {
     id: "8",
-    src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800&q=80",
-    fullSize: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=100",
-    alt: "Gateway to Spiti Valley"
+    src: "images/gallery_8.avif",
+    fullSize: "images/gallery_8.avif",
+    alt: "Kinnaur Himalayas"
   }
 ];
