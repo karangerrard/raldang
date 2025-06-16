@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 
-export default function DiningSection() {
+type AboutSectionProps = {
+  id?: string;
+};
+export default function DiningSection({ id }: AboutSectionProps) {
   return (
-    <section id="dining" className="py-20 bg-[hsl(var(--mountain-gray))]/30">
+    <section id={id} className="py-20 bg-[hsl(var(--mountain-gray))]/30">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div 
           className="text-center mb-16"

@@ -17,14 +17,14 @@ export default function Home() {
       <Header />
       <main className="font-poppins text-[hsl(var(--mountain-pine))] bg-[hsl(var(--mountain-white))]">
         <HeroSection />
-        <AboutSection />
-        <LocationHighlight />
-        <RoomsSection />
-        <DiningSection />
-        <TestimonialsSection />
-        <GallerySection />
-        <HowToReachSection />
-        <ContactSection />
+        <AboutSection id="about"/>
+        {/* <LocationHighlight id="location"/> */}
+        <RoomsSection id="rooms"/>
+        <DiningSection id="dining"/>
+        {/* <TestimonialsSection id="testimonials"/> */}
+        <GallerySection id="gallery"/>
+        <HowToReachSection id="directions"/>
+        <ContactSection id="contact"/>
       </main>
       <Footer />
     </>

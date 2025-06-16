@@ -23,8 +23,11 @@ const contactFormSchema = z.object({
 });
 
 type ContactFormValues = z.infer<typeof contactFormSchema>;
+type AboutSectionProps = {
+  id: string;
+}
 
-export default function ContactSection() {
+export default function ContactSection({ id }: AboutSectionProps) {
   const { toast } = useToast();
   
   const form = useForm<ContactFormValues>({
@@ -82,7 +85,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-[hsl(var(--mountain-pine))] text-white">
+    <section id={id} className="py-20 bg-[hsl(var(--mountain-pine))] text-white">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <motion.div

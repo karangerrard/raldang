@@ -3,9 +3,12 @@ import { RoomCard } from "@/components/ui/room-card";
 import { rooms } from "@/lib/data";
 import { motion } from "framer-motion";
 
-export default function RoomsSection() {
+type AboutSectionProps = {
+  id?: string;
+};
+export default function RoomsSection({ id }: AboutSectionProps) {
   return (
-    <section id="rooms" className="py-20 bg-[hsl(var(--mountain-white))]">
+    <section id={id} className="py-20 bg-[hsl(var(--mountain-white))]">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div 
           className="text-center mb-16"

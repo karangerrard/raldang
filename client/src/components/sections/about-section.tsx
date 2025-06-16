@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+type AboutSectionProps = {
+  id: string;
+}
 
-export default function AboutSection() {
+export default function AboutSection({ id }: AboutSectionProps) {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -21,7 +24,7 @@ export default function AboutSection() {
   };
 
   return (
-    <section id="about" className="py-20 bg-[hsl(var(--mountain-white))]">
+    <section id={id} className="py-20 bg-[hsl(var(--mountain-white))]">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div 
           className="text-center mb-16"

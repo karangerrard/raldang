@@ -3,9 +3,12 @@ import { TransportCard } from "@/components/ui/transport-card";
 import { transportOptions } from "@/lib/data";
 import { motion } from "framer-motion";
 
-export default function HowToReachSection() {
+type AboutSectionProps = {
+  id?: string;
+};
+export default function HowToReachSection({ id }: AboutSectionProps) {
   return (
-    <section id="directions" className="py-20 bg-[hsl(var(--mountain-white))]">
+    <section id={id} className="py-20 bg-[hsl(var(--mountain-white))]">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div 
           className="text-center mb-16"

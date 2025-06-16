@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useAppContext } from "@/lib/context";
 import { motion, AnimatePresence } from "framer-motion";
+//import {Link} from "wouter";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -30,13 +31,74 @@ export default function Header() {
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6 text-[hsl(var(--mountain-white))]">
-          <a href="#home" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium">Home</a>
-          <a href="#about" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium">About</a>
-          <a href="#rooms" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium">Rooms</a>
-          <a href="#dining" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium">Dining</a>
-          <a href="#gallery" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium">Gallery</a>
-          <a href="#directions" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium">How to Reach</a>
-          <a href="#contact" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium">Contact</a>
+          <a href="#home" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium"
+          onClick={e => {
+            e.preventDefault();
+            const el = document.getElementById("home");
+            if (el) {
+              el.scrollIntoView({ behavior: "smooth" });
+            }
+          }}>Home</a>
+          <a href="#about" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium"
+          onClick={e => {
+            e.preventDefault();
+            const el = document.getElementById("about");
+            if (el) {
+              const yOffset = -80; // adjust for header height
+              const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+              window.scrollTo({ top: y, behavior: "smooth" });
+            }
+          }}>About</a>
+          <a href="#rooms" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium"
+          onClick={e => {
+            e.preventDefault();
+            const el = document.getElementById("rooms");
+            if (el) {
+              const yOffset = -80; // adjust for header height
+              const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+              window.scrollTo({ top: y, behavior: "smooth" });
+            }
+          }}>Rooms</a>
+          <a href="#dining" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium"
+          onClick={e => {
+            e.preventDefault();
+            const el = document.getElementById("dining");
+            if (el) {
+              const yOffset = -80; // adjust for header height
+              const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+              window.scrollTo({ top: y, behavior: "smooth" });
+            }
+          }}>Dining</a>
+          <a href="#gallery" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium"
+          onClick={e => {
+            e.preventDefault();
+            const el = document.getElementById("gallery");
+            if (el) {
+              const yOffset = -80; // adjust for header height
+              const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+              window.scrollTo({ top: y, behavior: "smooth" });
+            }
+          }}>Gallery</a>
+          <a href="#directions" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium"
+          onClick={e => {
+            e.preventDefault();
+            const el = document.getElementById("directions");
+            if (el) {
+              const yOffset = -80; // adjust for header height
+              const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+              window.scrollTo({ top: y, behavior: "smooth" });
+            }
+          }}>How to Reach</a>
+          <a href="#contact" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium"
+          onClick={e => {
+            e.preventDefault();
+            const el = document.getElementById("contact");
+            if (el) {
+              const yOffset = -80; // adjust for header height
+              const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+              window.scrollTo({ top: y, behavior: "smooth" });
+            }
+          }}>Contact</a>
         </nav>
         
         {/* Mobile menu button */}
