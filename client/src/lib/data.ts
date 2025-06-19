@@ -172,49 +172,49 @@ export const transportOptions: TransportOption[] = [
 export const galleryImages: GalleryImage[] = [
   {
     id: "1",
-    src: "images/gallery_1.avif",
+    src: "images/gallery_1_cover.avif",
     fullSize: "images/gallery_1.avif",
     alt: "Kinnaur Temple"
   },
   {
     id: "2",
-    src: "images/gallery_2.avif",
+    src: "images/gallery_2_cover.avif",
     fullSize: "images/gallery_2.avif",
     alt: "Kinnaur monastery"
   },
   {
     id: "3",
-    src: "images/gallery_3.avif",
+    src: "images/gallery_3_cover.avif",
     fullSize: "images/gallery_3.avif",
     alt: "Tibetan Prayer Flags"
   },
   {
     id: "4",
-    src: "images/gallery_4.avif",
+    src: "images/gallery_4_cover.avif",
     fullSize: "images/gallery_4.avif",
     alt: "Himalayan sheeps"
   },
   {
     id: "5",
-    src: "images/gallery_5.avif",
-    fullSize: "images/gallery_5.avif",    
+    src: "images/gallery_5_cover.avif",
+    fullSize: "images/gallery_5.avif",
     alt: "Raldang Peak"
   },
   {
     id: "6",
-    src: "images/gallery_6.avif",
-    fullSize: "images/gallery_6.avif",        
+    src: "images/gallery_6_cover.avif",
+    fullSize: "images/gallery_6.avif",
     alt: "Snow road to Kinnaur"
   },
   {
     id: "7",
-    src: "images/gallery_9.avif",
+    src: "images/gallery_9_cover.avif",
     fullSize: "images/gallery_9.avif",
     alt: "Kinnaur suicide point"
   },
   {
     id: "8",
-    src: "images/gallery_8.avif",
+    src: "images/gallery_8_cover.avif",
     fullSize: "images/gallery_8.avif",
     alt: "Kinnaur Himalayas"
   }

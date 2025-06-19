@@ -22,6 +22,14 @@ export default function Header() {
     };
   }, []);
 
+  function smoothScrollTo(id: string, yOffset: -80) {
+    const el = document.getElementById(id);
+    if (el) {
+      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  }
+
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 backdrop-blur-md ${scrolled ? 'bg-[hsl(var(--mountain-pine))]/85 shadow-lg' : 'bg-[hsl(var(--mountain-pine))]/70'}`}>
       <div className="container mx-auto px-4 md:px-8 py-3 flex justify-between items-center">
@@ -34,70 +42,37 @@ export default function Header() {
           <a href="#home" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium"
           onClick={e => {
             e.preventDefault();
-            const el = document.getElementById("home");
-            if (el) {
-              el.scrollIntoView({ behavior: "smooth" });
-            }
+            smoothScrollTo("home", -80); // adjust for header height
           }}>Home</a>
           <a href="#about" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium"
           onClick={e => {
             e.preventDefault();
-            const el = document.getElementById("about");
-            if (el) {
-              const yOffset = -80; // adjust for header height
-              const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-              window.scrollTo({ top: y, behavior: "smooth" });
-            }
+            smoothScrollTo("about", -80); // adjust for header height
           }}>About</a>
           <a href="#rooms" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium"
           onClick={e => {
             e.preventDefault();
-            const el = document.getElementById("rooms");
-            if (el) {
-              const yOffset = -80; // adjust for header height
-              const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-              window.scrollTo({ top: y, behavior: "smooth" });
-            }
+            smoothScrollTo("rooms", -80); // adjust for header height
           }}>Rooms</a>
           <a href="#dining" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium"
           onClick={e => {
             e.preventDefault();
-            const el = document.getElementById("dining");
-            if (el) {
-              const yOffset = -80; // adjust for header height
-              const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-              window.scrollTo({ top: y, behavior: "smooth" });
-            }
+              smoothScrollTo("dining", -80); // adjust for header height
           }}>Dining</a>
           <a href="#gallery" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium"
           onClick={e => {
             e.preventDefault();
-            const el = document.getElementById("gallery");
-            if (el) {
-              const yOffset = -80; // adjust for header height
-              const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-              window.scrollTo({ top: y, behavior: "smooth" });
-            }
+            smoothScrollTo("gallery", -80); // adjust for header height
           }}>Gallery</a>
           <a href="#directions" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium"
           onClick={e => {
             e.preventDefault();
-            const el = document.getElementById("directions");
-            if (el) {
-              const yOffset = -80; // adjust for header height
-              const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-              window.scrollTo({ top: y, behavior: "smooth" });
-            }
+            smoothScrollTo("directions", -80); // adjust for header height
           }}>How to Reach</a>
           <a href="#contact" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium"
           onClick={e => {
             e.preventDefault();
-            const el = document.getElementById("contact");
-            if (el) {
-              const yOffset = -80; // adjust for header height
-              const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-              window.scrollTo({ top: y, behavior: "smooth" });
-            }
+            smoothScrollTo("contact", -80); // adjust for header height
           }}>Contact</a>
         </nav>
         
