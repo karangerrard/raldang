@@ -18,11 +18,11 @@ export default function Home() {
       <main className="font-poppins text-[hsl(var(--mountain-pine))] bg-[hsl(var(--mountain-white))]">
         <HeroSection />
         <AboutSection id="about"/>
-        {/* <LocationHighlight id="location"/> */}
+        <LocationHighlight/> 
         <RoomsSection id="rooms"/>
         <DiningSection id="dining"/>
-        {/* <TestimonialsSection id="testimonials"/> */}
-        <GallerySection id="gallery"/>
+        <TestimonialsSection />
+        {/* <GallerySection id="gallery"/> */}
         <HowToReachSection id="directions"/>
         <ContactSection id="contact"/>
       </main>

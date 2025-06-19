@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useAppContext } from "@/lib/context";
 import { motion, AnimatePresence } from "framer-motion";
-//import {Link} from "wouter";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -59,11 +59,12 @@ export default function Header() {
             e.preventDefault();
               smoothScrollTo("dining", -80); // adjust for header height
           }}>Dining</a>
-          <a href="#gallery" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium"
+          <Link to="/gallery" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium">Gallery</Link>
+          {/*  <a href="#gallery" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium"
           onClick={e => {
             e.preventDefault();
             smoothScrollTo("gallery", -80); // adjust for header height
-          }}>Gallery</a>
+          }}>Gallery</a>*/}
           <a href="#directions" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium"
           onClick={e => {
             e.preventDefault();

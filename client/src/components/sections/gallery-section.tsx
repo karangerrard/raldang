@@ -2,13 +2,9 @@ import { motion } from "framer-motion";
 import { GalleryItem } from "@/components/ui/gallery-item";
 import { galleryImages } from "@/lib/data";
 
-type AboutSectionProps = {
-  id?: string;
-};
-
-export default function GallerySection({ id }: AboutSectionProps) {
+export default function GallerySection() {
   return (
-    <section id={id} className="py-20 bg-[hsl(var(--mountain-gray))]/30">
+    <section id={"gallery"} className="py-20 bg-[hsl(var(--mountain-gray))]/30">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div 
           className="text-center mb-16"
