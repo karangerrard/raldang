@@ -5,7 +5,7 @@ import { galleryImages } from "@/lib/data";
 export default function GallerySection() {
   return (
     <section id={"gallery"} className="py-20 bg-[hsl(var(--mountain-gray))]/30">
-      <div className="container mx-auto px-4 md:px-8">
+      <div className="container mx-auto px-4 md:px-8 min-h-screen">
         <motion.div 
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -25,15 +25,16 @@ export default function GallerySection() {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {galleryImages.map((image, index) => (
-            <motion.div
+            <div
               key={image.id}
-              initial={{ opacity: 0, scale: 0.98 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.4, delay: index * 0.1 % 0.4 }} // stagger but reset after 4
+              //initial={{ opacity: 0 }}
+              //whileInView={{ opacity: 1, scale: 1 }}
+             // viewport={{ once: true, margin: "-100px" }}
+              //animate={{ opacity: 1, scale: 1 }}
+              //transition={{ duration: 0.4, delay: index * 0.1 }} // stagger but reset after 4
             >
               <GalleryItem image={image} />
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -9,9 +9,22 @@ import TestimonialsSection from "@/components/sections/testimonials-section";
 import GallerySection from "@/components/sections/gallery-section";
 import HowToReachSection from "@/components/sections/activities-section";
 import ContactSection from "@/components/sections/contact-section";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 
 export default function Home() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state && location.state.scrollTo) {
+      const el = document.getElementById(location.state.scrollTo);
+      if (el) {
+        const y = el.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    }
+  }, [location.state]);
   return (
     <>
       <Header />

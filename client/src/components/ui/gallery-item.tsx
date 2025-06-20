@@ -8,6 +8,7 @@ interface GalleryItemProps {
 
 export function GalleryItem({ image }: GalleryItemProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   const openFullscreen = () => {
     setIsOpen(true);
@@ -30,7 +31,8 @@ export function GalleryItem({ image }: GalleryItemProps) {
           src={image.src} 
           alt={image.alt} 
           className="w-full h-72 object-cover"
-          loading="lazy"
+          loading="eager"
+          onLoad={() => setLoaded(true)}
         />
       </motion.div>
 
