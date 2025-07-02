@@ -83,24 +83,32 @@ export default function AboutSection({ id }: AboutSectionProps) {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="rounded-lg overflow-hidden shadow-lg h-64 gallery-item">
+              <picture>
+                <source srcSet={`${import.meta.env.BASE_URL}images/cherry_blossoms_mobile.avif`} media="(max-width: 640px)"  />
               <img src={`${import.meta.env.BASE_URL}images/cherry_blossoms.avif`}
-                  loading="lazy"
                    alt="Cherry Blossoms" className="w-full h-full object-cover" />
+              </picture>
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg h-64 gallery-item">
+              <picture>
+                <source srcSet={`${import.meta.env.BASE_URL}images/raldang_peak_mobile.avif`} media="(max-width: 640px)" />
               <img src={`${import.meta.env.BASE_URL}images/raldang_peak.avif`}
-                   loading="lazy"
                    alt="Raldang Peak" className="w-full h-full object-cover" />
+              </picture>
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg h-64 gallery-item">
+              <picture>
+                <source srcSet={`${import.meta.env.BASE_URL}images/kalpa_town_mobile.avif`} media="(max-width: 640px)" />
               <img src={`${import.meta.env.BASE_URL}images/kalpa_town.avif`}
-                   loading="lazy"
                    alt="Kalpa Town" className="w-full h-full object-cover" />
+              </picture>
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg h-64 gallery-item">
+              <picture>
+                <source srcSet={`${import.meta.env.BASE_URL}images/home_food_mobile.avif`} media="(max-width: 640px)" />
               <img src={`${import.meta.env.BASE_URL}images/home_food.avif`}
-                   loading="lazy"
                    alt="Homestay food" className="w-full h-full object-cover" />
+              </picture>
             </div>
           </motion.div>
         </div>

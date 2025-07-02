@@ -102,20 +102,32 @@ export default function DiningSection({ id }: AboutSectionProps) {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="rounded-lg overflow-hidden shadow-lg h-64 gallery-item">
-              <img src={`${import.meta.env.BASE_URL}images/food_1.avif`}
-                   alt="Himachali Home food" className="w-full h-full object-cover" />
+              <picture>
+                <source srcSet={`${import.meta.env.BASE_URL}images/food_1_mobile.avif`} media="(max-width: 640px)" />
+                <img src={`${import.meta.env.BASE_URL}images/food_1.avif`}
+                     alt="Himachali Home food" className="w-full h-full object-cover" />
+              </picture>
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg h-64 gallery-item">
-              <img src={`${import.meta.env.BASE_URL}images/food_2.avif`}
-                   alt="Momo plate" className="w-full h-full object-cover" />
+              <picture>
+                <source srcSet={`${import.meta.env.BASE_URL}images/food_2_mobile.avif`} media="(max-width: 640px)" />
+                <img src={`${import.meta.env.BASE_URL}images/food_2.avif`}
+                     alt="Momo plate" className="w-full h-full object-cover" />
+              </picture>
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg h-64 gallery-item">
-              <img src={`${import.meta.env.BASE_URL}images/food_3.avif`}      
-                   alt="Butter tea" className="w-full h-full object-cover" />
+              <picture>
+                <source srcSet={`${import.meta.env.BASE_URL}images/food_3_mobile.avif`} media="(max-width: 640px)" />
+                <img src={`${import.meta.env.BASE_URL}images/food_3.avif`}
+                     alt="Butter tea" className="w-full h-full object-cover" />
+              </picture>
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg h-64 gallery-item">
-              <img src={`${import.meta.env.BASE_URL}images/food_4.avif`}
-                   alt="Momo plate red" className="w-full h-full object-cover" />
+              <picture>
+                <source srcSet={`${import.meta.env.BASE_URL}images/food_4_mobile.avif`} media="(max-width: 640px)" />
+                <img src={`${import.meta.env.BASE_URL}images/food_4.avif`}
+                     alt="Momo plate red" className="w-full h-full object-cover" />
+              </picture>
             </div>
           </motion.div>
         </div>

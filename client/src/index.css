@@ -98,14 +98,21 @@ img {
   will-change: transform;
 }
 
-/* For parallax effect with better performance */
+/* For parallax effect with better performance 
 .parallax {
   background-attachment: fixed;
   transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1000px;
   will-change: transform;
-}
+}*/
+
+.parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
 
 /* Support users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {

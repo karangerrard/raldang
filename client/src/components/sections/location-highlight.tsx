@@ -1,13 +1,29 @@
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 export default function LocationHighlight() {
+
+  const [bgImage, setBgImage] = useState(`${import.meta.env.BASE_URL}images/kinnaur-mountain-view.avif`);
+
+  useEffect(() => {
+    function updateBg() {
+      if (window.innerWidth < 640) {
+        setBgImage(`${import.meta.env.BASE_URL}images/kinnaur-mountain-view_mobile.avif`);
+      } else {
+        setBgImage(`${import.meta.env.BASE_URL}images/kinnaur-mountain-view.avif`);
+      }
+    }
+    updateBg();
+    window.addEventListener("resize", updateBg);
+    return () => window.removeEventListener("resize", updateBg);
+  }, []);
   return (
     <section className="py-20 relative">
       {/* Background image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center parallax" 
-        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}images/kinnaur-mountain-view.avif')` }}
+        className="absolute inset-0 bg-cover bg-center" 
+        style={{ backgroundImage: `url('${bgImage}')` }}
       ></div>
       
       {/* Overlay */}

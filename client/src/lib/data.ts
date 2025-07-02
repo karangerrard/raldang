@@ -4,6 +4,7 @@ export interface Room {
   description: string;
   amenities: string[];
   price: string;
+  imageMob?: string; // Optional mobile image
   image: string;
 }
 
@@ -43,6 +44,7 @@ export const rooms: Room[] = [
     description: "Wake up to breathtaking panoramic views of the Raldang peak from your private balcony. These spacious rooms feature traditional Kinnauri décor and modern amenities for a comfortable mountain stay.",
     amenities: ["Panoramic Mountain View", "Private Balcony", "Free Wi-Fi", "Daily Breakfast", "Tea/Coffee Maker", "Room Service"],
     price: "₹4,500/night",
+    imageMob: "images/room_mountain_mobile.avif",
     image: "images/room_mountain.avif"
   },
   {
@@ -51,6 +53,7 @@ export const rooms: Room[] = [
     description: "Comfortable rooms with a private balcony overlooking our peaceful garden and apple orchard. Enjoy the tranquil atmosphere with partial mountain views and cozy Himachali interior design.",
     amenities: ["Garden View", "Private Balcony", "Free Wi-Fi", "Daily Breakfast", "Tea/Coffee Maker", "Room Service"],
     price: "₹3,500/night",
+    imageMob: "images/room_gardenview_mobile.avif",
     image: "images/room_gardenview.avif"
   }
 ];
