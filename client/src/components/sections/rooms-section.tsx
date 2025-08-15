@@ -45,12 +45,13 @@ export default function RoomsSection({ id }: AboutSectionProps) {
           transition={{ duration: 0.5 }}
         >
           <p className="text-lg mb-4">All accommodations include complimentary breakfast, Wi-Fi, and evening tea in the garden.</p>
-          <Button 
+          {/*
+           <Button 
             asChild
             className="inline-block bg-[hsl(var(--mountain-gold))] hover:bg-[hsl(var(--mountain-gold))]/90 text-[hsl(var(--mountain-pine))] font-medium py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-md"
           >
             <a href="#contact">Check Availability</a>
-          </Button>
+          </Button>*/}
         </motion.div>
       </div>
     </section>

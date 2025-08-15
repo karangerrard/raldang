@@ -6,6 +6,7 @@ export interface Room {
   price: string;
   imageMob?: string; // Optional mobile image
   image: string;
+  images: string[];
 }
 
 export interface Testimonial {
@@ -45,7 +46,8 @@ export const rooms: Room[] = [
     amenities: ["Panoramic Mountain View", "Private Balcony", "Free Wi-Fi", "Daily Breakfast", "Tea/Coffee Maker", "Room Service"],
     price: "₹4,500/night",
     imageMob: "images/room_mountain_mobile.avif",
-    image: "images/room_mountain.avif"
+    image: "images/room_mountain.avif",
+    images: ["images/room_mountain.avif", "images/room_mountain.avif", "images/room_mountain.avif","images/room_mountain.avif"]
   },
   {
     id: "garden-view",
@@ -54,7 +56,8 @@ export const rooms: Room[] = [
     amenities: ["Garden View", "Private Balcony", "Free Wi-Fi", "Daily Breakfast", "Tea/Coffee Maker", "Room Service"],
     price: "₹3,500/night",
     imageMob: "images/room_gardenview_mobile.avif",
-    image: "images/room_gardenview.avif"
+    image: "images/room_gardenview.avif",
+    images: ["images/room_gardenview.avif", "images/room_gardenview.avif", "images/room_gardenview.avif", "images/room_gardenview.avif"]
   }
 ];
 

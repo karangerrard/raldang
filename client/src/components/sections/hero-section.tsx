@@ -6,9 +6,9 @@ export default function HeroSection() {
     <section id="home" className="h-screen relative flex items-center justify-center overflow-hidden">
       {/* Mobile Background */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat parallax md:hidden"
         style={{
-          backgroundImage: `url('${import.meta.env.BASE_URL}images/kinnaur-mountain-view-mobile.avif')`,
+          backgroundImage: `url('${import.meta.env.BASE_URL}images/kinnaur-mountain-view_mobile.avif')`,
         }}
         aria-hidden="true"
       ></div>
@@ -36,20 +36,32 @@ export default function HeroSection() {
             Experience the Magic of Kalpa
           </h1>
           <p className="text-base sm:text-lg md:text-2xl text-[hsl(var(--mountain-white))] mb-8 max-w-3xl mx-auto text-shadow-lg drop-shadow-xl">
-            A traditional Himachali homestay with breathtaking views of the Raldang peak
+            A Himachali homestay on the edge of the valley with breathtaking views of the Raldang peak
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button
-              asChild
-              className="text-sm sm:text-base md:text-lg py-3 sm:py-4 md:py-6 px-6 sm:px-8 md:px-12 rounded-full transition-all transform hover:scale-105 font-semibold shadow-lg border-2 bg-[hsl(var(--mountain-gold))] hover:bg-[hsl(var(--mountain-gold))]/90 text-[hsl(var(--mountain-pine))] border-[hsl(var(--mountain-white))]"
+              className="text-sm sm:text-base md:text-lg py-3 sm:py-4 md:py-6 px-6 sm:px-8 md:px-12 rounded-full transition-all transform hover:scale-105 font-semibold shadow-lg border-2 bg-[hsl(var(--mountain-gold))] hover:bg-[hsl(var(--mountain-gold))]/90 text-[hsl(var(--mountain-white))] border-[hsl(var(--mountain-white))]"
+              onClick={() => {
+                const el = document.getElementById("contact");
+                if (el) {
+                  const y = el.getBoundingClientRect().top + window.pageYOffset - 80; // adjust offset for header
+                  window.scrollTo({ top: y, behavior: "smooth" });
+                }
+              }}
             >
-              <a href="#contact">Book Your Stay</a>
+              Book Your Stay
             </Button>
-            <Button
-              asChild
-              className="text-sm sm:text-base md:text-lg py-3 sm:py-4 md:py-6 px-6 sm:px-8 md:px-12 rounded-full transition-all transform hover:scale-105 font-semibold shadow-lg border-2 bg-[hsl(var(--mountain-white))] hover:bg-[hsl(var(--mountain-white))]/90 text-[hsl(var(--mountain-gold))] border-[hsl(var(--mountain-black))]"
+            <Button              
+              className="text-sm sm:text-base md:text-lg py-3 sm:py-4 md:py-6 px-6 sm:px-8 md:px-12 rounded-full transition-all transform hover:scale-105 font-semibold shadow-lg border-2 bg-[hsl(var(--mountain-white))] hover:bg-[hsl(var(--mountain-white))]/90 text-[hsl(var(--mountain-gold))] border-[hsl(var(--mountain-gold))]"
+              onClick={() => {
+                const el = document.getElementById("rooms");
+                if (el) {
+                  const y = el.getBoundingClientRect().top + window.pageYOffset - 80; // adjust offset for header
+                  window.scrollTo({ top: y, behavior: "smooth" });
+                }
+              }}
             >
-              <a href="#rooms">Explore Rooms</a>
+              Explore Rooms
             </Button>
           </div>
         </motion.div>
