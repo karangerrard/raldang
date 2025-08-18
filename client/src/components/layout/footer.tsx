@@ -26,8 +26,8 @@ export default function Footer() {
             <h4 className="font-medium text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li><a href="#home" className="hover:text-[hsl(var(--mountain-red))] transition-colors">Home</a></li>
-              <li><a href="#about" className="hover:text-[hsl(var(--mountain-red))] transition-colors">About Us</a></li>
-              <li><a href="#rooms" className="hover:text-[hsl(var(--mountain-red))] transition-colors">Accommodations</a></li>
+              <li><a href="#about" className="hover:text-[hsl(var(--mountain-red))] transition-colors">About</a></li>
+              <li><a href="#rooms" className="hover:text-[hsl(var(--mountain-red))] transition-colors">Rooms</a></li>
               <li><a href="#dining" className="hover:text-[hsl(var(--mountain-red))] transition-colors">Dining</a></li>
               <li><a href="#gallery" className="hover:text-[hsl(var(--mountain-red))] transition-colors">Gallery</a></li>
               <li><a href="#contact" className="hover:text-[hsl(var(--mountain-red))] transition-colors">Contact</a></li>

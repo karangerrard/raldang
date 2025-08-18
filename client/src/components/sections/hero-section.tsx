@@ -69,8 +69,18 @@ export default function HeroSection() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-6 left-0 right-0 text-center text-[hsl(var(--mountain-white))] animate-bounce z-10">
-        <a href="#about" aria-label="Scroll down to about section">
-          <i className="fas fa-chevron-down text-2xl drop-shadow-lg"></i>
+        <a
+        href="#about"
+        aria-label="Scroll down to about section"
+        onClick={e => {
+          e.preventDefault();
+          const el = document.getElementById("about");
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+        }}
+      >
+        <i className="fas fa-chevron-down text-2xl drop-shadow-lg"></i>
         </a>
       </div>
     </section>
