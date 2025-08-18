@@ -35,7 +35,7 @@ export default function HeroSection() {
           <h1 className="font-playfair text-3xl sm:text-4xl md:text-6xl text-[hsl(var(--mountain-white))] font-bold mb-4 text-shadow-lg drop-shadow-xl">
             Experience the Magic of Kalpa
           </h1>
-          <p className="text-base sm:text-lg md:text-2xl text-[hsl(var(--mountain-white))] mb-8 max-w-3xl mx-auto text-shadow-lg drop-shadow-xl">
+          <p className="font-semibold text-base sm:text-lg md:text-2xl text-[hsl(var(--mountain-white))] mb-8 max-w-3xl mx-auto text-shadow-lg drop-shadow-xl">
             A Himachali homestay on the edge of the valley with breathtaking views of the Raldang peak
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">

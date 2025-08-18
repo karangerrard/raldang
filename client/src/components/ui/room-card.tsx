@@ -40,7 +40,7 @@ export function RoomCard({ room }: RoomCardProps) {
             </div>
           </div>
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-            <span className="font-playfair text-[hsl(var(--mountain-gold))] text-xl font-semibold">
+            <span className="font-playfair text-[hsl(var(--mountain-pine))] text-xl font-semibold">
               {room.price}
             </span>
             <Button
