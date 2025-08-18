@@ -76,7 +76,8 @@ export default function HeroSection() {
           e.preventDefault();
           const el = document.getElementById("about");
           if (el) {
-            el.scrollIntoView({ behavior: "smooth" });
+            const y = el.getBoundingClientRect().top + window.pageYOffset - 80; // adjust offset as needed
+            window.scrollTo({ top: y, behavior: "smooth" });
           }
         }}
       >
