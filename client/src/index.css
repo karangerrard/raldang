@@ -154,3 +154,7 @@ img {
 #contact .SelectTrigger {
   color: white !important;
 }
+
+html,body {
+  overflow-x: hidden;
+}

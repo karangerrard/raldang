@@ -13,7 +13,7 @@ export default function GallerySection() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-[hsl(var(--mountain-pine))] mb-4">Photo Gallery</h2>
+          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-[hsl(var(--mountain-pine))] mb-4 mt-10">Photo Gallery</h2>
           <p className="text-lg max-w-2xl mx-auto">
             Take a visual journey through our homestay and the stunning landscapes of Kinnaur Valley.
             <span className="block text-sm mt-2 text-[hsl(var(--mountain-gold))] font-medium">
