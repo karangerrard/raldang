@@ -79,7 +79,15 @@ export default function Header() {
       return (
         <a
           href={`#${sectionId}`}
-          onClick={closeMenu}
+          onClick={e => {
+            e.preventDefault();
+            closeMenu();
+            const el = document.getElementById(sectionId);
+            if (el) {
+              const y = el.getBoundingClientRect().top + window.pageYOffset - 80; // adjust offset for header
+              window.scrollTo({ top: y, behavior: "smooth" });
+            }
+          }}
           className={navClass}  
         >
           {label}
@@ -87,7 +95,7 @@ export default function Header() {
       );
     }
     return (
-      <Link to="/" onClick={closeMenu} className={navClass}>
+      <Link to="/" onClick={closeMenu} state={{ scrollTo: sectionId }} className={navClass}>
         {label}
       </Link>
     );
@@ -97,7 +105,7 @@ export default function Header() {
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 backdrop-blur-md ${scrolled ? 'bg-[hsl(var(--mountain-pine))]/85 shadow-lg' : 'bg-[hsl(var(--mountain-pine))]/70'}`}>
       <div className="container mx-auto px-4 md:px-8 py-3 flex justify-between items-center">
-        <a href="#" className="text-[hsl(var(--mountain-white))] font-dancing text-3xl font-bold text-shadow-sm">
+        <a href="#" className="text-[hsl(var(--mountain-white))] font-dancing text-3xl font-bold text-shadow-sm mr-4">
           Raldang View Homestay
         </a>
         
@@ -114,7 +122,7 @@ export default function Header() {
         
         {/* Mobile menu button */}
         <button 
-          className="md:hidden text-[hsl(var(--mountain-white))] text-2xl"
+          className="md:hidden text-[hsl(var(--mountain-white))] text-2xl pr-6"
           onClick={toggleMenu}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
