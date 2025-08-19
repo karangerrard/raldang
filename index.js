@@ -142,6 +142,10 @@ var vite_config_default = defineConfig({
         ]
       : []),*/
   ],
+  server: {
+    host: "0.0.0.0",
+    port: 5e3
+  },
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
