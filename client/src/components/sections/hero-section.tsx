@@ -6,7 +6,7 @@ export default function HeroSection() {
     <section id="home" className="h-screen relative flex items-center justify-center overflow-hidden">
       {/* Mobile Background */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat parallax md:hidden"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"
         style={{
           backgroundImage: `url('${import.meta.env.BASE_URL}images/kinnaur-mountain-view_mobile.avif')`,
         }}
