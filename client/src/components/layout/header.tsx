@@ -6,7 +6,15 @@ import { useLocation,Link } from "react-router-dom";
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const { isMenuOpen, toggleMenu, closeMenu } = useAppContext();
-  //const location = useLocation();
+  const location = useLocation();
+
+  // Determine if we're on the gallery page
+  const isGalleryPage = location.pathname === '/gallery';
+  
+  // Determine text color class based on page and scroll position
+  const textColorClass = (isGalleryPage && !scrolled && !isMenuOpen) 
+    ? 'text-[hsl(var(--mountain-pine))]' 
+    : 'text-[hsl(var(--mountain-white))]';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -103,14 +111,16 @@ export default function Header() {
 
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 backdrop-blur-md ${scrolled ? 'bg-[hsl(var(--mountain-pine))]/85 shadow-lg' : 'bg-[hsl(var(--mountain-pine))]/70'}`}>
+    <header className={`fixed w-full z-50 transition-all duration-300 backdrop-blur-sm ${
+      scrolled || isMenuOpen? 'bg-[hsl(var(--mountain-pine))]/85 shadow-lg' : 'bg-transparent'
+    }`}>
       <div className="container mx-auto px-4 md:px-8 py-3 flex justify-between items-center">
-        <a href="#" className="text-[hsl(var(--mountain-white))] font-dancing text-3xl font-bold text-shadow-sm mr-4">
+        <a href="#" className={`${textColorClass} font-dancing text-3xl font-bold text-shadow-sm mr-4`}>
           Raldang View Homestay
         </a>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-6 text-[hsl(var(--mountain-white))]">
+        <nav className={`hidden md:flex space-x-6 ${textColorClass}`}>
           <NavLink sectionId="home" />
           <NavLink sectionId="about" />
           <NavLink sectionId="rooms" />
@@ -122,7 +132,7 @@ export default function Header() {
         
         {/* Mobile menu button */}
         <button 
-          className="md:hidden text-[hsl(var(--mountain-white))] text-2xl pr-6"
+          className={`md:hidden ${textColorClass} text-2xl pr-6`}
           onClick={toggleMenu}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
@@ -138,7 +148,9 @@ export default function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15 }}
-            className="bg-[hsl(var(--mountain-pine))]/90 backdrop-blur-md text-[hsl(var(--mountain-white))] py-4 px-4 md:hidden"
+            className={`${
+              scrolled ? 'bg-[hsl(var(--mountain-pine))]/90' : 'bg-[hsl(var(--mountain-pine))]/85'
+            } backdrop-blur-md text-[hsl(var(--mountain-white))] py-4 px-4 md:hidden`}
           >
             <div className="flex flex-col space-y-4">
               <MobileNavLink sectionId="home" />

@@ -23,7 +23,7 @@ export function GalleryItem({ image }: GalleryItemProps) {
   return (
     <>
       <motion.div
-        whileHover={{ scale: 1.03 }}
+        //whileHover={{ scale: 1.03 }}
         className="gallery-item rounded-lg overflow-hidden shadow-lg cursor-pointer"
         onClick={openFullscreen}
       >
