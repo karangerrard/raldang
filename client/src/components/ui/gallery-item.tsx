@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GalleryImage } from "@/lib/data";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -9,16 +9,40 @@ interface GalleryItemProps {
 export function GalleryItem({ image }: GalleryItemProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   const openFullscreen = () => {
+    // Store the current scroll position
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    setScrollPosition(currentScroll);
+    
+    // Prevent scrolling and fix the position
+    document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${currentScroll}px`;
+    document.body.style.width = "100%";
+    
     setIsOpen(true);
-    document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
   };
 
-  const closeFullscreen = () => {
-    setIsOpen(false);
+  const closeFullscreen = () => { 
     document.body.style.overflow = "auto"; // Re-enable scrolling
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.width = "";
+    window.scrollTo(0, scrollPosition);
+    setIsOpen(false);
   };
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = "auto";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+    };
+  }, []);
 
   return (
     <>
