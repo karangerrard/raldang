@@ -13,18 +13,24 @@ export function RoomCard({ room }: RoomCardProps) {
 
   return (
     <>
-    <motion.div
-      whileHover={{ y: -5, transition: { duration: 0.2 } }}
-      className="h-full cursor-pointer"
-      onClick={() => setShowGallery(true)}
-    >
       <Card className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow h-full">
-        <div className="h-64 overflow-hidden">
+        <div className="h-64 overflow-hidden relative cursor-pointer group"
+          onClick={() => setShowGallery(true)}
+        >
           <img 
             src={room.image} 
             alt={room.name} 
             className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
           />
+
+        {/* Gallery indicator overlay */}
+          <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <div className="text-white text-center">
+              <i className="fas fa-images text-2xl mb-2"></i>
+              <p className="text-sm">Click to view photos</p>
+            </div>
+          </div>
+
         </div>
         <CardContent className="p-6">
           <h3 className="font-playfair text-xl font-bold mb-2">{room.name}</h3>
@@ -58,8 +64,7 @@ export function RoomCard({ room }: RoomCardProps) {
             </Button>
           </div>
         </CardContent>
-      </Card>
-    </motion.div>
+      </Card> 
 
     {showGallery && (
   <motion.div

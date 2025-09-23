@@ -24,10 +24,10 @@ export default function AboutSection({ id }: AboutSectionProps) {
   };
 
   return (
-    <section id={id} className="py-20 bg-[hsl(var(--mountain-white))]">
+    <section id={id} className="py-16 bg-[hsl(var(--mountain-white))]">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -37,14 +37,14 @@ export default function AboutSection({ id }: AboutSectionProps) {
           <div className="w-24 h-1 bg-[hsl(var(--mountain-red))] mx-auto"></div>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="font-playfair text-2xl font-semibold mb-4 text-[hsl(var(--mountain-blue))]">A Home In The Mountains</h3>
+            <h3 className="font-playfair text-3xl font-semibold mb-4 text-[hsl(var(--mountain-blue))]">A Home In The Mountains</h3>
             <p className="mb-6 text-lg">
               Nestled in the heart of the majestic Kinnaur Valley, our traditional Himachali homestay offers you an authentic experience 
               of mountain living with modern comforts. Wake up to breathtaking views of the Raldang peak, surrounded by the tranquility of nature.
@@ -76,34 +76,35 @@ export default function AboutSection({ id }: AboutSectionProps) {
           </motion.div>
           
           <motion.div 
-            className="grid grid-cols-2 gap-4"
+            className="grid grid-cols-2 gap-4 max-w-[650px] mx-auto"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="rounded-lg overflow-hidden shadow-lg h-64 gallery-item">
+            <div className="rounded-lg overflow-hidden shadow-md aspect-square gallery-item hover:shadow-lg transition-shadow duration-300">
               <picture>
                 <source srcSet={`${import.meta.env.BASE_URL}images/cherry_blossoms_mobile.avif`} media="(max-width: 640px)"  />
               <img src={`${import.meta.env.BASE_URL}images/cherry_blossoms.avif`}
-                   alt="Cherry Blossoms" className="w-full h-full object-cover" />
+                   alt="Cherry Blossoms" 
+                   className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" />
               </picture>
             </div>
-            <div className="rounded-lg overflow-hidden shadow-lg h-64 gallery-item">
+            <div className="rounded-lg overflow-hidden shadow-lg aspect-square gallery-item">
               <picture>
                 <source srcSet={`${import.meta.env.BASE_URL}images/raldang_peak_mobile.avif`} media="(max-width: 640px)" />
               <img src={`${import.meta.env.BASE_URL}images/raldang_peak.avif`}
                    alt="Raldang Peak" className="w-full h-full object-cover" />
               </picture>
             </div>
-            <div className="rounded-lg overflow-hidden shadow-lg h-64 gallery-item">
+            <div className="rounded-lg overflow-hidden shadow-lg aspect-squaregallery-item">
               <picture>
                 <source srcSet={`${import.meta.env.BASE_URL}images/kalpa_town_mobile.avif`} media="(max-width: 640px)" />
               <img src={`${import.meta.env.BASE_URL}images/kalpa_town.avif`}
                    alt="Kalpa Town" className="w-full h-full object-cover" />
               </picture>
             </div>
-            <div className="rounded-lg overflow-hidden shadow-lg h-64 gallery-item">
+            <div className="rounded-lg overflow-hidden shadow-lg aspect-squaregallery-item">
               <picture>
                 <source srcSet={`${import.meta.env.BASE_URL}images/home_food_mobile.avif`} media="(max-width: 640px)" />
               <img src={`${import.meta.env.BASE_URL}images/home_food.avif`}
