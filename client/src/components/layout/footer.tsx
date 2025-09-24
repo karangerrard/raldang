@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer className="bg-[hsl(var(--mountain-pine))] text-white py-12">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8  ">
           <div>
             <h3 className="font-dancing text-2xl font-bold mb-4">Raldang View Homestay</h3>
             <p className="mb-4">Your home in the Himalayan mountains with authentic experiences and breathtaking views.</p>
@@ -12,9 +12,6 @@ export default function Footer() {
               </a>
               <a href="#" className="text-[hsl(var(--mountain-red))] hover:text-[hsl(var(--mountain-red))]/80 transition-colors">
                 <i className="fab fa-instagram"></i>
-              </a>
-              <a href="#" className="text-[hsl(var(--mountain-red))] hover:text-[hsl(var(--mountain-red))]/80 transition-colors">
-                <i className="fab fa-twitter"></i>
               </a>
               <a href="#" className="text-[hsl(var(--mountain-red))] hover:text-[hsl(var(--mountain-red))]/80 transition-colors">
                 <i className="fab fa-tripadvisor"></i>
@@ -34,16 +31,16 @@ export default function Footer() {
             </ul>
           </div>
           
-          <div>
+          {/*<div>
             <h4 className="font-medium text-lg mb-4">Experiences</h4>
             <ul className="space-y-2">
               <li><a href="#" className="hover:text-[hsl(var(--mountain-red))] transition-colors">Apple Orchard Tour</a></li>
               <li><a href="#" className="hover:text-[hsl(var(--mountain-red))] transition-colors">Local Village Walks</a></li>
               <li><a href="#" className="hover:text-[hsl(var(--mountain-red))] transition-colors">Spiti Valley Excursions</a></li>
             </ul>
-          </div>
+          </div>*/}
           
-          <div>
+          <div className="md:col-start-4">  
             <h4 className="font-medium text-lg mb-4">Contact Us</h4>
             <ul className="space-y-3">
               <li className="flex gap-3">
@@ -53,10 +50,6 @@ export default function Footer() {
               <li className="flex gap-3">
                 <i className="fas fa-phone-alt mt-1 text-[hsl(var(--mountain-red))]"></i>
                 <span>+91 98765 43210</span>
-              </li>
-              <li className="flex gap-3">
-                <i className="fas fa-envelope mt-1 text-[hsl(var(--mountain-red))]"></i>
-                <span>info@kinnaurvalleyhomestay.com</span>
               </li>
             </ul>
           </div>

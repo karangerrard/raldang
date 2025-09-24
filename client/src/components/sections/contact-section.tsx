@@ -121,17 +121,6 @@ export default function ContactSection({ id }: AboutSectionProps) {
                   <p>+91 98765 43211</p>
                 </div>
               </div>
-              
-              <div className="flex items-start gap-4">
-                <div className="mt-1 text-[hsl(var(--mountain-gold))]">
-                  <i className="fas fa-envelope text-xl"></i>
-                </div>
-                <div>
-                  <h4 className="font-medium text-lg mb-1">Email</h4>
-                  <p>info@kinnaurvalleyhomestay.com</p>
-                  <p>bookings@kinnaurvalleyhomestay.com</p>
-                </div>
-              </div>
             </div>
             
             <div className="space-y-4">
@@ -142,12 +131,6 @@ export default function ContactSection({ id }: AboutSectionProps) {
                 </a>
                 <a href="#" className="w-10 h-10 rounded-full bg-[hsl(var(--mountain-blue))]/20 hover:bg-[hsl(var(--mountain-blue))]/40 flex items-center justify-center transition-colors">
                   <i className="fab fa-instagram"></i>
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-[hsl(var(--mountain-blue))]/20 hover:bg-[hsl(var(--mountain-blue))]/40 flex items-center justify-center transition-colors">
-                  <i className="fab fa-twitter"></i>
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-[hsl(var(--mountain-blue))]/20 hover:bg-[hsl(var(--mountain-blue))]/40 flex items-center justify-center transition-colors">
-                  <i className="fab fa-tripadvisor"></i>
                 </a>
               </div>
             </div>
