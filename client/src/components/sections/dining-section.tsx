@@ -95,34 +95,34 @@ export default function DiningSection({ id }: AboutSectionProps) {
           </motion.div>
           
           <motion.div 
-            className="grid grid-cols-2 gap-4"
+            className="grid grid-cols-2 gap-3 maax-w-[650px] mx-auto"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="rounded-lg overflow-hidden shadow-lg h-64 gallery-item">
+            <div className="rounded-lg overflow-hidden shadow-lg aspect-square gallery-item">
               <picture>
                 <source srcSet={`${import.meta.env.BASE_URL}images/food_1_mobile.avif`} media="(max-width: 640px)" />
                 <img src={`${import.meta.env.BASE_URL}images/food_1.avif`}
                      alt="Himachali Home food" className="w-full h-full object-cover" />
               </picture>
             </div>
-            <div className="rounded-lg overflow-hidden shadow-lg h-64 gallery-item">
+            <div className="rounded-lg overflow-hidden shadow-lg aspect-square gallery-item">
               <picture>
                 <source srcSet={`${import.meta.env.BASE_URL}images/food_2_mobile.avif`} media="(max-width: 640px)" />
                 <img src={`${import.meta.env.BASE_URL}images/food_2.avif`}
                      alt="Momo plate" className="w-full h-full object-cover" />
               </picture>
             </div>
-            <div className="rounded-lg overflow-hidden shadow-lg h-64 gallery-item">
+            <div className="rounded-lg overflow-hidden shadow-lg aspect-square gallery-item">
               <picture>
                 <source srcSet={`${import.meta.env.BASE_URL}images/food_3_mobile.avif`} media="(max-width: 640px)" />
                 <img src={`${import.meta.env.BASE_URL}images/food_3.avif`}
                      alt="Butter tea" className="w-full h-full object-cover" />
               </picture>
             </div>
-            <div className="rounded-lg overflow-hidden shadow-lg h-64 gallery-item">
+            <div className="rounded-lg overflow-hidden shadow-lg aspect-square gallery-item">
               <picture>
                 <source srcSet={`${import.meta.env.BASE_URL}images/food_4_mobile.avif`} media="(max-width: 640px)" />
                 <img src={`${import.meta.env.BASE_URL}images/food_4.avif`}
