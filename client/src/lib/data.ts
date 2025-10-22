@@ -159,12 +159,12 @@ export const transportOptions: TransportOption[] = [
     id: "special",
     from: "Special Note",
     icon: "info-circle",
-    color: "snow",
+    color: "blue",
     options: [
       {
         mode: "Best Time to Travel",
-        duration: "April to October",
-        description: "Winter months (November to March) can have road closures due to snow. Inner Line Permit required for some areas near the border."
+        duration: "March to June & October to November",
+        description: "Winter months (December to February) can have road closures due to snow. Inner Line Permit required for some areas near the border."
       },
       {
         mode: "Transport Arrangement",

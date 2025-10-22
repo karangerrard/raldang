@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-[hsl(var(--mountain-pine))] text-white py-12">
+    <footer className="bg-[hsl(var(--mountain-white))] text-[hsl(var(--mountain-pine))] py-12">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8  ">
           <div>
@@ -19,7 +19,7 @@ export default function Footer() {
             </div>
           </div>
           
-          <div>
+          {/*<div>
             <h4 className="font-medium text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li><a href="#home" className="hover:text-[hsl(var(--mountain-red))] transition-colors">Home</a></li>
@@ -29,7 +29,7 @@ export default function Footer() {
               <li><a href="#gallery" className="hover:text-[hsl(var(--mountain-red))] transition-colors">Gallery</a></li>
               <li><a href="#contact" className="hover:text-[hsl(var(--mountain-red))] transition-colors">Contact</a></li>
             </ul>
-          </div>
+          </div>*/}
           
           {/*<div>
             <h4 className="font-medium text-lg mb-4">Experiences</h4>

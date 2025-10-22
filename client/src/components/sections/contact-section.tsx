@@ -12,13 +12,15 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { apiRequest } from "@/lib/queryClient";
 import { useMutation } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
   phone: z.string().min(10, { message: "Please enter a valid phone number" }),
   guests: z.string(),
-  checkin: z.string().min(1, { message: "Please select a check-in date" }),
-  checkout: z.string().min(1, { message: "Please select a check-out date" }),
+  checkin: z.date({ required_error: "Please select a check-in date" }),
+  checkout: z.date({ required_error: "Please select a check-out date" }), 
   message: z.string().optional(),
 });
 
@@ -36,8 +38,8 @@ export default function ContactSection({ id }: AboutSectionProps) {
       name: "",
       phone: "",
       guests: "2",
-      checkin: "",
-      checkout: "",
+      checkin: undefined,
+      checkout: undefined,
       message: "",
     },
   });
@@ -85,7 +87,7 @@ export default function ContactSection({ id }: AboutSectionProps) {
   }
 
   return (
-    <section id={id} className="py-20 bg-[hsl(var(--mountain-pine))] text-white">
+    <section id={id} className="py-20 bg-[hsl(var(--mountain-white))] text-[hsl(var(--mountain-pine))]">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <motion.div
@@ -126,10 +128,10 @@ export default function ContactSection({ id }: AboutSectionProps) {
             <div className="space-y-4">
               <h4 className="font-medium text-lg">Follow Us</h4>
               <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 rounded-full bg-[hsl(var(--mountain-blue))]/20 hover:bg-[hsl(var(--mountain-blue))]/40 flex items-center justify-center transition-colors">
+                <a href="#" className="w-10 h-10 rounded-full bg-[hsl(var(--mountain-gold))]/20 hover:bg-[hsl(var(--mountain-pine))]/40 flex items-center justify-center transition-colors">
                   <i className="fab fa-facebook-f"></i>
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-[hsl(var(--mountain-blue))]/20 hover:bg-[hsl(var(--mountain-blue))]/40 flex items-center justify-center transition-colors">
+                <a href="#" className="w-10 h-10 rounded-full bg-[hsl(var(--mountain-gold))]/20 hover:bg-[hsl(var(--mountain-pine))]/40 flex items-center justify-center transition-colors">
                   <i className="fab fa-instagram"></i>
                 </a>
               </div>
@@ -154,7 +156,7 @@ export default function ContactSection({ id }: AboutSectionProps) {
                       <FormControl>
                         <Input
                           placeholder="Your name"
-                          className="px-4 py-3 rounded-lg bg-[hsl(var(--mountain-pine-800))] border border-[hsl(var(--mountain-blue))]/30 focus:border-[hsl(var(--mountain-gold))] focus:outline-none placeholder:text-white/50 text-white"
+                          className="px-4 py-3 rounded-lg bg-[hsl(var(--mountain-pine-800))] border border-[hsl(var(--mountain-blue))]/30 focus:border-[hsl(var(--mountain-gold))] focus:outline-none placeholder:text-[hsl(var(--mountain-pine))]/70 text-black"
                           {...field}
                         />
                       </FormControl>
@@ -174,7 +176,7 @@ export default function ContactSection({ id }: AboutSectionProps) {
                           <Input
                             type="tel"
                             placeholder="Your phone number"
-                            className="px-4 py-3 rounded-lg bg-[hsl(var(--mountain-pine-800))] border border-[hsl(var(--mountain-blue))]/30 focus:border-[hsl(var(--mountain-gold))] focus:outline-none placeholder:text-white/50 text-white"
+                            className="px-4 py-3 rounded-lg bg-[hsl(var(--mountain-pine-800))] border border-[hsl(var(--mountain-blue))]/30 focus:border-[hsl(var(--mountain-red))] focus:outline-none placeholder:text-[hsl(var(--mountain-pine))]/70 text-black"
                             {...field}
                           />
                         </FormControl>
@@ -191,7 +193,7 @@ export default function ContactSection({ id }: AboutSectionProps) {
                         <FormLabel className="font-medium">Number of Guests</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
-                            <SelectTrigger className="px-4 py-3 rounded-lg bg-[hsl(var(--mountain-pine-800))] border border-[hsl(var(--mountain-blue))]/30 focus:border-[hsl(var(--mountain-red))] focus:outline-none">
+                            <SelectTrigger className="px-4 py-3 rounded-lg bg-[hsl(var(--mountain-pine-800))] border border-[hsl(var(--mountain-pine))] focus:border-[hsl(var(--mountain-red))] focus:outline-none placeholder:text-[hsl(var(--mountain-pine))]/70 text-black">
                               <SelectValue placeholder="Select guests" />
                             </SelectTrigger>
                           </FormControl>
@@ -209,18 +211,21 @@ export default function ContactSection({ id }: AboutSectionProps) {
                   />
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex flex-col md:flex-row md:gap-6 space-y-4 md:space-y-0">
                   <FormField
                     control={form.control}
                     name="checkin"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="font-medium">Check-in Date</FormLabel>
+                        <FormLabel className="font-medium mb-2 block">Check-in Date</FormLabel>
                         <FormControl>
-                          <Input
-                            type="date"
-                            className="px-4 py-3 rounded-lg bg-[hsl(var(--mountain-pine-800))] border border-[hsl(var(--mountain-blue))]/30 focus:border-[hsl(var(--mountain-red))] focus:outline-none"
-                            {...field}
+                          <DatePicker
+                            selected={field.value}
+                            onChange={(date: Date | null) => field.onChange(date)}
+                            dateFormat="dd/MM/yyyy"
+                            minDate={new Date()}
+                            placeholderText="Select check-in date"
+                            className="w-full px-4 py-3 rounded-lg bg-[hsl(var(--mountain-pine-800))] border border-[hsl(var(--mountain-blue))]/30 focus:border-[hsl(var(--mountain-red))] focus:outline-none"
                           />
                         </FormControl>
                         <FormMessage />
@@ -233,13 +238,16 @@ export default function ContactSection({ id }: AboutSectionProps) {
                     name="checkout"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="font-medium">Check-out Date</FormLabel>
-                        <FormControl>
-                          <Input
-                            type="date"
-                            className="px-4 py-3 rounded-lg bg-[hsl(var(--mountain-pine-800))] border border-[hsl(var(--mountain-blue))]/30 focus:border-[hsl(var(--mountain-red))] focus:outline-none"
-                            {...field}
-                          />
+                        <FormLabel className="font-medium mb-2 block">Check-out Date</FormLabel>
+                          <FormControl>
+                            <DatePicker
+                              selected={field.value}
+                              onChange={(date: Date | null) => field.onChange(date)}
+                              dateFormat="dd/MM/yyyy"
+                              minDate={form.getValues().checkin || new Date()}
+                              placeholderText="Select check-out date"
+                              className="w-full px-4 py-3 rounded-lg bg-[hsl(var(--mountain-pine-800))] border border-[hsl(var(--mountain-blue))]/30 focus:border-[hsl(var(--mountain-red))] focus:outline-none"
+                            />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -257,7 +265,7 @@ export default function ContactSection({ id }: AboutSectionProps) {
                         <Textarea
                           rows={4}
                           placeholder="Tell us about your visit or any special requirements"
-                          className="px-4 py-3 rounded-lg bg-[hsl(var(--mountain-pine-800))] border border-[hsl(var(--mountain-blue))]/30 focus:border-[hsl(var(--mountain-red))] focus:outline-none"
+                          className="px-4 py-3 rounded-lg bg-[hsl(var(--mountain-white))] border border-[hsl(var(--mountain-blue))]/30 focus:border-[hsl(var(--mountain-red))] focus:outline-none !placeholder:text-black !text-black"
                           {...field}
                         />
                       </FormControl>
@@ -275,7 +283,7 @@ export default function ContactSection({ id }: AboutSectionProps) {
                     <i className="fab fa-whatsapp text-lg"></i>
                     {contactMutation.isPending ? "Sending..." : "Send Inquiry via WhatsApp"}
                   </Button>
-                  <p className="text-xs text-center text-[hsl(var(--mountain-white))]/70">
+                  <p className="text-xs text-center text-[hsl(var(--mountain-pine))]">
                     Your inquiry will be sent directly to our WhatsApp business number for faster response
                   </p>
                 </div>
