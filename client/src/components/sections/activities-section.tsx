@@ -65,12 +65,12 @@ export default function HowToReachSection({ id }: AboutSectionProps) {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          <Button 
+          {/*<Button 
             asChild
             className="inline-block bg-[hsl(var(--mountain-gold))] hover:bg-[hsl(var(--mountain-gold))]/90 text-[hsl(var(--mountain-pine))] font-medium py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-md"
           >
             <a href="#contact">Need Help Planning Your Journey?</a>
-          </Button>
+          </Button>*/}
         </motion.div>
       </div>
     </section>

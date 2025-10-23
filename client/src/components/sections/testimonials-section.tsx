@@ -13,7 +13,7 @@ export default function TestimonialsSection() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-[hsl(var(--mountain-pine))] mb-4">Guest Experiences</h2>
+          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-[hsl(var(--mountain-pine))] mb-4">Google Reviews</h2>
           <div className="w-24 h-1 bg-[hsl(var(--mountain-red))] mx-auto"></div>
         </motion.div>
         

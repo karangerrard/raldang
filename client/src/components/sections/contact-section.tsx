@@ -16,8 +16,16 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const contactFormSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters" }),
-  phone: z.string().min(10, { message: "Please enter a valid phone number" }),
+  name: z
+  .string()
+  .min(2, { message: "Name must be at least 2 characters" })
+  .max(50, { message: "Name cannot exceed 50 characters." })
+  .regex(/^[a-zA-Z\s]+$/, { message: "Name should contain only letters." }),
+  phone: z
+  .string()
+  .min(10, { message: "Please enter a valid phone number" })
+  .max(15, { message: "Phone number cannot exceed 15 digits." })
+  .regex(/^\+?[0-9\s\-]{7,15}$/, { message: "Please enter a valid phone number" }),
   guests: z.string(),
   checkin: z.date({ required_error: "Please select a check-in date" }),
   checkout: z.date({ required_error: "Please select a check-out date" }), 
@@ -82,7 +90,7 @@ export default function ContactSection({ id }: AboutSectionProps) {
     // Open WhatsApp with the message after a short delay
     setTimeout(() => {
       // Using business number placeholder - will be replaced with actual number
-      window.open(`https://wa.me/919876543210?text=${whatsappMessage}`, '_blank');
+      window.open(`https://wa.me/918580863067?text=${whatsappMessage}`, '_blank');
     }, 1000);
   }
 
@@ -119,8 +127,8 @@ export default function ContactSection({ id }: AboutSectionProps) {
                 </div>
                 <div>
                   <h4 className="font-medium text-lg mb-1">Phone & WhatsApp</h4>
-                  <p>+91 98765 43210 <i className="fab fa-whatsapp text-green-400 ml-1"></i></p>
-                  <p>+91 98765 43211</p>
+                  <p>+91 8580863067</p>
+                  <p>+91 9999059585 <i className="fab fa-whatsapp text-green-400 ml-1"></i></p>
                 </div>
               </div>
             </div>
@@ -131,7 +139,10 @@ export default function ContactSection({ id }: AboutSectionProps) {
                 <a href="#" className="w-10 h-10 rounded-full bg-[hsl(var(--mountain-gold))]/20 hover:bg-[hsl(var(--mountain-pine))]/40 flex items-center justify-center transition-colors">
                   <i className="fab fa-facebook-f"></i>
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-[hsl(var(--mountain-gold))]/20 hover:bg-[hsl(var(--mountain-pine))]/40 flex items-center justify-center transition-colors">
+                <a href="https://www.instagram.com/raldangviewhomestay/"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="w-10 h-10 rounded-full bg-[hsl(var(--mountain-gold))]/20 hover:bg-[hsl(var(--mountain-pine))]/40 flex items-center justify-center transition-colors">
                   <i className="fab fa-instagram"></i>
                 </a>
               </div>

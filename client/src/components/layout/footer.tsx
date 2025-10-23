@@ -10,7 +10,10 @@ export default function Footer() {
               <a href="#" className="text-[hsl(var(--mountain-red))] hover:text-[hsl(var(--mountain-red))]/80 transition-colors">
                 <i className="fab fa-facebook-f"></i>
               </a>
-              <a href="#" className="text-[hsl(var(--mountain-red))] hover:text-[hsl(var(--mountain-red))]/80 transition-colors">
+              <a href="https://www.instagram.com/raldangviewhomestay/"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="text-[hsl(var(--mountain-red))] hover:text-[hsl(var(--mountain-red))]/80 transition-colors">
                 <i className="fab fa-instagram"></i>
               </a>
               <a href="#" className="text-[hsl(var(--mountain-red))] hover:text-[hsl(var(--mountain-red))]/80 transition-colors">
@@ -49,7 +52,7 @@ export default function Footer() {
               </li>
               <li className="flex gap-3">
                 <i className="fas fa-phone-alt mt-1 text-[hsl(var(--mountain-red))]"></i>
-                <span>+91 98765 43210</span>
+                <span>+91 8580863067</span>
               </li>
             </ul>
           </div>

@@ -64,10 +64,17 @@ export const rooms: Room[] = [
 export const testimonials: Testimonial[] = [
   {
     id: "1",
-    text: "Our stay at Raldang View Homestay was truly magical. The views of Raldang peak from our room were breathtaking, the home-cooked meals were incredibly delicious, and the warmth of our hosts made us feel like family. Walking through the apple orchard and learning about local traditions was a highlight of our Himachal trip.",
-    name: "Aman & Priya",
+    text: "Good spacious rooms with a super view from the balcony , you can see Kinnaur Kailash as well as Raldang peak ."+
+            "The rooms and bathrooms have all the facilities you would need there."+
+            "Proper wi-fi to work"+
+            "Heaters to keep you warm"+
+            "Geysers for hot water in the bathrooms"+
+            "Now talking about food , it was really amazing and homely just like someone is eating at their own home. You'll need to tell them in advance so they'll have the time to prepare food."+
+            "Kalpa in itself is soo peaceful and this homestay is even more peaceful , it is located 10-15 minutes of walk from the main bazaar"+
+            "And I would really like to thank the owners of the homestay for their hospitality . So this homestay is managed by mother , daughter duo who are amazing people and will keep you like their own family , they both are the best .",
+    name: "Karandeep Singh",
     location: "Delhi, India",
-    initial: "A"
+    initial: "K"
   },
   {
     id: "2",
