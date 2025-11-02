@@ -11,6 +11,7 @@ import HowToReachSection from "@/components/sections/activities-section";
 import ContactSection from "@/components/sections/contact-section";
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 
 export default function Home() {
@@ -30,6 +31,58 @@ export default function Home() {
   }, [location.state, location.pathname, navigate]);
   return (
     <>
+      <Helmet>
+        {/* Basic Meta Tags */}
+        <title>Raldang Homestay | Cozy Mountain Stay in Kinnaur Valley</title>
+        <meta
+          name="description"
+          content="Raldang Homestay offers a peaceful stay in the scenic Kinnaur Valley, Himachal Pradesh. Experience mountain views, homely food, and local Himachali hospitality."
+        />
+        <meta
+          name="keywords"
+          content="Raldang Homestay, Kinnaur Homestay, Kalpa Homestay, Himachal stay, mountain view rooms, homestay near Reckong Peo, Kinnaur Kailash"
+        />
+        <meta name="author" content="Raldang Homestay" />
+
+        {/* Open Graph (for social media) */}
+        <meta property="og:title" content="Raldang Homestay | Cozy Mountain Stay in Kinnaur" />
+        <meta property="og:description" content="Enjoy a cozy stay surrounded by the mountains of Kinnaur Valley, with delicious local meals and warm hospitality." />
+        <meta property="og:image" content="https://karangerrard.github.io/raldang/images/kinnaur-mountain-view.avif" />
+        <meta property="og:url" content="https://karangerrard.github.io/raldang/" />
+        <meta property="og:type" content="website" />
+
+        {/* LodgingBusiness JSON-LD Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LodgingBusiness",
+            "name": "Raldang Homestay",
+            "image": "https://karangerrard.github.io/raldang/images/kinnaur-mountain-view.avif",
+            "description":
+              "Raldang Homestay offers mountain-view rooms, homely meals, and serene surroundings in Kinnaur Valley, Himachal Pradesh.",
+            "url": "https://karangerrard.github.io/raldang/",
+            "telephone": "+91 8580863067",
+            "priceRange": "₹1000 - ₹3500",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Saryo Valley, Kalpa",
+              "addressLocality": "Kinnaur",
+              "addressRegion": "Himachal Pradesh",
+              "postalCode": "172107",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "31.5269",
+              "longitude": "78.2525"
+            },
+            "sameAs": [
+              "https://www.instagram.com/raldangviewhomestay/",
+              "https://maps.app.goo.gl/yo598UXUUeeTadaW7"
+            ]
+          })}
+        </script>
+      </Helmet>
       <Header />
       <main className="font-poppins text-[hsl(var(--mountain-pine))] bg-[hsl(var(--mountain-white))]">
         <HeroSection />

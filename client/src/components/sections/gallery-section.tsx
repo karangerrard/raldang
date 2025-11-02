@@ -1,10 +1,50 @@
+import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { GalleryItem } from "@/components/ui/gallery-item";
 import { galleryImages } from "@/lib/data";
 
 export default function GallerySection() {
   return (
-    <section id={"gallery"} className="py-20 bg-[hsl(var(--mountain-gray))]/30">
+    <>
+      {/* SEO Metadata */}
+      <Helmet>
+        <title>Photo Gallery | Raldang Homestay in Kinnaur Valley</title>
+        <meta
+          name="description"
+          content="Explore the photo gallery of Raldang Homestay and witness the cozy rooms, local Himachali charm, and breathtaking views of Kinnaur Valley."
+        />
+        <meta
+          name="keywords"
+          content="Raldang Homestay, Kinnaur homestay gallery, Himachal stay photos, Kinnaur Valley images, Raldang photos, homestay near Kalpa"
+        />
+        <meta property="og:title" content="Photo Gallery | Raldang Homestay" />
+        <meta
+          property="og:description"
+          content="Take a visual journey through Raldang Homestay — the cozy mountain retreat in Kinnaur Valley."
+        />
+        <meta property="og:image" content="/images/cover-gallery.jpg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://karangerrard.github.io/raldang/gallery" />
+        <link rel="canonical" href="https://karangerrard.github.io/raldang/gallery" />
+      </Helmet>
+
+      {/* JSON-LD Schema for Google */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ImageGallery",
+            "name": "Raldang Homestay Photo Gallery",
+            "description":
+              "A curated collection of images showcasing Raldang Homestay, its rooms, and the stunning views of Kinnaur Valley.",
+            "image": galleryImages.map(
+              (img) => `https://karangerrard.github.io/raldang/${img.src}`
+            ),
+          }),
+        }}
+      />
+    <section id={"gallery"} className="py-20 bg-[hsl(var(--mountain-white))]/30">
       <div className="container mx-auto px-4 md:px-8 min-h-screen">
         <motion.div 
           className="text-center mb-16"
@@ -39,5 +79,6 @@ export default function GallerySection() {
         </div>
       </div>
     </section>
+    </>
   );
 }
