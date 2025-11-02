@@ -48,7 +48,7 @@ export default function HowToReachSection({ id }: AboutSectionProps) {
           </h3>
           <div className="w-full h-[450px]">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13483.580866477763!2d78.24730001410767!3d31.5375051740285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39063304c89e9cf3%3A0x7d39bafad8e25979!2sKalpa%2C%20Himachal%20Pradesh%20172107!5e0!3m2!1sen!2sin!4v1652952465427!5m2!1sen!2sin" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3400.9071469872692!2d78.2520239!3d31.526710099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39066b59d0f807bf%3A0xef9fc9b26222cca8!2sRaldang%20view%20homestay!5e0!3m2!1sen!2sin!4v1762120413189!5m2!1sen!2sin" 
               className="w-full h-full" 
               style={{ border: 0 }} 
               allowFullScreen 

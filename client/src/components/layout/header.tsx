@@ -112,7 +112,7 @@ export default function Header() {
 
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 backdrop-blur-sm ${
-      scrolled || isMenuOpen? 'bg-[hsl(var(--mountain-pine))]/85 shadow-lg' : 'bg-transparent'
+      scrolled || isMenuOpen? 'bg-[hsl(var(--mountain-gold))]/85 shadow-lg' : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4 md:px-8 py-3 flex justify-between items-center">
         <a href="#" className={`${textColorClass} font-dancing text-3xl font-bold text-shadow-sm mr-4`}>

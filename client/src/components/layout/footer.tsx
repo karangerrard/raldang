@@ -48,11 +48,15 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex gap-3">
                 <i className="fas fa-map-marker-alt mt-1 text-[hsl(var(--mountain-red))]"></i>
-                <span>Raldang View Homestay, Kalpa, Himachal Pradesh - 172107</span>
+                <span>Raldang View Homestay, Saryo Valley, Kalpa, Himachal Pradesh - 172107</span>
               </li>
               <li className="flex gap-3">
                 <i className="fas fa-phone-alt mt-1 text-[hsl(var(--mountain-red))]"></i>
                 <span>+91 8580863067</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <i className="fab fa-whatsapp text-green-400 text-xl"></i>
+                <span>+91 9999059585</span>
               </li>
             </ul>
           </div>
