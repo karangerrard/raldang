@@ -18,7 +18,7 @@ export default function RoomsSection({ id }: AboutSectionProps) {
           transition={{ duration: 0.5 }}
         >
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-[hsl(var(--mountain-pine))] mb-4">Accommodation</h2>
-          <p className="text-lg max-w-2xl mx-auto">Experience the perfect blend of traditional Himachali architecture and modern comforts in our thoughtfully designed rooms.</p>
+          <p className="text-lg max-w-2xl mx-auto">Experience the perfect blend of traditional Himachali hospitality and modern comforts in our rooms.</p>
           <div className="w-24 h-1 bg-[hsl(var(--mountain-gold))] mx-auto mt-4"></div>
         </motion.div>
         

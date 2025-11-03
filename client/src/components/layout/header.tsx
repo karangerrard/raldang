@@ -76,7 +76,7 @@ export default function Header() {
 
   function MobileNavLink({ sectionId }: { sectionId: string }) {
     const location = useLocation();
-    const navClass = "hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium";
+    const navClass = "hover:text-[hsl(var(--mountain-pine))] transition-colors font-medium";
 
     // Capitalize sectionId for display
     const label = sectionId
@@ -145,19 +145,18 @@ export default function Header() {
         {isMenuOpen && (
           <motion.div 
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: .85, height: 'auto' }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15 }}
-            className={`${
-              scrolled ? 'bg-[hsl(var(--mountain-pine))]/90' : 'bg-[hsl(var(--mountain-pine))]/85'
-            } backdrop-blur-md text-[hsl(var(--mountain-white))] py-4 px-4 md:hidden`}
+            className="bg-[hsl(var(--mountain-gold))]/85 backdrop-blur-sm text-[hsl(var(--mountain-white))] text-lg font-bold py-4 px-4 md:hidden shadow-lg"
           >
             <div className="flex flex-col space-y-4">
               <MobileNavLink sectionId="home" />
               <MobileNavLink sectionId="about" />
               <MobileNavLink sectionId="rooms" />
               <MobileNavLink sectionId="dining" />
-              <Link to="/gallery" onClick={closeMenu} className="hover:text-[hsl(var(--mountain-red))] transition-colors font-medium">Gallery</Link>
+              <Link to="/gallery" onClick={closeMenu} className="hover:text-[hsl(var(--mountain-pine))] transition-colors font-medium">Gallery</Link>
+              <MobileNavLink sectionId="directions" />
               <MobileNavLink sectionId="contact" />
             </div>
           </motion.div>

@@ -8,7 +8,7 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"
         style={{
-          backgroundImage: `url('${import.meta.env.BASE_URL}images/kinnaur-mountain-view_mobile.avif')`,
+          backgroundImage: `url('${import.meta.env.BASE_URL}images/hero_mobile.avif')`,
         }}
         aria-hidden="true"
       ></div>
@@ -17,13 +17,13 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat parallax hidden md:block"
         style={{
-          backgroundImage: `url('${import.meta.env.BASE_URL}images/kinnaur-mountain-view.avif')`,
+          backgroundImage: `url('${import.meta.env.BASE_URL}images/hero_desktop.avif')`,
         }}
         aria-hidden="true"
       ></div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.4)] to-[rgba(0,0,0,0.2)] z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.1)] to-[rgba(0,0,0,0.1)] z-0"></div>
 
       {/* Content */}
       <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
@@ -32,19 +32,19 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="font-playfair text-3xl sm:text-4xl md:text-6xl text-[hsl(var(--mountain-white))] font-bold mb-4 text-shadow-lg drop-shadow-xl">
+          <h1 className="font-playfair text-4xl sm:text-4xl md:text-6xl text-[hsl(var(--mountain-white))] font-bold mb-4 text-shadow-lg drop-shadow-xl">
             Experience the Magic of Kalpa
           </h1>
-          <p className="font-semibold text-base sm:text-lg md:text-2xl text-[hsl(var(--mountain-white))] mb-8 max-w-3xl mx-auto text-shadow-lg drop-shadow-xl">
+          <p className="font-semibold text-xl sm:text-lg md:text-2xl text-[hsl(var(--mountain-white))] mb-8 max-w-3xl mx-auto text-shadow-lg drop-shadow-xl">
             A Himachali homestay on the edge of the valley with breathtaking views of the Raldang peak
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <Button
-              className="text-sm sm:text-base md:text-lg py-3 sm:py-4 md:py-6 px-6 sm:px-8 md:px-12 rounded-full transition-all transform hover:scale-105 font-semibold shadow-lg border-2 bg-[hsl(var(--mountain-gold))] hover:bg-[hsl(var(--mountain-gold))]/90 text-[hsl(var(--mountain-white))] border-[hsl(var(--mountain-white))]"
+              className="w-2/3 mx-auto sm:mx-0 sm:w-auto text-lg sm:text-base md:text-lg py-4 sm:py-4 md:py-6 px-8 sm:px-8 md:px-12 rounded-full transition-all transform hover:scale-105 font-semibold shadow-lg border-2 bg-[hsl(var(--mountain-gold))] hover:bg-[hsl(var(--mountain-gold))]/90 text-[hsl(var(--mountain-white))] border-[hsl(var(--mountain-white))]"
               onClick={() => {
                 const el = document.getElementById("contact");
                 if (el) {
-                  const y = el.getBoundingClientRect().top + window.pageYOffset - 80; // adjust offset for header
+                  const y = el.getBoundingClientRect().top + window.scrollY - 20; // adjust offset for header
                   window.scrollTo({ top: y, behavior: "smooth" });
                 }
               }}
@@ -52,11 +52,14 @@ export default function HeroSection() {
               Book Your Stay
             </Button>
             <Button              
-              className="text-sm sm:text-base md:text-lg py-3 sm:py-4 md:py-6 px-6 sm:px-8 md:px-12 rounded-full transition-all transform hover:scale-105 font-semibold shadow-lg border-2 bg-[hsl(var(--mountain-white))] hover:bg-[hsl(var(--mountain-white))]/90 text-[hsl(var(--mountain-gold))] border-[hsl(var(--mountain-gold))]"
+              className="w-2/3 mx-auto sm:mx-0 sm:w-auto text-lg sm:text-base md:text-lg py-4 sm:py-4 md:py-6 px-8 sm:px-8 md:px-12 rounded-full transition-all transform hover:scale-105 font-semibold shadow-lg border-2 bg-[hsl(var(--mountain-white))] hover:bg-[hsl(var(--mountain-white))]/90 text-[hsl(var(--mountain-gold))] border-[hsl(var(--mountain-gold))]"
               onClick={() => {
                 const el = document.getElementById("rooms");
                 if (el) {
-                  const y = el.getBoundingClientRect().top + window.pageYOffset - 80; // adjust offset for header
+                  // Different offsets for mobile and desktop
+                  const isMobile = window.innerWidth < 640; // sm breakpoint is 640px
+                  const offset = isMobile ? 0 : 20;
+                  const y = el.getBoundingClientRect().top + window.scrollY - offset; // adjust offset for header
                   window.scrollTo({ top: y, behavior: "smooth" });
                 }
               }}

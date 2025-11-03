@@ -15,7 +15,7 @@ export default function DiningSection({ id }: AboutSectionProps) {
           transition={{ duration: 0.5 }}
         >
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-[hsl(var(--mountain-pine))] mb-4">Home-Cooked Meals</h2>
-          <p className="text-lg max-w-2xl mx-auto">Experience authentic Himachali cuisine made with fresh, local ingredients, many from our own garden and orchard.</p>
+          <p className="text-lg max-w-2xl mx-auto">Indulge in mountain cuisine that celebrates simplicity, freshness, and the soul of Himachal’s rich culinary heritage.</p>
           <div className="w-24 h-1 bg-[hsl(var(--mountain-red))] mx-auto mt-4"></div>
         </motion.div>
         
@@ -28,8 +28,7 @@ export default function DiningSection({ id }: AboutSectionProps) {
           >
             <h3 className="font-playfair text-2xl font-semibold mb-6 text-[hsl(var(--mountain-blue))]">Taste The Mountains</h3>
             <p className="mb-6 text-lg">
-              Our family has preserved traditional Himachali recipes for generations. Each meal is prepared with love using organic, 
-              locally-sourced ingredients that showcase the unique flavors of the Kinnaur region.
+              Our family has preserved traditional Himachali recipes for generations. Each home-cooked meal is prepared with love using organic, locally sourced ingredients that highlight the authentic flavors of Kinnaur.
             </p>
             
             <div className="space-y-6 mt-8">
@@ -45,7 +44,7 @@ export default function DiningSection({ id }: AboutSectionProps) {
                 </div>
                 <div>
                   <h4 className="font-playfair text-lg font-semibold mb-1">Traditional Himachali Dham</h4>
-                  <p>A celebratory feast featuring multiple courses of local delicacies, including siddu, madra, and chana madra.</p>
+                  <p>A celebratory feast served at our homestay featuring multiple courses of local delicacies such as siddu, madra, and chana madra.</p>
                 </div>
               </motion.div>
               
@@ -61,7 +60,7 @@ export default function DiningSection({ id }: AboutSectionProps) {
                 </div>
                 <div>
                   <h4 className="font-playfair text-lg font-semibold mb-1">Orchard-to-Table Experience</h4>
-                  <p>Seasonal dishes featuring apples from our orchard, including fresh juices, desserts, and savory specialties.</p>
+                  <p>Seasonal dishes made with Kinnaur apples from our orchard, including fresh juices, desserts, and savory specialties.</p>
                 </div>
               </motion.div>
               
@@ -105,28 +104,31 @@ export default function DiningSection({ id }: AboutSectionProps) {
               <picture>
                 <source srcSet={`${import.meta.env.BASE_URL}images/food_1_mobile.avif`} media="(max-width: 640px)" />
                 <img src={`${import.meta.env.BASE_URL}images/food_1.avif`}
-                     alt="Himachali Home food" className="w-full h-full object-cover" />
+                     alt="Himachali Home food" 
+                     className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" />
               </picture>
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg aspect-square gallery-item">
               <picture>
                 <source srcSet={`${import.meta.env.BASE_URL}images/food_2_mobile.avif`} media="(max-width: 640px)" />
                 <img src={`${import.meta.env.BASE_URL}images/food_2.avif`}
-                     alt="Momo plate" className="w-full h-full object-cover" />
+                     alt="Momo plate"
+                     className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" />
               </picture>
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg aspect-square gallery-item">
               <picture>
                 <source srcSet={`${import.meta.env.BASE_URL}images/food_3_mobile.avif`} media="(max-width: 640px)" />
                 <img src={`${import.meta.env.BASE_URL}images/food_3.avif`}
-                     alt="Butter tea" className="w-full h-full object-cover" />
+                     alt="Butter tea" 
+                     className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" />
               </picture>
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg aspect-square gallery-item">
               <picture>
                 <source srcSet={`${import.meta.env.BASE_URL}images/food_4_mobile.avif`} media="(max-width: 640px)" />
                 <img src={`${import.meta.env.BASE_URL}images/food_4.avif`}
-                     alt="Momo plate red" className="w-full h-full object-cover" />
+                     alt="Momo plate red" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" />
               </picture>
             </div>
           </motion.div>

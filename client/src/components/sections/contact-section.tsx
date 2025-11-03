@@ -106,8 +106,7 @@ export default function ContactSection({ id }: AboutSectionProps) {
           >
             <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-6">Get in Touch</h2>
             <p className="text-lg mb-8">
-              We're excited to welcome you to our Himalayan haven. Reach out to us for bookings, 
-              inquiries, or to plan your perfect mountain getaway.
+              We’re excited to welcome you to our Himalayan haven. Contact us to book your stay at Raldang View Homestay in Kinnaur Valley, Himachal Pradesh, or to plan your perfect mountain getaway.
             </p>
             
             <div className="space-y-6 mb-8">

@@ -33,7 +33,7 @@ export default function AboutSection({ id }: AboutSectionProps) {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-[hsl(var(--mountain-pine))] mb-4">Our Himalayan Haven</h2>
+          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-[hsl(var(--mountain-pine))] mb-4">Our Homestay in Kinnaur</h2>
           <div className="w-24 h-1 bg-[hsl(var(--mountain-red))] mx-auto"></div>
         </motion.div>
         
@@ -46,12 +46,11 @@ export default function AboutSection({ id }: AboutSectionProps) {
           >
             <h3 className="font-playfair text-3xl font-semibold mb-4 text-[hsl(var(--mountain-blue))]">A Home In The Mountains</h3>
             <p className="mb-6 text-lg">
-              Nestled in the heart of the majestic Kinnaur Valley, our traditional Himachali homestay offers you an authentic experience 
-              of mountain living with modern comforts. Wake up to breathtaking views of the Raldang peak, surrounded by the tranquility of nature.
+              Nestled in the heart of the majestic Kinnaur Valley, our Himachali homestay offers you an authentic experience
+              of mountain living with modern comforts. Wake up to breathtaking views of Raldang Peak and the surrounding Himalayan landscapes.
             </p>
             <p className="mb-6 text-lg">
-              Our family has called this valley home for generations, and we take pride in sharing our heritage, cuisine, and 
-              the natural beauty of this region with guests from around the world.
+              As your hosts at Raldang View Homestay, we take pride in sharing Himachal’s rich culture, traditional cuisine, and the natural beauty of Kinnaur Valley with guests from around the world.
             </p>
             <motion.div 
               className="flex flex-col sm:flex-row gap-4 mt-8"
@@ -90,25 +89,28 @@ export default function AboutSection({ id }: AboutSectionProps) {
                    className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" />
               </picture>
             </div>
-            <div className="rounded-lg overflow-hidden shadow-lg aspect-square gallery-item">
+            <div className="rounded-lg overflow-hidden shadow-lg aspect-square gallery-item hover:shadow-lg transition-shadow duration-300">
               <picture>
                 <source srcSet={`${import.meta.env.BASE_URL}images/raldang_peak_mobile.avif`} media="(max-width: 640px)" />
               <img src={`${import.meta.env.BASE_URL}images/raldang_peak.avif`}
-                   alt="Raldang Peak" className="w-full h-full object-cover" />
+                   alt="Raldang Peak" 
+                   className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" />
               </picture>
             </div>
-            <div className="rounded-lg overflow-hidden shadow-lg aspect-squaregallery-item">
+            <div className="rounded-lg overflow-hidden shadow-lg aspect-square gallery-item hover:shadow-lg transition-shadow duration-300">
               <picture>
                 <source srcSet={`${import.meta.env.BASE_URL}images/kalpa_town_mobile.avif`} media="(max-width: 640px)" />
               <img src={`${import.meta.env.BASE_URL}images/kalpa_town.avif`}
-                   alt="Kalpa Town" className="w-full h-full object-cover" />
+                   alt="Kalpa Town" 
+                   className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" />
               </picture>
             </div>
-            <div className="rounded-lg overflow-hidden shadow-lg aspect-squaregallery-item">
+            <div className="rounded-lg overflow-hidden shadow-lg aspect-square gallery-item hover:shadow-lg transition-shadow duration-300">
               <picture>
                 <source srcSet={`${import.meta.env.BASE_URL}images/home_food_mobile.avif`} media="(max-width: 640px)" />
               <img src={`${import.meta.env.BASE_URL}images/home_food.avif`}
-                   alt="Homestay food" className="w-full h-full object-cover" />
+                   alt="Homestay food" 
+                   className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" />
               </picture>
             </div>
           </motion.div>
