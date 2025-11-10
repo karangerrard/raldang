@@ -32,5 +32,23 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
+    sourcemap: false, // Disable source maps for production
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug'],
+      },
+      mangle: true,
+      output: {
+        comments: false,
+      }
+    },
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      }
+    }
   },
 });

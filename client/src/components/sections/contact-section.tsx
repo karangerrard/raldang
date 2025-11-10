@@ -54,7 +54,7 @@ export default function ContactSection({ id }: AboutSectionProps) {
 
   const contactMutation = useMutation({
     mutationFn: (data: ContactFormValues) => {
-      return apiRequest("POST", "/api/contact", data);
+      return apiRequest("POST", "api/contact", data);
     },
     onSuccess: () => {
       toast({
@@ -63,17 +63,16 @@ export default function ContactSection({ id }: AboutSectionProps) {
       });
       form.reset();
     },
-    onError: (error) => {
-      toast({
-        title: "Error",
-        description: "There was a problem sending your inquiry. Please try again.",
-        variant: "destructive",
-      });
+    onError: (error: any) => {
+      const errorMessage = error?.response?.data?.message || 
+                          error?.message || 
+                          "There was a problem sending your inquiry. Please try again.";
     },
   });
 
   function onSubmit(data: ContactFormValues) {
-    // Send to backend API
+    try{
+      // Send to backend API
     contactMutation.mutate(data);
     
     // Prepare WhatsApp message (as an alternative option)
@@ -82,16 +81,24 @@ export default function ContactSection({ id }: AboutSectionProps) {
       `*Name:* ${data.name}\n` +
       `*Phone:* ${data.phone}\n` +
       `*Guests:* ${data.guests}\n` +
-      `*Check-in:* ${data.checkin}\n` +
-      `*Check-out:* ${data.checkout}\n` +
+      `*Check-in:* ${data.checkin?.toLocaleDateString()}\n` +
+      `*Check-out:* ${data.checkout?.toLocaleDateString()}\n` +
       `*Message:* ${data.message || "No additional message"}`
     );
     
     // Open WhatsApp with the message after a short delay
     setTimeout(() => {
       // Using business number placeholder - will be replaced with actual number
-      window.open(`https://wa.me/918580863067?text=${whatsappMessage}`, '_blank');
-    }, 1000);
+      window.open(`https://wa.me/919999059585?text=${whatsappMessage}`, '_blank');
+    }, 500);
+    }catch(error){
+      console.error("Form submission error:", error);
+      toast({
+        title: "Error",
+        description: "An unexpected error occurred. Please try again.",
+        variant: "destructive",
+      });
+    }  
   }
 
   return (
