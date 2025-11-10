@@ -41,14 +41,6 @@ export default defineConfig({
         pure_funcs: ['console.log', 'console.info', 'console.debug'],
       },
       mangle: true,
-      output: {
-        comments: false,
-      }
     },
-    rollupOptions: {
-      output: {
-        manualChunks: undefined,
-      }
-    }
   },
 });
