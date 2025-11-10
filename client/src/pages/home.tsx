@@ -90,7 +90,7 @@ export default function Home() {
         {/* <LocationHighlight/>  */}
         <RoomsSection id="rooms"/>
         <DiningSection id="dining"/>
-        <FAQSection />
+        <FAQSection id="faq" />
         {/* <GallerySection id="gallery"/> */}
         <HowToReachSection id="directions"/>
         <ContactSection id="contact"/>

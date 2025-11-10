@@ -61,7 +61,11 @@ const faqs: FAQItem[] = [
   },
 ];
 
-export default function FAQSection() {
+type FAQSectionProps = {
+  id?: string;
+}
+
+export default function FAQSection({ id }: FAQSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {

@@ -41,13 +41,19 @@ export default function Header() {
 
   function NavLink({ sectionId }: { sectionId: string }) {
     const location = useLocation();
-    const navClass = "hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium";
+    const navClass = scrolled 
+    ? "hover:text-[hsl(var(--mountain-pine))] transition-colors font-medium"
+    : "hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium";
     const scrollOffset = -80;
 
     // Capitalize sectionId for display
-    const label = sectionId
+    let label = sectionId
       ? sectionId.charAt(0).toUpperCase() + sectionId.slice(1).replace("-", " ")
       : "";
+    // Make FAQ all caps
+    if (sectionId === "faq") {
+      label = "FAQs";
+    }
 
     if (location.pathname === "/" && sectionId) {
       return (
@@ -79,10 +85,13 @@ export default function Header() {
     const navClass = "hover:text-[hsl(var(--mountain-pine))] transition-colors font-medium";
 
     // Capitalize sectionId for display
-    const label = sectionId
+    let label = sectionId
       ? sectionId.charAt(0).toUpperCase() + sectionId.slice(1).replace("-", " ")
       : "";
-
+    // Make FAQ all caps
+    if (sectionId === "faq") {
+      label = "FAQs";
+    }
     if (location.pathname === "/" && sectionId) {
       return (
         <a
@@ -125,7 +134,16 @@ export default function Header() {
           <NavLink sectionId="about" />
           <NavLink sectionId="rooms" />
           <NavLink sectionId="dining" />
-          <Link to="/gallery" className="hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium">Gallery</Link>
+          <Link 
+            to="/gallery" 
+            className={scrolled 
+              ? "hover:text-[hsl(var(--mountain-pine))] transition-colors font-medium"
+              : "hover:text-[hsl(var(--mountain-gold))] transition-colors font-medium"
+            }
+          >
+            Gallery
+          </Link>
+          <NavLink sectionId="faq" />
           <NavLink sectionId="directions" />
           <NavLink sectionId="contact" />
         </nav>
@@ -156,6 +174,7 @@ export default function Header() {
               <MobileNavLink sectionId="rooms" />
               <MobileNavLink sectionId="dining" />
               <Link to="/gallery" onClick={closeMenu} className="hover:text-[hsl(var(--mountain-pine))] transition-colors font-medium">Gallery</Link>
+              <MobileNavLink sectionId="faq" />
               <MobileNavLink sectionId="directions" />
               <MobileNavLink sectionId="contact" />
             </div>
