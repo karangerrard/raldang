@@ -8,19 +8,19 @@ export default function GallerySection() {
     <>
       {/* SEO Metadata */}
       <Helmet>
-        <title>Photo Gallery | Raldang Homestay in Kinnaur Valley</title>
+        <title>Photo Gallery | Raldang View Homestay in Kalpa, Kinnaur Valley</title>
         <meta
           name="description"
-          content="Explore the photo gallery of Raldang Homestay and witness the cozy rooms, local Himachali charm, and breathtaking views of Kinnaur Valley."
+          content="Explore the photo gallery of Raldang View Homestay and witness the cozy rooms, local Himachali charm, and breathtaking views of Kalpa, Kinnaur Valley."
         />
         <meta
           name="keywords"
-          content="Raldang Homestay, Kinnaur homestay gallery, Himachal stay photos, Kinnaur Valley images, Raldang photos, homestay near Kalpa"
+          content="Raldang View Homestay, Kinnaur homestay gallery, Himachal stay photos, Kinnaur Valley images, Raldang photos, homestay near Kalpa, Kalpa hotel gallery"
         />
-        <meta property="og:title" content="Photo Gallery | Raldang Homestay" />
+        <meta property="og:title" content="Photo Gallery | Raldang View Homestay" />
         <meta
           property="og:description"
-          content="Take a visual journey through Raldang Homestay — the cozy mountain retreat in Kinnaur Valley."
+          content="Take a visual journey through Raldang View Homestay — the cozy mountain retreat in Kalpa, Kinnaur Valley."
         />
         <meta property="og:image" content="/images/cover-gallery.jpg" />
         <meta property="og:type" content="website" />
@@ -35,9 +35,9 @@ export default function GallerySection() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ImageGallery",
-            "name": "Raldang Homestay Photo Gallery",
+            "name": "Raldang View Homestay Photo Gallery",
             "description":
-              "A curated collection of images showcasing Raldang Homestay, its rooms, and the stunning views of Kinnaur Valley.",
+              "A curated collection of images showcasing Raldang View Homestay, its rooms, and the stunning views of Kalpa, Kinnaur Valley.",
             "image": galleryImages.map(
               (img) => `https://karangerrard.github.io/raldang/${img.src}`
             ),

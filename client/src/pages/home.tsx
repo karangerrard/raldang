@@ -5,7 +5,7 @@ import AboutSection from "@/components/sections/about-section";
 import LocationHighlight from "@/components/sections/location-highlight";
 import RoomsSection from "@/components/sections/rooms-section";
 import DiningSection from "@/components/sections/dining-section";
-import TestimonialsSection from "@/components/sections/testimonials-section";
+import FAQSection from "@/components/sections/faq-section";
 import GallerySection from "@/components/sections/gallery-section";
 import HowToReachSection from "@/components/sections/activities-section";
 import ContactSection from "@/components/sections/contact-section";
@@ -33,20 +33,20 @@ export default function Home() {
     <>
       <Helmet>
         {/* Basic Meta Tags */}
-        <title>Raldang Homestay | Cozy Mountain Stay in Kinnaur Valley</title>
+        <title>Raldang View Homestay | Cozy Mountain Stay in Kalpa, Kinnaur Valley, Himachal Pradesh</title>
         <meta
           name="description"
-          content="Raldang Homestay offers a peaceful stay in the scenic Kinnaur Valley, Himachal Pradesh. Experience mountain views, homely food, and local Himachali hospitality."
+          content="Raldang View Homestay offers a peaceful stay in the scenic Kalpa, Kinnaur Valley, Himachal Pradesh. Experience mountain views, homely food, and local Himachali hospitality."
         />
         <meta
           name="keywords"
-          content="Raldang Homestay, Kinnaur Homestay, Kalpa Homestay, Himachal stay, mountain view rooms, homestay near Reckong Peo, Kinnaur Kailash"
+          content="Raldang View Homestay, Kinnaur Homestay, Kalpa Homestay, Himachal stay, mountain view rooms, homestay near Reckong Peo, Kinnaur Kailash, Kalpa Hotels, Himachali food, cozy homestay"
         />
-        <meta name="author" content="Raldang Homestay" />
+        <meta name="author" content="Raldang View Homestay" />
 
         {/* Open Graph (for social media) */}
-        <meta property="og:title" content="Raldang Homestay | Cozy Mountain Stay in Kinnaur" />
-        <meta property="og:description" content="Enjoy a cozy stay surrounded by the mountains of Kinnaur Valley, with delicious local meals and warm hospitality." />
+        <meta property="og:title" content="Raldang View Homestay | Cozy Mountain Stay in Kalpa, Kinnaur Valley, Himachal Pradesh" />
+        <meta property="og:description" content="Enjoy a cozy stay surrounded by the mountains of Kalpa, Kinnaur Valley, Himachal Pradesh with delicious local meals and warm hospitality." />
         <meta property="og:image" content="https://karangerrard.github.io/raldang/images/kinnaur-mountain-view.avif" />
         <meta property="og:url" content="https://karangerrard.github.io/raldang/" />
         <meta property="og:type" content="website" />
@@ -56,10 +56,10 @@ export default function Home() {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LodgingBusiness",
-            "name": "Raldang Homestay",
+            "name": "Raldang View Homestay",
             "image": "https://karangerrard.github.io/raldang/images/kinnaur-mountain-view.avif",
             "description":
-              "Raldang Homestay offers mountain-view rooms, homely meals, and serene surroundings in Kinnaur Valley, Himachal Pradesh.",
+              "Raldang View Homestay offers mountain-view rooms, homely meals, and serene surroundings in Kalpa, Kinnaur Valley, Himachal Pradesh.",
             "url": "https://karangerrard.github.io/raldang/",
             "telephone": "+91 8580863067",
             "priceRange": "₹1000 - ₹3500",
@@ -90,7 +90,7 @@ export default function Home() {
         {/* <LocationHighlight/>  */}
         <RoomsSection id="rooms"/>
         <DiningSection id="dining"/>
-        <TestimonialsSection />
+        <FAQSection />
         {/* <GallerySection id="gallery"/> */}
         <HowToReachSection id="directions"/>
         <ContactSection id="contact"/>
