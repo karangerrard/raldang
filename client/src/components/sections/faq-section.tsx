@@ -37,7 +37,7 @@ const faqs: FAQItem[] = [
     question: "Do you have free Wi-Fi available at the property?",
     answer: (
       <>
-        Yes, we offer complimentary <span className="font-semibold text-[hsl(var(--mountain-gold))]">Jio air fibre high-speed Wi-Fi</span> <i className="fas fa-wifi text-[hsl(var(--mountain-gold))] mr-2"></i>throughout the property, including all guest rooms and common areas.  
+        Yes, we offer complimentary <span className="font-semibold text-[hsl(var(--mountain-gold))]">Jio AirFiber high-speed Wi-Fi</span> <i className="fas fa-wifi text-[hsl(var(--mountain-gold))] mr-2"></i>throughout the property, including all guest rooms and common areas.  
       </>
     ),
   },
