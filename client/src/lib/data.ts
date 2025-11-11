@@ -44,7 +44,7 @@ export const rooms: Room[] = [
     name: "Mountain Balcony Room",
     description: "Wake up to the chirping of Himalayan birds and breathtaking panoramic views of Raldang peak from your private balcony. These spacious rooms feature modern amenities for a comfortable mountain stay.",
     amenities: ["Panoramic Mountain View", "Private Balcony", "Free Wi-Fi", "Daily Breakfast", "Tea/Coffee Maker", "Bathroom Geyser"],
-    price: "₹4,500/night",
+    price: "₹2,500/night",
     imageMob: "images/room_mountain_mobile.avif",
     image: "images/room_mountain.avif",
     images: ["images/room_mountain.avif", "images/room_mountain.avif", "images/room_mountain.avif","images/room_mountain.avif"]
@@ -54,7 +54,7 @@ export const rooms: Room[] = [
     name: "Garden View Room",
     description: "Comfortable rooms with a private balcony overlooking our peaceful garden and apple orchard. Enjoy the tranquil atmosphere with partial mountain views and cozy Himachali interior design.",
     amenities: ["Garden View", "Private Balcony", "Free Wi-Fi", "Daily Breakfast", "Tea/Coffee Maker", "Room Service","Bathroom Geyser"],
-    price: "₹3,500/night",
+    price: "₹2,200/night",
     imageMob: "images/room_gardenview_mobile.avif",
     image: "images/room_gardenview.avif",
     images: ["images/room_gardenview.avif", "images/room_gardenview.avif", "images/room_gardenview.avif", "images/room_gardenview.avif"]
@@ -193,7 +193,7 @@ export const galleryImages: GalleryImage[] = [
     id: "2",
     src: "images/gallery_2_cover.avif",
     fullSize: "images/gallery_2.avif",
-    alt: "Kinnaur monastery"
+    alt: "Kinnaur Monastery"
   },
   {
     id: "3",
@@ -205,7 +205,7 @@ export const galleryImages: GalleryImage[] = [
     id: "4",
     src: "images/gallery_4_cover.avif",
     fullSize: "images/gallery_4.avif",
-    alt: "Himalayan sheeps"
+    alt: "Himalayan Sheep"
   },
   {
     id: "5",
@@ -217,18 +217,18 @@ export const galleryImages: GalleryImage[] = [
     id: "6",
     src: "images/gallery_6_cover.avif",
     fullSize: "images/gallery_6.avif",
-    alt: "Snow road to Kinnaur"
+    alt: "Chaka Trail"
   },
   {
     id: "7",
     src: "images/gallery_9_cover.avif",
     fullSize: "images/gallery_9.avif",
-    alt: "Kinnaur suicide point"
+    alt: "Kinnaur Suicide Point"
   },
   {
     id: "8",
     src: "images/gallery_8_cover.avif",
     fullSize: "images/gallery_8.avif",
-    alt: "Kinnaur Himalayas"
+    alt: "Raldang Peak"
   }
 ];

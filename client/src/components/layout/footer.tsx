@@ -7,13 +7,13 @@ export default function Footer() {
             <h3 className="font-dancing text-3xl font-bold mb-4">Raldang View Homestay</h3>
             <p className="text-xl mb-4">Your home in the Himachal with authentic experiences and breathtaking Himalayan views.</p>
             <div className="flex gap-4">
-              <a href="#" className="text-[hsl(var(--mountain-red))] hover:text-[hsl(var(--mountain-red))]/80 transition-colors">
+              {/*<a href="#" className="text-[hsl(var(--mountain-red))] hover:text-[hsl(var(--mountain-red))]/80 transition-colors">
                 <i className="fab fa-facebook-f"></i>
-              </a>
+              </a>*/}
               <a href="https://www.instagram.com/raldangviewhomestay/"
                  target="_blank"
                  rel="noopener noreferrer"
-                 className="text-[hsl(var(--mountain-red))] hover:text-[hsl(var(--mountain-red))]/80 transition-colors">
+                 className="w-10 h-10 rounded-full bg-[hsl(var(--mountain-gold))]/20 hover:bg-[hsl(var(--mountain-pine))]/40 flex items-center justify-center transition-colors">
                 <i className="fab fa-instagram"></i>
               </a>
               <a href="#" className="text-[hsl(var(--mountain-red))] hover:text-[hsl(var(--mountain-red))]/80 transition-colors">

@@ -140,16 +140,16 @@ export default function ContactSection({ id }: AboutSectionProps) {
             </div>
             
             <div className="space-y-4">
-              <h4 className="font-medium text-lg">Follow Us</h4>
+              <h4 className="font-medium text-lg">Follow or DM Us</h4>
               <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 rounded-full bg-[hsl(var(--mountain-gold))]/20 hover:bg-[hsl(var(--mountain-pine))]/40 flex items-center justify-center transition-colors">
+                {/* Facebook button 
                   <i className="fab fa-facebook-f"></i>
-                </a>
+                </a>*/}
                 <a href="https://www.instagram.com/raldangviewhomestay/"
                  target="_blank"
                  rel="noopener noreferrer"
-                 className="w-10 h-10 rounded-full bg-[hsl(var(--mountain-gold))]/20 hover:bg-[hsl(var(--mountain-pine))]/40 flex items-center justify-center transition-colors">
-                  <i className="fab fa-instagram"></i>
+                 className="w-20 h-20 rounded-full bg-[hsl(var(--mountain-gold))]/20 hover:bg-[hsl(var(--mountain-pine))]/40 flex items-center justify-center transition-colors">
+                  <i className="fab fa-instagram text-5xl"></i>
                 </a>
               </div>
             </div>

@@ -13,7 +13,7 @@ const faqs: FAQItem[] = [
     question: "How can I book my stay?",
     answer: (
       <>
-        You can book directly via <span className="font-semibold text-[hsl(var(--mountain-gold))]">WhatsApp</span> using the Send inquiry button after filling all the appropriate details in our <span className="font-semibold text-[hsl(var(--mountain-gold))]">contact section</span>, or reach us through the <span className="font-semibold text-[hsl(var(--mountain-gold))]">number</span> provided on our website.
+        You can book directly via <span className="font-semibold text-[hsl(var(--mountain-gold))]">WhatsApp</span> using the Send inquiry button after filling all the appropriate details in our <span className="font-semibold text-[hsl(var(--mountain-gold))]">contact section</span>, or reach us through the <span className="font-semibold text-[hsl(var(--mountain-gold))]">number</span> provided on our website. Also you can DM us on our <span className="font-semibold text-[hsl(var(--mountain-gold))]">Instagram page</span> provided at the bottom of the website.
       </>
     ),
   },
@@ -37,8 +37,7 @@ const faqs: FAQItem[] = [
     question: "Do you have free Wi-Fi available at the property?",
     answer: (
       <>
-        Yes, we offer complimentary <span className="font-semibold text-[hsl(var(--mountain-gold))]">high-speed Wi-Fi</span> <i className="fas fa-wifi text-[hsl(var(--mountain-gold))] mr-2"></i>throughout the property, including all guest rooms and common areas.
-        
+        Yes, we offer complimentary <span className="font-semibold text-[hsl(var(--mountain-gold))]">Jio air fibre high-speed Wi-Fi</span> <i className="fas fa-wifi text-[hsl(var(--mountain-gold))] mr-2"></i>throughout the property, including all guest rooms and common areas.  
       </>
     ),
   },
@@ -59,6 +58,23 @@ const faqs: FAQItem[] = [
     </span>
   ),
   },
+  {
+    question: "When is the best time to see snowfall and enjoy stargazing in Kalpa?",
+    answer: (
+    <span>
+      If you wish to experience both <span className="font-semibold text-[hsl(var(--mountain-gold))]">snowfall</span> and breathtaking{" "}
+      <span className="font-semibold text-[hsl(var(--mountain-gold))]">stargazing</span>, the best time to visit{" "}
+      <span className="font-semibold text-[hsl(var(--mountain-gold))]">Kalpa</span> is from{" "}
+      <span className="font-semibold text-[hsl(var(--mountain-gold))]">November to February</span>.{" "}
+      The air is crisp and the sky is perfectly clear, ideal for watching the{" "}
+      <span className="font-semibold text-[hsl(var(--mountain-gold))]"> countless stars</span> right from our homestay terrace.
+      <br /><br />
+      As your hosts, we suggest planning your trip in{" "}
+      <span className="font-semibold text-[hsl(var(--mountain-gold))]">January</span> for the best mix of fresh snow and cloud free nights. 
+      Just remember, after heavy snowfall there can be <span className="font-semibold text-[hsl(var(--mountain-gold))]">brief road closures</span>, so do check in with us before traveling we’ll happily update you on weather and road conditions.
+    </span>
+    ),
+  }
 ];
 
 type FAQSectionProps = {
