@@ -47,8 +47,8 @@ export default function Home() {
         {/* Open Graph (for social media) */}
         <meta property="og:title" content="Raldang View Homestay | Cozy Mountain Stay in Kalpa, Kinnaur Valley, Himachal Pradesh" />
         <meta property="og:description" content="Enjoy a cozy stay surrounded by the mountains of Kalpa, Kinnaur Valley, Himachal Pradesh with delicious local meals and warm hospitality." />
-        <meta property="og:image" content="https://karangerrard.github.io/raldang/images/kinnaur-mountain-view.avif" />
-        <meta property="og:url" content="https://karangerrard.github.io/raldang/" />
+        <meta property="og:image" content="https://raldangviewhomestay.in/images/kinnaur-mountain-view.avif" />
+        <meta property="og:url" content="https://raldangviewhomestay.in/" />
         <meta property="og:type" content="website" />
 
         {/* LodgingBusiness JSON-LD Schema */}
@@ -57,10 +57,10 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "LodgingBusiness",
             "name": "Raldang View Homestay",
-            "image": "https://karangerrard.github.io/raldang/images/kinnaur-mountain-view.avif",
+            "image": "https://raldangviewhomestay.in/images/kinnaur-mountain-view.avif",
             "description":
               "Raldang View Homestay offers mountain-view rooms, homely meals, and serene surroundings in Kalpa, Kinnaur Valley, Himachal Pradesh.",
-            "url": "https://karangerrard.github.io/raldang/",
+            "url": "https://raldangviewhomestay.in/",
             "telephone": "+91 8580863067",
             "priceRange": "₹1000 - ₹3500",
             "address": {

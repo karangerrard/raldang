@@ -24,8 +24,8 @@ export default function GallerySection() {
         />
         <meta property="og:image" content="/images/cover-gallery.jpg" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://karangerrard.github.io/raldang/gallery" />
-        <link rel="canonical" href="https://karangerrard.github.io/raldang/gallery" />
+        <meta property="og:url" content="https://raldangviewhomestay.in/gallery" />
+        <link rel="canonical" href="https://raldangviewhomestay.in/gallery" />
       </Helmet>
 
       {/* JSON-LD Schema for Google */}
@@ -39,7 +39,7 @@ export default function GallerySection() {
             "description":
               "A curated collection of images showcasing Raldang View Homestay, its rooms, and the stunning views of Kalpa, Kinnaur Valley.",
             "image": galleryImages.map(
-              (img) => `https://karangerrard.github.io/raldang/${img.src}`
+              (img) => `https://raldangviewhomestay.in/${img.src}`
             ),
           }),
         }}
