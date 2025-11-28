@@ -65,7 +65,7 @@ export default function Home() {
             "priceRange": "₹1000 - ₹3500",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "Saryo Valley, Kalpa",
+              "streetAddress": "Saryo, Kalpa",
               "addressLocality": "Kinnaur",
               "addressRegion": "Himachal Pradesh",
               "postalCode": "172107",

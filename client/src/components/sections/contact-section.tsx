@@ -123,7 +123,7 @@ export default function ContactSection({ id }: AboutSectionProps) {
                 </div>
                 <div>
                   <h4 className="font-medium text-lg mb-1">Location</h4>
-                  <p>Raldang View Homestay, Saryo Valley, Kalpa, Kinnaur, Himachal Pradesh, India - 172107</p>
+                  <p>Raldang View Homestay, Saryo, Kalpa, Kinnaur, Himachal Pradesh, India - 172107</p>
                 </div>
               </div>
               

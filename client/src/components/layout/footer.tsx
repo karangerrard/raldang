@@ -48,7 +48,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex gap-3 text-lg">
                 <i className="fas fa-map-marker-alt mt-1 text-[hsl(var(--mountain-red))]"></i>
-                <span>Raldang View Homestay, Saryo Valley, Kalpa, Himachal Pradesh - 172107</span>
+                <span>Raldang View Homestay, Saryo, Kalpa, Himachal Pradesh - 172107</span>
               </li>
               <li className="flex gap-3 text-lg">
                 <i className="fas fa-phone-alt mt-1 text-[hsl(var(--mountain-red))]"></i>
