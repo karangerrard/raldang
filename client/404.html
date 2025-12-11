@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/raldang/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found - Raldang View Homestay</title>
+    <meta http-equiv="refresh" content="0;url='/'" />
+    <script>
+      // Redirect to home page with the attempted path preserved
+      sessionStorage.redirect = location.pathname;
+    </script>
+  </head>
+  <body>
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: Arial, sans-serif;">
+      <div style="text-align: center;">
+        <h1 style="font-size: 48px; margin-bottom: 20px;">404</h1>
+        <p style="font-size: 24px; margin-bottom: 20px;">Page Not Found</p>
+        <p style="font-size: 16px; color: #666; margin-bottom: 30px;">
+          The page you're looking for doesn't exist.
+        </p>
+        <a href="/" style="
+          background-color: #d4a373;
+          color: white;
+          padding: 12px 24px;
+          text-decoration: none;
+          border-radius: 4px;
+          font-size: 16px;
+        ">
+          Go Back Home
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
