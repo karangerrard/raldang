@@ -2,11 +2,35 @@ import { Button } from "@/components/ui/button";
 import { TransportCard } from "@/components/ui/transport-card";
 import { transportOptions } from "@/lib/data";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 type AboutSectionProps = {
   id?: string;
 };
 export default function HowToReachSection({ id }: AboutSectionProps) {
+  const [isHovered, setIsHovered] = useState(false);
+  const [isMobileDevice, setIsMobileDevice] = useState(false);
+
+  useEffect(() => {
+    // Check if device is mobile
+    const checkMobile = () => {
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 768;
+      setIsMobileDevice(isMobile);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const handleMapClick = () => {
+    // Coordinates for Kalpa, Himachal Pradesh
+    const latitude = 31.52693415767176;
+    const longitude = 78.252538884111;
+    
+    // Open Google Maps app on mobile
+    window.location.href = `geo:${latitude},${longitude}?q=Raldang+View+Homestay`;
+  };
   return (
     <section id={id} className="py-20 bg-[hsl(var(--mountain-white))]">
       <div className="container mx-auto px-4 md:px-8">
@@ -41,20 +65,53 @@ export default function HowToReachSection({ id }: AboutSectionProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
-          className="my-12 rounded-xl overflow-hidden shadow-lg border-4 border-[hsl(var(--mountain-gold))]/30"
+          className={`my-12 rounded-xl overflow-hidden shadow-lg border-4 border-[hsl(var(--mountain-gold))]/30 ${
+            isMobileDevice ? 'relative cursor-pointer' : ''
+          }`}
+          {...(isMobileDevice && {
+            onMouseEnter: () => setIsHovered(true),
+            onMouseLeave: () => setIsHovered(false),
+            onClick: handleMapClick,
+            role: 'button',
+            tabIndex: 0,
+            onKeyDown: (e: React.KeyboardEvent) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                handleMapClick();
+              }
+            },
+            'aria-label': 'Click to open location in Google Maps'
+          })}
         >
           <h3 className="font-playfair text-xl text-center py-4 bg-[hsl(var(--mountain-gold))]/10 border-b border-[hsl(var(--mountain-gold))]/20">
             Our Location on Google Maps
           </h3>
-          <div className="w-full h-[450px]">
+          <div className="w-full h-[450px] relative">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3400.9071469872692!2d78.2520239!3d31.526710099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f55!3m3!1m2!1s0x39066b59d0f807bf%3A0xef9fc9b26222cca8!2sRaldang%20view%20homestay!5e0!3m2!1sen!2sin!4v1762120413189!5m2!1sen!2sin" 
               className="w-full h-full" 
-              style={{ border: 0 }} 
+              style={{ border: 0, pointerEvents: isMobileDevice ? 'none' : 'auto' }} 
               allowFullScreen 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
+            
+            {/* Hover overlay with click instruction - only for mobile */}
+            {isMobileDevice && (
+              <div 
+                className={`absolute inset-0 flex items-center justify-center transition-all duration-300 rounded-b-lg ${
+                  isHovered ? 'bg-black/40' : 'bg-black/0'
+                }`}
+              >
+                <div 
+                  className={`text-center transition-opacity duration-300 ${
+                    isHovered ? 'opacity-100' : 'opacity-0'
+                  }`}
+                >
+                  <p className="text-white text-lg font-semibold">Click to Open in Google Maps</p>
+                  <p className="text-white text-sm mt-2">Get directions to Raldang View Homestay</p>
+                </div>
+              </div>
+            )}
           </div>
         </motion.div>
         
