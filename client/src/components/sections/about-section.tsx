@@ -1,9 +1,84 @@
 import { motion } from "framer-motion";
+import { useState, useRef } from "react";
+
 type AboutSectionProps = {
   id: string;
 }
 
 export default function AboutSection({ id }: AboutSectionProps) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState({ x: 0, y: 0 });
+  const [touchEnd, setTouchEnd] = useState({ x: 0, y: 0 });
+  const imageContainerRef = useRef<HTMLDivElement>(null);
+
+  const images = [
+    {
+      alt: "Cherry Blossoms",
+      mobile: `${import.meta.env.BASE_URL}images/cherry_blossoms_mobile.avif`,
+      desktop: `${import.meta.env.BASE_URL}images/cherry_blossoms.avif`
+    },
+    {
+      alt: "Raldang Peak",
+      mobile: `${import.meta.env.BASE_URL}images/raldang_peak_mobile.avif`,
+      desktop: `${import.meta.env.BASE_URL}images/raldang_peak.avif`
+    },
+    {
+      alt: "Kalpa Town",
+      mobile: `${import.meta.env.BASE_URL}images/kalpa_town_mobile.avif`,
+      desktop: `${import.meta.env.BASE_URL}images/kalpa_town.avif`
+    },
+    {
+      alt: "Homestay food",
+      mobile: `${import.meta.env.BASE_URL}images/home_food_mobile.avif`,
+      desktop: `${import.meta.env.BASE_URL}images/home_food.avif`
+    }
+  ];
+
+  const handlePrevious = () => {
+    setCurrentImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setTouchStart({
+      x: e.targetTouches[0].clientX,
+      y: e.targetTouches[0].clientY
+    });
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+    setTouchEnd({
+      x: e.changedTouches[0].clientX,
+      y: e.changedTouches[0].clientY
+    });
+    handleSwipe();
+  };
+
+  const handleSwipe = () => {
+    if (!touchStart.x || !touchEnd.x) return;
+    
+    const horizontalDistance = touchStart.x - touchEnd.x;
+    const verticalDistance = Math.abs(touchStart.y - touchEnd.y);
+    const horizontalAbs = Math.abs(horizontalDistance);
+    
+    // Allow diagonal swipes with more margin of error
+    // 1. Horizontal distance must be greater than 10px
+    // 2. Horizontal movement must be dominant (more than vertical movement)
+    if (horizontalAbs > 10 && horizontalAbs > verticalDistance) {
+      const isLeftSwipe = horizontalDistance > 0;
+      const isRightSwipe = horizontalDistance < 0;
+
+      if (isLeftSwipe) {
+        handleNext();
+      }
+      if (isRightSwipe) {
+        handlePrevious();
+      }
+    }
+  };
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -75,43 +150,64 @@ export default function AboutSection({ id }: AboutSectionProps) {
           </motion.div>
           
           <motion.div 
-            className="grid grid-cols-2 gap-4 max-w-[650px] mx-auto"
+            className="relative max-w-[550px] mx-auto"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="rounded-lg overflow-hidden shadow-md aspect-square gallery-item hover:shadow-lg transition-shadow duration-300">
+            {/* Swipe Text - Mobile Only */}
+            <div className="md:hidden text-center mb-3 text-sm text-gray-600 font-medium">
+              Swipe to see more
+            </div>
+
+            <div 
+              ref={imageContainerRef}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+              className="rounded-2xl overflow-hidden shadow-lg aspect-square gallery-item hover:shadow-2xl transition-shadow duration-300 relative cursor-grab active:cursor-grabbing"
+            >
               <picture>
-                <source srcSet={`${import.meta.env.BASE_URL}images/cherry_blossoms_mobile.avif`} media="(max-width: 640px)"  />
-              <img src={`${import.meta.env.BASE_URL}images/cherry_blossoms.avif`}
-                   alt="Cherry Blossoms" 
-                   className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" />
+                <source srcSet={images[currentImageIndex].mobile} media="(max-width: 640px)" />
+                <img 
+                  src={images[currentImageIndex].desktop}
+                  alt={images[currentImageIndex].alt}
+                  className="w-full h-full object-cover" 
+                />
               </picture>
             </div>
-            <div className="rounded-lg overflow-hidden shadow-lg aspect-square gallery-item hover:shadow-lg transition-shadow duration-300">
-              <picture>
-                <source srcSet={`${import.meta.env.BASE_URL}images/raldang_peak_mobile.avif`} media="(max-width: 640px)" />
-              <img src={`${import.meta.env.BASE_URL}images/raldang_peak.avif`}
-                   alt="Raldang Peak" 
-                   className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" />
-              </picture>
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-lg aspect-square gallery-item hover:shadow-lg transition-shadow duration-300">
-              <picture>
-                <source srcSet={`${import.meta.env.BASE_URL}images/kalpa_town_mobile.avif`} media="(max-width: 640px)" />
-              <img src={`${import.meta.env.BASE_URL}images/kalpa_town.avif`}
-                   alt="Kalpa Town" 
-                   className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" />
-              </picture>
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-lg aspect-square gallery-item hover:shadow-lg transition-shadow duration-300">
-              <picture>
-                <source srcSet={`${import.meta.env.BASE_URL}images/home_food_mobile.avif`} media="(max-width: 640px)" />
-              <img src={`${import.meta.env.BASE_URL}images/home_food.avif`}
-                   alt="Homestay food" 
-                   className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" />
-              </picture>
+            
+            {/* Navigation Buttons - Desktop Only */}
+            <button
+              onClick={handlePrevious}
+              className="hidden md:flex absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white/80 text-[hsl(var(--mountain-blue))] rounded-full p-2.5 md:p-3.5 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 z-10 items-center justify-center"
+              aria-label="Previous image"
+            >
+              <i className="fas fa-chevron-left text-lg md:text-2xl"></i>
+            </button>
+            
+            <button
+              onClick={handleNext}
+              className="hidden md:flex absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white/80 text-[hsl(var(--mountain-blue))] rounded-full p-2.5 md:p-3.5 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 z-10 items-center justify-center"
+              aria-label="Next image"
+            >
+              <i className="fas fa-chevron-right text-lg md:text-2xl"></i>
+            </button>
+
+            {/* Image Counter/Indicator */}
+            <div className="flex justify-center items-center gap-2 mt-6">
+              {images.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentImageIndex(index)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    index === currentImageIndex 
+                      ? 'w-6 bg-[hsl(var(--mountain-blue))]' 
+                      : 'w-2 bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  aria-label={`Go to image ${index + 1}`}
+                />
+              ))}
             </div>
           </motion.div>
         </div>
