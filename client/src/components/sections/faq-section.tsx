@@ -108,7 +108,7 @@ export default function FAQSection({ id }: FAQSectionProps) {
     <section id="faq" className="py-20 bg-[hsl(var(--mountain-white))]">
       {/* SEO Metadata */}
       <Helmet>
-        <title>FAQs – Raldang View Homestay | Kalpa, Kinnaur Valley, Himachal Pradesh</title>
+        <title>FAQs – Raldang View Homestay | Homestay in Kalpa, Kinnaur Valley, Himachal Pradesh</title>
         <meta
           name="description"
           content="Find answers about Raldang View Homestay in Kalpa — best time to visit, Wi-Fi, food, parking, booking details, and family-friendly amenities."

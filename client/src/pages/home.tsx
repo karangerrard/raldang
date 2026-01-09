@@ -33,7 +33,7 @@ export default function Home() {
     <>
       <Helmet>
         {/* Basic Meta Tags */}
-        <title>Raldang View Homestay | Cozy Mountain Stay in Kalpa, Kinnaur Valley, Himachal Pradesh</title>
+        <title>Raldang View Homestay | Homestay in Kalpa, Kinnaur Valley, Himachal Pradesh</title>
         <meta
           name="description"
           content="Raldang View Homestay offers a peaceful stay in the scenic Kalpa, Kinnaur Valley, Himachal Pradesh. Experience mountain views, homely food, and local Himachali hospitality."
@@ -45,7 +45,7 @@ export default function Home() {
         <meta name="author" content="Raldang View Homestay" />
 
         {/* Open Graph (for social media) */}
-        <meta property="og:title" content="Raldang View Homestay | Cozy Mountain Stay in Kalpa, Kinnaur Valley, Himachal Pradesh" />
+        <meta property="og:title" content="Raldang View Homestay | Homestay in Kalpa, Kinnaur Valley, Himachal Pradesh" />
         <meta property="og:description" content="Enjoy a cozy stay surrounded by the mountains of Kalpa, Kinnaur Valley, Himachal Pradesh with delicious local meals and warm hospitality." />
         <meta property="og:image" content="https://raldangviewhomestay.in/images/kinnaur-mountain-view.avif" />
         <meta property="og:url" content="https://raldangviewhomestay.in/" />

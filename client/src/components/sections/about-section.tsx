@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 
 type AboutSectionProps = {
   id: string;
@@ -211,6 +212,23 @@ export default function AboutSection({ id }: AboutSectionProps) {
             </div>
           </motion.div>
         </div>
+
+        {/* Gallery Link */}
+        <motion.div
+          className="flex justify-center mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <Link
+            to="/gallery"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-[hsl(var(--mountain-gold))] text-white font-semibold rounded-lg hover:bg-[hsl(var(--mountain-gold))] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+          >
+            <i className="fas fa-images"></i>
+            Explore Our Photo Gallery
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

@@ -52,12 +52,12 @@ export const rooms: Room[] = [
   {
     id: "garden-view",
     name: "Garden View Room",
-    description: "Comfortable rooms with a private balcony overlooking our peaceful garden and apple orchard. Enjoy the tranquil atmosphere with partial mountain views and cozy Himachali interior design.",
+    description: "Comfortable rooms with a private balcony overlooking our peaceful garden and apple orchard. Enjoy the tranquil atmosphere with partial mountain views and Apple garden views.",
     amenities: ["Garden View", "Private Balcony", "Free Wi-Fi", "Daily Breakfast", "Tea/Coffee Maker", "Room Service","Bathroom Geyser"],
     price: "₹2,200/night",
-    imageMob: "images/room_gardenview_mobile.avif",
-    image: "images/room_gardenview.avif",
-    images: ["images/room_gardenview.avif", "images/room_gardenview.avif", "images/room_gardenview.avif", "images/room_gardenview.avif"]
+    imageMob: "images/room_gardenview_mobile_1.avif",
+    image: "images/room_gardenview_1.avif",
+    images: ["images/room_gardenview_1.avif", "images/room_gardenview_2.avif", "images/room_gardenview_3.avif", "images/room_gardenview_4.avif"]
   }
 ];
 
