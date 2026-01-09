@@ -180,7 +180,7 @@ export default function AboutSection({ id }: AboutSectionProps) {
             {/* Navigation Buttons - Desktop Only */}
             <button
               onClick={handlePrevious}
-              className="hidden md:flex absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white/80 text-[hsl(var(--mountain-blue))] rounded-full p-2.5 md:p-3.5 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 z-10 items-center justify-center"
+              className="hidden md:flex absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white/80 text-[hsl(var(--mountain-blue))] rounded-full w-10 h-10 md:w-14 md:h-14 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 z-10 items-center justify-center"
               aria-label="Previous image"
             >
               <i className="fas fa-chevron-left text-lg md:text-2xl"></i>
@@ -188,7 +188,7 @@ export default function AboutSection({ id }: AboutSectionProps) {
             
             <button
               onClick={handleNext}
-              className="hidden md:flex absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white/80 text-[hsl(var(--mountain-blue))] rounded-full p-2.5 md:p-3.5 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 z-10 items-center justify-center"
+              className="hidden md:flex absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white/80 text-[hsl(var(--mountain-blue))] rounded-full w-10 h-10 md:w-14 md:h-14 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 z-10 items-center justify-center"
               aria-label="Next image"
             >
               <i className="fas fa-chevron-right text-lg md:text-2xl"></i>
