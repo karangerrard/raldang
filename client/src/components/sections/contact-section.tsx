@@ -122,7 +122,7 @@ export default function ContactSection({ id }: AboutSectionProps) {
                   <i className="fas fa-map-marker-alt text-xl"></i>
                 </div>
                 <div>
-                  <h4 className="font-medium text-lg mb-1">Location</h4>
+                  <h4 className="font-medium font-semibold text-lg mb-1">Location</h4>
                   <p>Raldang View Homestay, Saryo, Kalpa, Kinnaur, Himachal Pradesh, India - 172107</p>
                 </div>
               </div>
@@ -132,16 +132,35 @@ export default function ContactSection({ id }: AboutSectionProps) {
                   <i className="fas fa-phone-alt text-xl"></i>
                 </div>
                 <div>
-                  <h4 className="font-medium text-lg mb-1">Phone & WhatsApp</h4>
+                  <h4 className="font-medium font-semibold text-lg mb-1">Phone Number</h4>
                   <p>+91 8580863067</p>
-                  <p>+91 9999059585 <i className="fab fa-whatsapp text-green-400 ml-1"></i></p>
                 </div>
               </div>
+              <a
+                href="https://wa.me/919999059585"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 hover:opacity-80 transition"
+              >
+              <div className="flex items-center gap-3">
+                <i className="fab fa-whatsapp text-3xl text-green-500"></i>
+
+                <p className="text-base">
+                  <span className="text-green-600 font-semibold hover:underline cursor-pointer">
+                    Chat on WhatsApp {"      "}
+                    <i className="fas fa-arrow-right transition group-hover:translate-x-1" />
+                  </span>{" "}
+                  <span className="text-gray-800 font-medium">
+                    +91 9999059585
+                  </span>
+                </p>
+              </div>
+              </a>
             </div>
             
             <div className="space-y-4">
-              <h4 className="font-medium text-lg">Follow or DM Us</h4>
-              <div className="flex gap-4">
+              <h4 className="font-medium font-semibold text-xl">Message us on Instagram</h4>
+              <div className="flex gap-4 ml-5">
                 {/* Facebook button 
                   <i className="fab fa-facebook-f"></i>
                 </a>*/}

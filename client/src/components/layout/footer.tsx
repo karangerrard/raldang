@@ -54,10 +54,17 @@ export default function Footer() {
                 <i className="fas fa-phone-alt mt-1 text-[hsl(var(--mountain-red))]"></i>
                 <span>+91 8580863067</span>
               </li>
-              <li className="flex items-center gap-3 text-lg">
-                <i className="fab fa-whatsapp text-green-400 text-xl"></i>
+              <a
+                href="https://wa.me/919999059585"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 hover:opacity-80 transition"
+              >
+              <li className="flex items-center gap-3 text-lg hover:underline cursor-pointer">
+                <i className="fab fa-whatsapp text-green-400 text-xl "></i>
                 <span>+91 9999059585</span>
               </li>
+              </a>
             </ul>
           </div>
         </div>
