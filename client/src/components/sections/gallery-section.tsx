@@ -1,9 +1,56 @@
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
-import { motion } from "framer-motion";
-import { GalleryItem } from "@/components/ui/gallery-item";
+import { motion, AnimatePresence } from "framer-motion";
 import { galleryImages } from "@/lib/data";
 
 export default function GallerySection() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(-1);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleImageClick = (index: number) => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    setScrollPosition(currentScroll);
+    
+    document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${currentScroll}px`;
+    document.body.style.width = "100%";
+    
+    setCurrentImageIndex(index);
+  };
+
+  const handleNext = () => {
+    const nextIndex = currentImageIndex + 1;
+    if (nextIndex < galleryImages.length) {
+      setCurrentImageIndex(nextIndex);
+    }
+  };
+
+  const handlePrev = () => {
+    const prevIndex = currentImageIndex - 1;
+    if (prevIndex >= 0) {
+      setCurrentImageIndex(prevIndex);
+    }
+  };
+
+  const closeModal = () => {
+    document.body.style.overflow = "auto";
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.width = "";
+    window.scrollTo(0, scrollPosition);
+    setCurrentImageIndex(-1);
+  };
+
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = "auto";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+    };
+  }, []);
+
   return (
     <>
       {/* SEO Metadata */}
@@ -67,16 +114,87 @@ export default function GallerySection() {
           {galleryImages.map((image, index) => (
             <div
               key={image.id}
-              //initial={{ opacity: 0 }}
-              //whileInView={{ opacity: 1, scale: 1 }}
-             // viewport={{ once: true, margin: "-100px" }}
-              //animate={{ opacity: 1, scale: 1 }}
-              //transition={{ duration: 0.4, delay: index * 0.1 }} // stagger but reset after 4
+              className="cursor-pointer"
+              onClick={() => handleImageClick(index)}
             >
-              <GalleryItem image={image} />
+              <motion.div
+                className="rounded-lg overflow-hidden shadow-lg h-72"
+              >
+                <img 
+                  src={image.src} 
+                  alt={image.alt} 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  loading="eager"
+                />
+              </motion.div>
             </div>
           ))}
         </div>
+
+        {/* Fullscreen Modal */}
+        <AnimatePresence>
+          {currentImageIndex >= 0 && (
+            <motion.div 
+              className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeModal}
+            >
+              <motion.div
+                className="relative max-w-7xl max-h-[90vh] overflow-hidden"
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ type: "spring", duration: 0.4 }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <img 
+                  src={galleryImages[currentImageIndex]?.fullSize} 
+                  alt={galleryImages[currentImageIndex]?.alt}
+                  className="max-w-full max-h-[85vh] object-contain rounded-lg"
+                />
+                
+                {/* Navigation Arrows */}
+                {currentImageIndex > 0 && (
+                  <button
+                    onClick={handlePrev}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/70 text-white flex items-center justify-center hover:bg-black transition-colors"
+                    aria-label="Previous image"
+                  >
+                    <i className="fas fa-chevron-left text-2xl"></i>
+                  </button>
+                )}
+                {currentImageIndex < galleryImages.length - 1 && (
+                  <button
+                    onClick={handleNext}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/70 text-white flex items-center justify-center hover:bg-black transition-colors"
+                    aria-label="Next image"
+                  >
+                    <i className="fas fa-chevron-right text-2xl"></i>
+                  </button>
+                )}
+                
+                {/* Close Button */}
+                <div className="absolute top-2 right-2">
+                  <button 
+                    onClick={closeModal}
+                    className="w-10 h-10 rounded-full bg-black/70 text-white flex items-center justify-center hover:bg-black transition-colors"
+                    aria-label="Close fullscreen view"
+                  >
+                    <i className="fas fa-times"></i>
+                  </button>
+                </div>
+                
+                {/* Image Counter and Title */}
+                <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-white">
+                  <h3 className="text-lg font-medium">{galleryImages[currentImageIndex]?.alt}</h3>
+                  <p className="text-sm text-gray-300 mt-1">Image {currentImageIndex + 1} of {galleryImages.length}</p>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
     </>

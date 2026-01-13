@@ -4,9 +4,13 @@ import { motion, AnimatePresence } from "framer-motion";
 
 interface GalleryItemProps {
   image: GalleryImage;
+  currentIndex: number;
+  totalImages: number;
+  onNext?: () => void;
+  onPrev?: () => void;
 }
 
-export function GalleryItem({ image }: GalleryItemProps) {
+export function GalleryItem({ image, currentIndex, totalImages, onNext, onPrev }: GalleryItemProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -32,6 +36,14 @@ export function GalleryItem({ image }: GalleryItemProps) {
     document.body.style.width = "";
     window.scrollTo(0, scrollPosition);
     setIsOpen(false);
+  };
+
+  const handleNext = () => {
+    onNext?.();
+  };
+
+  const handlePrev = () => {
+    onPrev?.();
   };
 
   // Cleanup on unmount
@@ -83,6 +95,28 @@ export function GalleryItem({ image }: GalleryItemProps) {
                 alt={image.alt}
                 className="max-w-full max-h-[85vh] object-contain rounded-lg"
               />
+              
+              {/* Navigation Arrows */}
+              {currentIndex > 0 && (
+                <button
+                  onClick={handlePrev}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/70 text-white flex items-center justify-center hover:bg-black transition-colors"
+                  aria-label="Previous image"
+                >
+                  <i className="fas fa-chevron-left text-2xl"></i>
+                </button>
+              )}
+              {currentIndex < totalImages - 1 && (
+                <button
+                  onClick={handleNext}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/70 text-white flex items-center justify-center hover:bg-black transition-colors"
+                  aria-label="Next image"
+                >
+                  <i className="fas fa-chevron-right text-2xl"></i>
+                </button>
+              )}
+              
+              {/* Close Button */}
               <div className="absolute top-2 right-2">
                 <button 
                   onClick={closeFullscreen}
@@ -92,8 +126,11 @@ export function GalleryItem({ image }: GalleryItemProps) {
                   <i className="fas fa-times"></i>
                 </button>
               </div>
+              
+              {/* Image Counter and Title */}
               <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-white">
                 <h3 className="text-lg font-medium">{image.alt}</h3>
+                <p className="text-sm text-gray-300 mt-1">Image {currentIndex + 1} of {totalImages}</p>
               </div>
             </motion.div>
           </motion.div>
