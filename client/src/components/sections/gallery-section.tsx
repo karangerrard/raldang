@@ -55,19 +55,19 @@ export default function GallerySection() {
     <>
       {/* SEO Metadata */}
       <Helmet>
-        <title>Photo Gallery | Raldang View Homestay in Kalpa, Kinnaur Valley</title>
+        <title>Homestay in Kalpa Photos | Raldang View Homestay Gallery</title>
         <meta
           name="description"
-          content="Explore the photo gallery of Raldang View Homestay and witness the cozy rooms, local Himachali charm, and breathtaking views of Kalpa, Kinnaur Valley."
+          content="Explore real photos of Raldang View Homestay in Kalpa. See Himalayan views, cozy rooms, apple orchards and life in the Kinnaur Valley."
         />
         <meta
           name="keywords"
-          content="Raldang View Homestay, Kinnaur homestay gallery, Himachal stay photos, Kinnaur Valley images, Raldang photos, homestay near Kalpa, Kalpa hotel gallery"
+          content="homestay in Kalpa photos, Kalpa homestay images, Kinnaur homestay views, Raldang View Homestay gallery, Raldang photos, homestay near Kalpa, Kalpa hotel gallery"
         />
-        <meta property="og:title" content="Photo Gallery | Raldang View Homestay" />
+        <meta property="og:title" content="Kalpa Homestay Photo Gallery" />
         <meta
           property="og:description"
-          content="Take a visual journey through Raldang View Homestay — the cozy mountain retreat in Kalpa, Kinnaur Valley."
+          content="A visual tour of one of the most scenic homestays in Kalpa, Himachal Pradesh."
         />
         <meta property="og:image" content="/images/cover-gallery.jpg" />
         <meta property="og:type" content="website" />

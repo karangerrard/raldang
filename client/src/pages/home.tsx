@@ -33,20 +33,20 @@ export default function Home() {
     <>
       <Helmet>
         {/* Basic Meta Tags */}
-        <title>Raldang View Homestay | Homestay in Kalpa, Kinnaur Valley, Himachal Pradesh</title>
+        <title>Homestay in Kalpa | Raldang View Homestay, Kinnaur Valley, Himachal Pradesh</title>
         <meta
           name="description"
-          content="Raldang View Homestay offers a peaceful stay in the scenic Kalpa, Kinnaur Valley, Himachal Pradesh. Experience mountain views, homely food, and local Himachali hospitality."
+          content="Looking for a peaceful homestay in Kalpa? Stay at Raldang View Homestay in Kinnaur Valley with stunning Raldang peak views, home-cooked Himachali food and warm hospitality."
         />
         <meta
           name="keywords"
-          content="Raldang View Homestay, Kinnaur Homestay, Kalpa Homestay, Himachal stay, mountain view rooms, homestay near Reckong Peo, Kinnaur Kailash, Kalpa Hotels, Himachali food, cozy homestay"
+          content="homestay in Kalpa, Kalpa homestay, best homestay in Kalpa, homestay in Kinnaur, Kinnaur Valley homestay, Raldang View Homestay, homestay near Reckong Peo, Kinnaur Kailash, Kalpa Hotels, Himachali food, cozy homestay"
         />
         <meta name="author" content="Raldang View Homestay" />
 
         {/* Open Graph (for social media) */}
-        <meta property="og:title" content="Raldang View Homestay | Homestay in Kalpa, Kinnaur Valley, Himachal Pradesh" />
-        <meta property="og:description" content="Enjoy a cozy stay surrounded by the mountains of Kalpa, Kinnaur Valley, Himachal Pradesh with delicious local meals and warm hospitality." />
+        <meta property="og:title" content="Homestay in Kalpa | Raldang View Homestay, Kinnaur Valley, Himachal Pradesh" />
+        <meta property="og:description" content="A scenic homestay in Kalpa offering breathtaking Himalayan views, authentic Himachali meals and a peaceful mountain stay." />
         <meta property="og:image" content="https://raldangviewhomestay.in/images/kinnaur-mountain-view.avif" />
         <meta property="og:url" content="https://raldangviewhomestay.in/" />
         <meta property="og:type" content="website" />

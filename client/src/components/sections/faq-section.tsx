@@ -100,7 +100,7 @@ export default function FAQSection({ id }: FAQSectionProps) {
         text:
           typeof faq.answer === "string"
             ? faq.answer
-            : "Visit the FAQ section on Raldang View Homestay’s website for details.",
+            : "Please contact Raldang View Homestay directly for detailed information about this question.",
       },
     })),
   };
@@ -108,16 +108,19 @@ export default function FAQSection({ id }: FAQSectionProps) {
     <section id="faq" className="py-20 bg-[hsl(var(--mountain-white))]">
       {/* SEO Metadata */}
       <Helmet>
-        <title>FAQs – Raldang View Homestay | Homestay in Kalpa, Kinnaur Valley, Himachal Pradesh</title>
+        <title>FAQs About Homestay in Kalpa | Raldang View Homestay</title>
         <meta
           name="description"
-          content="Find answers about Raldang View Homestay in Kalpa — best time to visit, Wi-Fi, food, parking, booking details, and family-friendly amenities."
+          content="Frequently asked questions about staying at Raldang View Homestay in Kalpa, including weather, snowfall, Wi-Fi and travel tips."
         />
-        <meta name="keywords" content="Kalpa homestay, best time to visit Kalpa, Raldang View Homestay, Himachali food, Wi-Fi, parking, Kinnaur Valley stay, Kalpa hotel" />
-        <script type="application/ld+json">
-          {JSON.stringify(faqStructuredData)}
-        </script>
+        <meta name="keywords" content="Kalpa homestay FAQs, homestay in Kalpa questions, best time to visit Kalpa, snowfall in Kalpa, Raldang View Homestay" />
+        <link rel="canonical" href="https://raldangviewhomestay.in" />
       </Helmet>
+
+      {/* JSON-LD STRUCTURED DATA */}
+      <script type="application/ld+json">
+        {JSON.stringify(faqStructuredData)}
+      </script>
 
       <div className="container mx-auto px-4 md:px-8">
         {/* Section heading */}
