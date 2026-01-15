@@ -35,7 +35,7 @@ export function RoomCard({ room }: RoomCardProps) {
         <div className="mt-2 text-center">
         <p className="text-sm text-gray-500">
           <i className="fas fa-search mr-1"></i>
-          Click photo to view more
+          Click on the photo to view more
         </p>
         </div>
         <CardContent className="p-4">

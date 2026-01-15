@@ -45,9 +45,9 @@ export const rooms: Room[] = [
     description: "Wake up to the chirping of Himalayan birds and breathtaking panoramic views of Raldang peak from your private balcony. These spacious rooms feature modern amenities for a comfortable mountain stay.",
     amenities: ["Panoramic Mountain View", "Private Balcony", "Free Wi-Fi", "Daily Breakfast", "Tea/Coffee Maker", "Bathroom Geyser"],
     price: "₹2,500/night",
-    imageMob: "images/room_mountain_mobile.avif",
-    image: "images/room_mountain.avif",
-    images: ["images/room_mountain.avif", "images/room_mountain.avif", "images/room_mountain.avif","images/room_mountain.avif"]
+    imageMob: "images/room_mountainview_1.avif",
+    image: "images/room_mountainview_1.avif",
+    images: ["images/room_mountainview_1.avif", "images/room_mountainview_2.avif", "images/room_mountainview_3.avif","images/room_mountainview_4.avif"]
   },
   {
     id: "garden-view",

@@ -33,11 +33,11 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
         >
           <h1 className="font-playfair text-4xl sm:text-4xl md:text-6xl text-[hsl(var(--mountain-white))] font-bold mb-4 text-shadow-lg drop-shadow-xl">
-            Experience the Magic of Kalpa
+            A Divine Homestay in Kalpa
           </h1>
-          <p className="font-semibold text-xl sm:text-lg md:text-2xl text-[hsl(var(--mountain-white))] mb-8 max-w-3xl mx-auto text-shadow-lg drop-shadow-xl">
-            A Himachali homestay on the edge of the valley with breathtaking views of the Raldang peak
-          </p>
+          <h2 className="font-semibold text-xl sm:text-lg md:text-2xl text-[hsl(var(--mountain-white))] mb-8 max-w-3xl mx-auto text-shadow-lg drop-shadow-xl">
+            A Himachali homestay in Kalpa, perched on the edge of the valley with breathtaking views of the Raldang peak.
+          </h2>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <Button
               className="w-2/3 mx-auto sm:mx-0 sm:w-auto text-lg sm:text-base md:text-lg py-4 sm:py-4 md:py-6 px-8 sm:px-8 md:px-12 rounded-full transition-all transform hover:scale-105 font-semibold shadow-lg border-2 bg-[hsl(var(--mountain-gold))] hover:bg-[hsl(var(--mountain-gold))]/90 text-[hsl(var(--mountain-white))] border-[hsl(var(--mountain-white))]"
