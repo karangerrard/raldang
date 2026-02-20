@@ -13,7 +13,27 @@ const faqs: FAQItem[] = [
     question: "How can I book my stay?",
     answer: (
       <>
-        You can book directly via <span className="font-semibold text-[hsl(var(--mountain-gold))]">WhatsApp</span> using the Send inquiry button after filling all the appropriate details in our <span className="font-semibold text-[hsl(var(--mountain-gold))]">contact section</span>, or reach us through the <span className="font-semibold text-[hsl(var(--mountain-gold))]">number</span> provided on our website. Also you can DM us on our <span className="font-semibold text-[hsl(var(--mountain-gold))]">Instagram page</span> provided at the bottom of the website.
+        You can book directly via{" "}
+        <a
+          href="https://wa.me/919999059585"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-[hsl(var(--mountain-gold))] hover:underline cursor-pointer"
+        >
+          WhatsApp
+        </a>{" "}
+        using the Send inquiry button after filling all the appropriate details in our{" "}
+        <span className="font-semibold text-[hsl(var(--mountain-gold))]">contact section</span>, or reach us through the{" "}
+        <span className="font-semibold text-[hsl(var(--mountain-gold))]">number</span> provided on our website. Also you can DM us on our{" "}
+        <a
+          href="https://www.instagram.com/raldangviewhomestay/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-[hsl(var(--mountain-gold))] hover:underline cursor-pointer"
+        >
+          Instagram page
+        </a>{" "}
+        provided at the bottom of the website.
       </>
     ),
   },

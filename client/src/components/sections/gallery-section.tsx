@@ -20,17 +20,13 @@ export default function GallerySection() {
   };
 
   const handleNext = () => {
-    const nextIndex = currentImageIndex + 1;
-    if (nextIndex < galleryImages.length) {
-      setCurrentImageIndex(nextIndex);
-    }
+    const nextIndex = (currentImageIndex + 1) % galleryImages.length;
+    setCurrentImageIndex(nextIndex);
   };
 
   const handlePrev = () => {
-    const prevIndex = currentImageIndex - 1;
-    if (prevIndex >= 0) {
-      setCurrentImageIndex(prevIndex);
-    }
+    const prevIndex = currentImageIndex === 0 ? galleryImages.length - 1 : currentImageIndex - 1;
+    setCurrentImageIndex(prevIndex);
   };
 
   const closeModal = () => {
@@ -156,24 +152,20 @@ export default function GallerySection() {
                 />
                 
                 {/* Navigation Arrows */}
-                {currentImageIndex > 0 && (
-                  <button
-                    onClick={handlePrev}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/70 text-white flex items-center justify-center hover:bg-black transition-colors"
-                    aria-label="Previous image"
-                  >
-                    <i className="fas fa-chevron-left text-2xl"></i>
-                  </button>
-                )}
-                {currentImageIndex < galleryImages.length - 1 && (
-                  <button
-                    onClick={handleNext}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/70 text-white flex items-center justify-center hover:bg-black transition-colors"
-                    aria-label="Next image"
-                  >
-                    <i className="fas fa-chevron-right text-2xl"></i>
-                  </button>
-                )}
+                <button
+                  onClick={handlePrev}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/70 text-white flex items-center justify-center hover:bg-black transition-colors"
+                  aria-label="Previous image"
+                >
+                  <i className="fas fa-chevron-left text-2xl"></i>
+                </button>
+                <button
+                  onClick={handleNext}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/70 text-white flex items-center justify-center hover:bg-black transition-colors"
+                  aria-label="Next image"
+                >
+                  <i className="fas fa-chevron-right text-2xl"></i>
+                </button>
                 
                 {/* Close Button */}
                 <div className="absolute top-2 right-2">
