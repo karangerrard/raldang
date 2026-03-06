@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 
 type AboutSectionProps = {
   id: string;
@@ -8,9 +13,15 @@ type AboutSectionProps = {
 
 export default function AboutSection({ id }: AboutSectionProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [touchStart, setTouchStart] = useState({ x: 0, y: 0 });
-  const [touchEnd, setTouchEnd] = useState({ x: 0, y: 0 });
+  const [carouselApi, setCarouselApi] = useState<any>(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const imageContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setIsTransitioning(true);
+    const timer = setTimeout(() => setIsTransitioning(false), 400);
+    return () => clearTimeout(timer);
+  }, [currentImageIndex]);
 
   const images = [
     {
@@ -36,49 +47,16 @@ export default function AboutSection({ id }: AboutSectionProps) {
   ];
 
   const handlePrevious = () => {
-    setCurrentImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    carouselApi?.scrollPrev();
   };
 
   const handleNext = () => {
-    setCurrentImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    carouselApi?.scrollNext();
   };
 
-  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    setTouchStart({
-      x: e.targetTouches[0].clientX,
-      y: e.targetTouches[0].clientY
-    });
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
-    setTouchEnd({
-      x: e.changedTouches[0].clientX,
-      y: e.changedTouches[0].clientY
-    });
-    handleSwipe();
-  };
-
-  const handleSwipe = () => {
-    if (!touchStart.x || !touchEnd.x) return;
-    
-    const horizontalDistance = touchStart.x - touchEnd.x;
-    const verticalDistance = Math.abs(touchStart.y - touchEnd.y);
-    const horizontalAbs = Math.abs(horizontalDistance);
-    
-    // Allow diagonal swipes with more margin of error
-    // 1. Horizontal distance must be greater than 10px
-    // 2. Horizontal movement must be dominant (more than vertical movement)
-    if (horizontalAbs > 10 && horizontalAbs > verticalDistance) {
-      const isLeftSwipe = horizontalDistance > 0;
-      const isRightSwipe = horizontalDistance < 0;
-
-      if (isLeftSwipe) {
-        handleNext();
-      }
-      if (isRightSwipe) {
-        handlePrevious();
-      }
-    }
+  const handleDotClick = (index: number) => {
+    setCurrentImageIndex(index);
+    carouselApi?.scrollTo(index);
   };
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -162,45 +140,81 @@ export default function AboutSection({ id }: AboutSectionProps) {
               Swipe to see more
             </div>
 
-            <div 
+            {/* Carousel Container */}
+            <motion.div 
               ref={imageContainerRef}
-              onTouchStart={handleTouchStart}
-              onTouchEnd={handleTouchEnd}
-              className="rounded-2xl overflow-hidden shadow-lg aspect-square gallery-item hover:shadow-2xl transition-shadow duration-300 relative cursor-grab active:cursor-grabbing"
+              animate={isTransitioning ? { scale: 1.02 } : { scale: 1 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="relative rounded-2xl overflow-hidden shadow-lg aspect-square gallery-item hover:shadow-2xl transition-shadow duration-300"
             >
-              <picture>
-                <source srcSet={images[currentImageIndex].mobile} media="(max-width: 640px)" />
-                <img 
-                  src={images[currentImageIndex].desktop}
-                  alt={images[currentImageIndex].alt}
-                  className="w-full h-full object-cover" 
-                />
-              </picture>
-            </div>
-            
-            {/* Navigation Buttons - Desktop Only */}
-            <button
-              onClick={handlePrevious}
-              className="hidden md:flex absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white/80 text-[hsl(var(--mountain-blue))] rounded-full w-10 h-10 md:w-14 md:h-14 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 z-10 items-center justify-center"
-              aria-label="Previous image"
-            >
-              <i className="fas fa-chevron-left text-lg md:text-2xl"></i>
-            </button>
-            
-            <button
-              onClick={handleNext}
-              className="hidden md:flex absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white/80 text-[hsl(var(--mountain-blue))] rounded-full w-10 h-10 md:w-14 md:h-14 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 z-10 items-center justify-center"
-              aria-label="Next image"
-            >
-              <i className="fas fa-chevron-right text-lg md:text-2xl"></i>
-            </button>
+              <style>{`
+                .about-carousel [data-embla-viewport] {
+                  overflow: hidden;
+                }
+                .about-carousel [data-embla-container] {
+                  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                  will-change: transform;
+                }
+              `}</style>
+              <Carousel
+                opts={{
+                  startIndex: currentImageIndex,
+                  loop: true,
+                  align: "center",
+                  dragFree: false,
+                  containScroll: "keepSnaps",
+                  skipSnaps: false,
+                }}
+                setApi={(api) => {
+                  setCarouselApi(api);
+                  api?.on("select", () => {
+                    if (api) {
+                      setCurrentImageIndex(api.selectedScrollSnap());
+                    }
+                  });
+                }}
+                className="w-full h-full about-carousel"
+              >
+                <CarouselContent className="m-0 h-full">
+                  {images.map((image) => (
+                    <CarouselItem key={image.alt} className="p-0 basis-full">
+                      <picture>
+                        <source srcSet={image.mobile} media="(max-width: 640px)" />
+                        <img
+                          src={image.desktop}
+                          alt={image.alt}
+                          className="w-full h-full object-cover"
+                        />
+                      </picture>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
+
+              {/* Navigation Buttons - Desktop Only */}
+              <button
+                onClick={handlePrevious}
+                className="hidden md:flex absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white/80 text-[hsl(var(--mountain-blue))] rounded-full w-10 h-10 md:w-14 md:h-14 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 z-10 items-center justify-center"
+                aria-label="Previous image"
+              >
+                <i className="fas fa-chevron-left text-lg md:text-2xl"></i>
+              </button>
+
+              <button
+                onClick={handleNext}
+                className="hidden md:flex absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white/80 text-[hsl(var(--mountain-blue))] rounded-full w-10 h-10 md:w-14 md:h-14 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 z-10 items-center justify-center"
+                aria-label="Next image"
+              >
+                <i className="fas fa-chevron-right text-lg md:text-2xl"></i>
+              </button>
+            </motion.div>
 
             {/* Image Counter/Indicator */}
             <div className="flex justify-center items-center gap-2 mt-6">
               {images.map((_, index) => (
                 <button
                   key={index}
-                  onClick={() => setCurrentImageIndex(index)}
+                  onClick={() => handleDotClick(index)}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     index === currentImageIndex 
                       ? 'w-6 bg-[hsl(var(--mountain-blue))]' 
