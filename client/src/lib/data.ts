@@ -187,48 +187,72 @@ export const galleryImages: GalleryImage[] = [
     id: "1",
     src: "images/gallery_1_cover.avif",
     fullSize: "images/gallery_1.avif",
-    alt: "Kinnaur Temple"
+    alt: "Homestay Exterior 1"
   },
   {
     id: "2",
     src: "images/gallery_2_cover.avif",
     fullSize: "images/gallery_2.avif",
-    alt: "Kinnaur Monastery"
+    alt: "Homestay Exterior 2"
   },
   {
     id: "3",
     src: "images/gallery_3_cover.avif",
     fullSize: "images/gallery_3.avif",
-    alt: "Tibetan Prayer Flags"
+    alt: "Homestay Exterior 3"
   },
   {
     id: "4",
     src: "images/gallery_4_cover.avif",
     fullSize: "images/gallery_4.avif",
-    alt: "Himalayan Sheep"
+    alt: "Homestay Exterior 4"
   },
   {
     id: "5",
     src: "images/gallery_5_cover.avif",
     fullSize: "images/gallery_5.avif",
-    alt: "Raldang Peak"
+    alt: "Mountain View from Balcony"
   },
   {
     id: "6",
     src: "images/gallery_6_cover.avif",
     fullSize: "images/gallery_6.avif",
-    alt: "Chaka Trail"
+    alt: "Balcony View of Raldang Peak"
   },
   {
     id: "7",
-    src: "images/gallery_9_cover.avif",
-    fullSize: "images/gallery_9.avif",
+    src: "images/gallery_7_cover.avif",
+    fullSize: "images/gallery_7.avif",
     alt: "Kinnaur Suicide Point"
   },
   {
     id: "8",
     src: "images/gallery_8_cover.avif",
     fullSize: "images/gallery_8.avif",
+    alt: "Tibetan Prayer Wheels"
+  },
+  {
+    id: "9",
+    src: "images/gallery_9_cover.avif",
+    fullSize: "images/gallery_9.avif",
+    alt: "Tibetan Prayer Flags"
+  },
+  {
+    id: "10",
+    src: "images/gallery_10_cover.avif",
+    fullSize: "images/gallery_10.avif",
+    alt: "Himalayan Sheep"
+  },
+  {
+    id: "11",
+    src: "images/gallery_11_cover.avif",
+    fullSize: "images/gallery_11.avif",
     alt: "Raldang Peak"
+  },
+  {
+    id: "12",
+    src: "images/gallery_12_cover.avif",
+    fullSize: "images/gallery_12.avif",
+    alt: "Homemade meals"
   }
 ];
