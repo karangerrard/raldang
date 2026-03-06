@@ -57,7 +57,7 @@ export function RoomCard({ room }: RoomCardProps) {
             </span>
             <Button
               //asChild
-              className="bg-[hsl(var(--mountain-gold))] hover:bg-[hsl(var(--mountain-gold))]/90 text-[hsl(var(--mountain-pine))] py-2 px-6 rounded-full transition-colors w-full sm:w-auto"
+              className="bg-[hsl(var(--mountain-gold))] hover:bg-[hsl(var(--mountain-gold))]/90 text-[hsl(var(--mountain-white))] py-2 px-6 rounded-full transition-colors w-full sm:w-auto"
               onClick={() => {
                 const el = document.getElementById("contact");
                 if (el) {
