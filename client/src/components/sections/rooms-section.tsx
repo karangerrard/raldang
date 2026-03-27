@@ -44,7 +44,7 @@ export default function RoomsSection({ id }: AboutSectionProps) {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-lg mb-4">All accommodations include complimentary breakfast and Wi-Fi</p>
+          <p className="text-lg mb-4">All accommodations include complimentary welcome Tea and Wi-Fi</p>
           {/*
            <Button 
             asChild
