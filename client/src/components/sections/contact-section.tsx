@@ -314,7 +314,7 @@ export default function ContactSection({ id }: AboutSectionProps) {
                   <Button 
                     type="submit"
                     disabled={contactMutation.isPending}
-                    className="w-full py-3 px-6 bg-green-500 hover:bg-[hsl(var(--mountain-gold))]/90 text-[hsl(var(--mountain-white))] rounded-lg transition-colors font-medium flex items-center justify-center gap-2"
+                    className="w-full py-3 px-6 bg-green-500 hover:bg-green-600 text-[hsl(var(--mountain-white))] rounded-lg transition-colors font-medium flex items-center justify-center gap-2"
                   >
                     <i className="fab fa-whatsapp text-lg"></i>
                     {contactMutation.isPending ? "Sending..." : "Send Inquiry via WhatsApp"}
